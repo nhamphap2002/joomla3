@@ -1,0 +1,36 @@
+
+
+{
+    "Parent":{
+        "productIT":{
+            "product_in_stock":0,
+            "published":0,
+            "virtuemart_product_id":"3725"
+        }
+    },
+"Children":{
+    "ChidrensKeyArray":[7464,7465,7466],
+    "7464":{
+        "productIT":{
+            "product_in_stock":0,
+            "published":0,
+            "virtuemart_product_id":3726
+        }
+    },
+"7465":{
+    "productIT":{
+        "product_in_stock":0,
+        "published":0,
+        "virtuemart_product_id":3727
+    }
+},
+"7466":{
+    "productIT":{
+        "product_in_stock":0,
+        "published":0,
+        "virtuemart_product_id":3728
+    }
+}
+},
+"function":"unpublishProductWithChildren"
+}

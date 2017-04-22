@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+    <name>plg_system_fgcautocomplete</name>
+    <author>Tran Trong Thang</author>
+    <creationDate>March 2007</creationDate>
+    <copyright>Copyright (C) 2017 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>trantrongthang1207@gmail.com</authorEmail>
+    <authorUrl></authorUrl>
+    <version>3.0.0</version>
+    <description>Autocomplete</description>
+    <files>
+        <filename plugin="fgcautocomplete">fgcautocomplete.php</filename>
+        <folder plugin="fgcautocomplete">assets</folder>
+    </files>
+</extension>

@@ -1,0 +1,8 @@
+  
+    
+    {"product":{
+            "product_in_stock":0,
+            "published":0,
+            "virtuemart_product_id":"2223"
+        },
+        "function":"unpublishProduct"}

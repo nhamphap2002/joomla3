@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment" method="upgrade">
+    <name>Commweb</name>
+    <creationDate>April 22 2017</creationDate>
+    <author>The VirtueMart Development Team</author>
+    <authorUrl>https://virtuemart.net</authorUrl>
+    <copyright>Copyright (C) 2004 - 2017 Virtuemart Team. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>3.2.1</version>
+    <description>Commweb hosted VirtueMart Payment Plugin</description>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_vmpayment_commweb.ini</language>
+    </languages>
+    <files>
+        <filename plugin="commweb">commweb.php</filename>
+        <folder>commweb</folder>
+        <folder>language</folder>
+    </files>
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="spacer" default="VMPAYMENT_COMMWEB" level="level1" />
+                <field type="spacer" default=" " level="level1" />
+                <field type="spacer" default="VMPAYMENT_COMMWEB_PARAMS" level="level1" />
+		
+                <field name="commweb_title" type="text" size="50" default="" description="Commweb Hosted Name" label="Title"/>
+                <field name="commweb_description" type="text" size="50" default="" description="This controls the description which the user sees during checkout." label="Description"/>
+                <field name="commweb_merchant_id" type="text" size="50" default="" description="Commweb Hosted Merchant Id" label="Marchant Id"/>
+                <field name="commweb_api_password" type="text" size="50" default="" description="Commweb Hosted API Password" label="API Password"   />
+                <field name="merchant_name" type="text" size="50" default="" description="String to display on head of Lightbox or Payment Page of Commweb." label="Merchant name"   />
+                <field name="commweb_checkout_method" type="list" default=""
+                       label="Checkout Method" description="Select option for payment menthod">
+                    <option value="commweb_hosted_lightbox">Lightbox</option>
+                    <option value="part">Redirect</option>
+                </field>
+                <field name="secure_3d" type="text" size="50" default="" label="3D Secure" description="Enabled 3D Secure"   />
+                <field name="debug" type="checkbox" size="50" default="" label="Debug Log" description="Log data of Commweb."   />
+            </fieldset>
+        </fields>
+    </vmconfig>
+
+    <updateservers>
+        <!-- Note: No spaces or linebreaks allowed between the server tags -->
+        <server type="extension" name="VirtueMart plg_vmpayment_klarna Update Site"><![CDATA[http://virtuemart.net/releases/vm3/plg_vmpayment_klarna_update.xml]]></server>
+    </updateservers>
+
+</extension>

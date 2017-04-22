@@ -1,0 +1,61 @@
+{"field":[{
+        "custom_value":"2011 12 ",
+        "custom_price":0,
+        "field_type":"Stagione",
+        "virtuemart_custom_id":6,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":1
+    },{
+        "custom_value":";COM_VM_ERP_COL_RED",
+        "custom_price":0,
+        "field_type":"Colore",
+        "virtuemart_custom_id":7,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":2
+    },{
+        "custom_value":"Tessuto esterno:70% cotone  30% poliestere , Cappuccio fodera: 95% cotone  5% elastene. ",
+        "custom_price":0,
+        "field_type":"Materiale",
+        "virtuemart_custom_id":21,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":4
+    },{
+        "custom_value":"Bayer Leverkusen",
+        "custom_price":0,
+        "field_type":"Squadra",
+        "virtuemart_custom_id":11,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":9
+    },{
+        "custom_value":"Adidas",
+        "custom_price":0,
+        "field_type":"Marca",
+        "virtuemart_custom_id":12,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":10
+    },{
+        "custom_value":"XS 44 D3 I3 28- ",
+        "custom_price":0,
+        "field_type":"Taglia",
+        "virtuemart_custom_id":3,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":12
+    },{
+        "custom_value":"M 48 D5 I5 32- ",
+        "custom_price":0,
+        "field_type":"Taglia",
+        "virtuemart_custom_id":3,
+        "virtuemart_customfield_id":0,
+        "admin_only":0,
+        "ordering":13
+    }],
+    "virtuemart_product_id" : 2055,
+    "function":"editVariants"
+    }
+    

@@ -1,0 +1,207 @@
+{
+    "productIT":{
+        "vmlang":"it-IT",
+        "published":"1",
+        "product_sku":"23212",
+        "product_name":"24H Ac Milan Adidas Pantaloni tuta Pants Bianco Uomo Stagi one 09 10 Home ",
+        "categories":["346","305","322","325","317"],
+        "layout":"0",
+        "product_special":"0",
+        "product_thumb_image":"http:\/\/localhost.dev\/immaginiEbay\/maglie\/\/\/\/AstonVilla\/\/maglia\/\/bb\/\/det-pu739854-1.jpg",
+        "product_full_image":"http:\/\/localhost.dev\/immaginiEbay\/maglie\/\/\/\/AstonVilla\/\/maglia\/\/bb\/\/det-pu739854-1.jpg",
+        "mprices":{
+            "product_price":[18.181818181818],
+            "virtuemart_product_price_id":[""],
+            "product_currency":["47"],
+            "virtuemart_shoppergroup_id":[""],
+            "basePrice":[18.181818181818],
+            "product_tax_id":["1"],
+            "salesPrice":[22],
+            "product_discount_id":[-1],
+            "product_price_publish_up":[""],
+            "product_price_publish_down":[""],
+            "product_override_price":[0],
+            "use_desired_price":[1],
+            "price_quantity_start":[""],
+            "price_quantity_end":[""]
+            },
+        "intnotes":"",
+        "product_s_desc":"Saldi e sconti su un fantastico Pantaloni tuta Pants Milan Originale Adidas Uomo, della Stagione Stagi one 09 10 in Colore Bianco",
+        "product_desc":"Saldi e sconti su un fantastico Pantaloni tuta Pants Milan Originale Adidas Uomo, della Stagione Stagi one 09 10 in Colore Bianco<br>Stagi one 09 10 Colore principale : Bianco<br>Taglie Da Uomo  Caviglia STRETTA con ELASTICO<br>Il prodotto presenta tasche senza zip   100% polie stere, caldo \/ freddo, estivo \/invernale, imbottito e felpato \/ estivo<br>Versione per i match in casa  Loghi cuciti ricamati, tessuti pa rticolari , cuciture termosaldate. SENZA CARTELLINI ?<br>Il prodotto potrebbe risultare pi\u00f9 stretto del solito, prego controllarsi la misura taglie  Se \u00e8 leggero mettere che \u00e8 estivo , op pure se \u00e8 buono per allenamento o per partita con caratteristiche<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.modacalcio.com\/immaginiEbay\/taglie\/pantapuma.jpg\" alt=\"Tabella taglie e misure Pantaloni tuta Pants Milan Bianco Originale Adidas Uomo Stagi one 09 10\"><br \/> Codice Fornitore: 23212<br \/> Codice ERP Interno: MG-1314<br \/>Tag Ricerca:  23212",
+        "customtitle":"",
+        "metadesc":"Saldi e sconti su un fantastico Pantaloni tuta Pants Milan Originale Adidas Uomo, della Stagione Stagi one 09 10 in Colore Bianco",
+        "metakey":"24H Ac Milan Adidas Pantaloni tuta Pants Bianco Uomo Stagi one 09 10 Home ",
+        "metarobot":"",
+        "metaauthor":"modacalcio.com e-reall sport barbiero",
+        "product_in_stock":"20",
+        "product_ordered":"0",
+        "low_stock_notification":"1",
+        "min_order_level":"0",
+        "max_order_level":"0",
+        "product_available_date_text":"03\/21\/12",
+        "product_available_date":"2012-03-21 18:15:34",
+        "product_availability":"24h.gif",
+        "image":"24h.gif",
+        "product_length":"0.0000",
+        "product_lwh_uom":"IN",
+        "product_width":"0.0000",
+        "product_height":"0.0000",
+        "product_weight":"0.450",
+        "product_weight_uom":"KG",
+        "product_unit":"pezz",
+        "product_packaging":"0",
+        "product_box":"0",
+        "pictures":"http:\/\/localhost.dev\/immaginiEbay\/maglie\/\/\/\/AstonVilla\/\/maglia\/\/bb\/\/det-pu739854-1.jpg**http:\/\/localhost.dev\/immaginiEbay\/maglie\/\/\/\/AstonVilla\/\/maglia\/\/bb\/\/det-pu739854-2.jpg**http:\/\/localhost.dev\/immaginiEbay\/maglie\/\/\/\/AstonVilla\/\/maglia\/\/bb\/\/det-pu739854-3.jpg**http:\/\/localhost.dev\/immaginiEbay\/maglie\/\/\/\/AstonVilla\/\/maglia\/\/bb\/\/det-pu739854-4.jpg**",
+        "task":"apply",
+        "boxchecked":"0",
+        "controller":"product",
+        "view":"product",
+        "product_parent_id":0,
+        "metadesc ":"Saldi e sconti su un fantastico Pantaloni tuta Pants Milan Originale Adidas Uomo, della Stagione Stagi one 09 10 in Colore Bianco",
+        "slug":"24H_Ac_Milan_Adidas_Pantaloni_tuta_Pants_Bianco_Uomo_Stagi_one_09_10_Home_-1314",
+        "field":[{
+            "custom_value":"Stagi one 09 10",
+            "custom_price":0,
+            "field_type":"Stagione",
+            "virtuemart_custom_id":6,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":0
+        },{
+            "custom_value":"COM_VM_ERP_COL_WHITE",
+            "custom_price":0,
+            "field_type":"Colore",
+            "virtuemart_custom_id":7,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":1
+        },{
+            "custom_value":"Uomo",
+            "custom_price":0,
+            "field_type":"Genere",
+            "virtuemart_custom_id":44,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":2
+        },{
+            "custom_value":"Caviglia stretta",
+            "custom_price":0,
+            "field_type":"Caviglia",
+            "virtuemart_custom_id":43,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":3
+        },{
+            "custom_value":"Tasche senza zip",
+            "custom_price":0,
+            "field_type":"Tasche",
+            "virtuemart_custom_id":9,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":4
+        },{
+            "custom_value":"100% polie stere, caldo \/ freddo, estivo \/invernale, imbottito e felpato \/ estivo ",
+            "custom_price":0,
+            "field_type":"Materiale",
+            "virtuemart_custom_id":21,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":5
+        },{
+            "custom_value":"Home",
+            "custom_price":0,
+            "field_type":"Divisa",
+            "virtuemart_custom_id":22,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":6
+        },{
+            "custom_value":"Loghi cuciti ricamati, tessuti pa rticolari , cuciture termosaldate. SENZA CARTELLINI ?",
+            "custom_price":0,
+            "field_type":"Altri Dettagli",
+            "virtuemart_custom_id":31,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":7
+        },{
+            "custom_value":" aderente ",
+            "custom_price":0,
+            "field_type":"Vestibilita",
+            "virtuemart_custom_id":13,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":8
+        },{
+            "custom_value":"Sped. Immediata",
+            "custom_price":0,
+            "field_type":"Spedizione in",
+            "virtuemart_custom_id":8,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":9
+        },{
+            "custom_value":"Ac Milan",
+            "custom_price":0,
+            "field_type":"Squadra",
+            "virtuemart_custom_id":11,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":10
+        },{
+            "custom_value":"Adidas",
+            "custom_price":0,
+            "field_type":"Marca",
+            "virtuemart_custom_id":12,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":11
+        },{
+            "custom_value":"COM_VM_ERP_TRACK_PANT",
+            "custom_price":0,
+            "field_type":"Tipo Prodotto",
+            "virtuemart_custom_id":10,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":12
+        },{
+            "custom_value":"S 46 D4",
+            "custom_price":0,
+            "field_type":"Taglia",
+            "virtuemart_custom_id":3,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":13
+        }],
+        "custom_param":null,
+        "save_customfields":1,
+        "customlist":3
+    },
+    "productUK":{
+        "vmlang":"en-GB",
+        "product_name":"Pant Pants Original Adidas AC Milan White Man Stagi one 09 10",
+        "product_s_desc":"Sales and discounts on a fantastic Pant Pants Milan Adidas Original Man, one of the Stagi 09 Season 10 in White",
+        "slug":"pant-pants-original-adidas-ac-milan-white-man-stagi-one-09-10-1314",
+        "product_desc":"Sales and discounts on a fantastic Pant Pants Milan Adidas Original Man, one of the Stagi 09 Season 10 in White<br>One Stagi 09 10 Main Color: White<br>Sizes Men\\'s Ankle with NARROW BAND<br>The product has no zip pockets 100% poly ester, hot \/ cold, summer \/ winter, padded and fleece \/ summer<br>Version for the match at home sewn embroidered logos, fabric pa rticolari, seam sealed. WITHOUT TAGS?<br>The product may be more narrow than usual, please control himself the extent sizes If you put that light summer, op even if good for training or playing with characteristics<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.modacalcio.com\/immaginiEbay\/taglie\/pantapuma.jpg\" alt=\"Tabella taglie e misure Pantaloni tuta Pants Milan Bianco Originale Adidas Uomo Stagi one 09 10\"><br \/> Codice Fornitore: 23212<br \/> Codice ERP Interno: MG-1314<br \/>Tag Ricerca:  23212",
+        "metadesc":"Sales and discounts on a fantastic Pant Pants Milan Adidas Original Man, one of the Stagi 09 Season 10 in White",
+        "metakey":"Pant Pants Original Adidas AC Milan White Man Stagi one 09 10"
+    },
+    "productFR":{
+        "vmlang":"fr-FR",
+        "product_name":"Pantalon Pantalon d\\'Adidas AC Milan White Man Stagi un 09 10",
+        "product_s_desc":"Ventes et rabais sur un fantastique Pant Pantalon Milan Adidas Original Man, l\\'un des Stagi 09 Saison 10 en blanc",
+        "slug":"pantalon-pantalon-d\\'adidas-ac-milan-white-man-stagi-un-09-10-1314",
+        "product_desc":"Ventes et rabais sur un fantastique Pant Pantalon Milan Adidas Original Man, l\\'un des Stagi 09 Saison 10 en blanc<br>Un Stagi 09 10 Couleur principale: Blanc<br>La cheville de tailles Homme avec BANDE \u00c9TROITE<br>Le produit n\\'a pas poches zipp\u00e9es 100% d\\'ester poly, chaud \/ froid, \u00e9t\u00e9 \/ hiver, rembourr\u00e9 et polaire \/ \u00e9t\u00e9<br>Version pour le match \u00e0 domicile cousus logos brod\u00e9s, tissu pa rticolari, coutures \u00e9tanch\u00e9es. Sans les \u00e9tiquettes?<br>Le produit peut \u00eatre plus \u00e9troit que d\\'habitude, merci de contr\u00f4ler lui-m\u00eame la mesure o\u00f9 les tailles Si vous mettez cet \u00e9t\u00e9 clair, op m\u00eame si bon pour la formation ou de jouer avec des caract\u00e9ristiques<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.modacalcio.com\/immaginiEbay\/taglie\/pantapuma.jpg\" alt=\"Tabella taglie e misure Pantaloni tuta Pants Milan Bianco Originale Adidas Uomo Stagi one 09 10\"><br \/> Codice Fornitore: 23212<br \/> Codice ERP Interno: MG-1314<br \/>Tag Ricerca:  23212",
+        "metadesc":"Ventes et rabais sur un fantastique Pant Pantalon Milan Adidas Original Man, l\\'un des Stagi 09 Saison 10 en blanc",
+        "metakey":"Pantalon Pantalon d\\'Adidas AC Milan White Man Stagi un 09 10"
+    },
+    "productDE":{
+        "vmlang":"de-DE",
+        "product_name":"Pant Hose Urspr\u00fcngliche Adidas AC Milan White Man Stagi einem 09 10",
+        "product_s_desc":"Sales and Rabatte auf einem fantastischen Pant Pants Milan Adidas Original-Man, einer der Stagi 09 Season 10 in White",
+        "slug":"pant-hose-urspr\u00fcngliche-adidas-ac-milan-white-man-stagi-einem-09-10-1314",
+        "product_desc":"Sales and Rabatte auf einem fantastischen Pant Pants Milan Adidas Original-Man, einer der Stagi 09 Season 10 in White<br>Eine Stagi 09 10 Hauptfarbe: Wei\u00df<br>Gr\u00f6\u00dfen M\u00e4nner Kn\u00f6chel mit SCHMALBAND<br>Das Produkt hat keine Taschen mit Rei\u00dfverschluss 100% Poly ester, warm \/ kalt, Sommer \/ Winter, gepolsterte und Vlies \/ Sommer<br>Version f\u00fcr das Spiel zu Hause gen\u00e4ht gestickte Logos, Stoff pa rticolari, Siegelnaht. Ohne Umbauten?<br>Das Produkt kann schmaler als \u00fcblich, bitte beherrschen die Extentgr\u00f6\u00dfen Wenn du das Licht Sommer setzen, auch wenn op gut zum Trainieren oder spielen mit den Eigenschaften<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.modacalcio.com\/immaginiEbay\/taglie\/pantapuma.jpg\" alt=\"Tabella taglie e misure Pantaloni tuta Pants Milan Bianco Originale Adidas Uomo Stagi one 09 10\"><br \/> Codice Fornitore: 23212<br \/> Codice ERP Interno: MG-1314<br \/>Tag Ricerca:  23212",
+        "metadesc":"Sales and Rabatte auf einem fantastischen Pant Pants Milan Adidas Original-Man, einer der Stagi 09 Season 10 in White",
+        "metakey":"Pant Hose Urspr\u00fcngliche Adidas AC Milan White Man Stagi einem 09 10"
+    },
+    "function":"addProduct"
+}

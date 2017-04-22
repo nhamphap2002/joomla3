@@ -1,0 +1,10 @@
+/* 
+    Created on : Mar 14, 2017, 9:22:47 AM
+    Author     : Tran Trong Thang
+    Email      : trantrongthang1207@gmail.com
+    Skype      : trantrongthang1207
+*/
+#jform_request_id_chzn .chzn-search,
+#jform_parent_id_chzn .chzn-search{
+    position: static !important;
+}

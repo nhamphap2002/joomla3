@@ -1,0 +1,191 @@
+{
+    "productIT":{
+        "vmlang":"it-IT",
+        "published":"1",
+        "product_sku":"adidas ad g83085",
+        "product_name":"24H Adidas Intimo Tecnico Baselayer Felpa Cappuccio Hollow Pile Blu Uomo ",
+        "categories":[340,"325","326","327","318"],
+        "layout":"0",
+        "product_special":"0",
+        "product_thumb_image":"http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/front-moda.jpg",
+        "product_full_image":"http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/\/front-gall.jpg",
+        "mprices":{
+            "product_price":[""],
+            "virtuemart_product_price_id":[""],
+            "product_currency":[47],
+            "virtuemart_shoppergroup_id":[""],
+            "basePrice":[0],
+            "product_tax_id":[1],
+            "salesPrice":[50],
+            "product_discount_id":[8],
+            "product_price_publish_up":[""],
+            "product_price_publish_down":[""],
+            "product_override_price":[""],
+            "use_desired_price":[1],
+            "price_quantity_start":[""],
+            "price_quantity_end":[""]
+        },
+        "intnotes":"",
+        "product_s_desc":"Saldi e sconti su un fantastico Intimo Tecnico Uomo Originale Adidas  Felpa Hollow  pile  cappuccio, della Stagione 2013 in Colore Blu",
+        "product_desc":"Saldi e sconti su un fantastico Intimo Tecnico Uomo Originale Adidas  Felpa Hollow  pile  cappuccio, della Stagione 2013 in Colore Blu<br>versione maniche lunghe.  Colore principale: Blu<br>Taglie Da Uomo.  Composizione Tessile: 95% poliestere, 5% Elastene<br>Made in thailandia. Il prodotto ha una vestibilit\u00e0 normale<br>Leggera e calda, questa felpa sportiva con cappuccio da uomo e la tua protezione personale quando fa freddo. Dotata di tecnologia Climawarm\u2122 che ti consente di restare caldo e realizzata in tessuto THERMOLITE\u00ae antisudore con pratiche tasche con chiusura a zip. Cappuccio con cordino. Polsini e orlo a coste Il tessuto Climawarm\u2122  con THERMOLITE\u00ae assicura calore e allontana il sudore.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/FelpaHollow.jpg\" alt=\"Tabella taglie e misure Intimo Tecnico Originale Adidas  Felpa Hollow  pile  cappuccio  Uomo Blu\"><br \/> Codice Fornitore: adidas ad g83085<br \/> Codice ERP Interno: MG-1744<br \/>Tag Ricerca:  ad g83085",
+        "customtitle":"",
+        "metadesc":"Saldi e sconti su un fantastico Intimo Tecnico Uomo Originale Adidas  Felpa Hollow  pile  cappuccio, della Stagione 2013 in Colore Blu",
+        "metakey":"24H Adidas Intimo Tecnico Baselayer Felpa Cappuccio Hollow Pile Blu Uomo ",
+        "metarobot":"",
+        "metaauthor":"modacalcio.com e-reall sport barbiero",
+        "product_in_stock":"20",
+        "product_ordered":"0",
+        "low_stock_notification":"1",
+        "min_order_level":"0",
+        "max_order_level":"0",
+        "product_available_date_text":"03\/21\/12",
+        "product_available_date":"2012-03-21 18:15:34",
+        "product_availability":"24h.gif",
+        "image":"24h.gif",
+        "product_length":"0.0000",
+        "product_lwh_uom":"IN",
+        "product_width":"0.0000",
+        "product_height":"0.0000",
+        "product_weight":"0.450",
+        "product_weight_uom":"KG",
+        "product_unit":"pezz",
+        "product_packaging":"0",
+        "product_box":"0",
+        "pictures":"http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/det-1.jpg**http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/det-2.jpg**http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/det-3.jpg**http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/det-4.jpg**http:\/\/www.easycommercemanager.com\/immaginiEbay\/AbbigliamentoSportivo\/\/\/\/Adidas\/felpaG83085\/\/det-5.jpg**",
+        "task":"apply",
+        "boxchecked":"0",
+        "controller":"product",
+        "view":"product",
+        "product_parent_id":0,
+        "metadesc ":"Saldi e sconti su un fantastico Intimo Tecnico Uomo Originale Adidas  Felpa Hollow  pile  cappuccio, della Stagione 2013 in Colore Blu",
+        "slug":"24H_Add_Intimo_Tecner_Felpa_Cappuccio_Hollow_Pile_Blu_Uomo_-1744",
+        "save_customfields":1,
+        "field":[{
+            "custom_value":"COM_VM_ERP_LG_SLVS",
+            "custom_price":0,
+            "field_type":"Maniche",
+            "virtuemart_custom_id":14,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":0
+        },{
+            "custom_value":"COM_VM_ERP_COL_BLU",
+            "custom_price":0,
+            "field_type":"Colore",
+            "virtuemart_custom_id":7,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":1
+        },{
+            "custom_value":"Uomo",
+            "custom_price":0,
+            "field_type":"Genere",
+            "virtuemart_custom_id":44,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":2
+        },{
+            "custom_value":" poliestere, Elastene",
+            "custom_price":0,
+            "field_type":"Materiale",
+            "virtuemart_custom_id":21,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":3
+        },{
+            "custom_value":"Normale",
+            "custom_price":0,
+            "field_type":"Vestibilita",
+            "virtuemart_custom_id":13,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":4
+        },{
+            "custom_value":"Leggera e calda",
+            "custom_price":0,
+            "field_type":"Altri Dettagli",
+            "virtuemart_custom_id":31,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":5
+        },{
+            "custom_value":"Sped. Immediata",
+            "custom_price":0,
+            "field_type":"Spedizione in",
+            "virtuemart_custom_id":8,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":6
+        },{
+            "custom_value":"Adidas",
+            "custom_price":0,
+            "field_type":"Marca",
+            "virtuemart_custom_id":12,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":7
+        },{
+            "custom_value":"COM_VM_ERP_HOODIE",
+            "custom_price":0,
+            "field_type":"Tipo Prodotto",
+            "virtuemart_custom_id":10,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":8
+        },{
+            "custom_value":"S ",
+            "custom_price":0,
+            "field_type":"Taglia",
+            "virtuemart_custom_id":3,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":9
+        },{
+            "custom_value":"M ",
+            "custom_price":0,
+            "field_type":"Taglia",
+            "virtuemart_custom_id":3,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":10
+        },{
+            "custom_value":"L ",
+            "custom_price":4,
+            "field_type":"Taglia",
+            "virtuemart_custom_id":3,
+            "virtuemart_customfield_id":0,
+            "admin_only":0,
+            "ordering":11
+        }],
+        "custom_param":null,
+        "customlist":3
+    },
+    "productUK":{
+        "vmlang":"en-GB",
+        "product_name":"Technical Underwear Adidas Original Hooded Fleece Sweatshirt Hollow Man Blue",
+        "product_s_desc":"Sales and discounts on a fantastic Technical Underwear Mens Original Adidas fleece hooded sweatshirt Hollow, Blue Colour of the Season 2013",
+        "slug":"tec-ue-adidas-original-hooded-fleece-sweatshirt-hollow-man-blue-1744",
+        "product_desc":"Sales and discounts on a fantastic Technical Underwear Mens Original Adidas fleece hooded sweatshirt Hollow, Blue Colour of the Season 2013<br>long-sleeved version. Main Color: Blue<br>Men&#39;s Sizes. Textile Composition: 95% Polyester, 5% Elastene<br>Made in Thailand. The product has a normal fit<br>Lightweight and warm, this sporty sweatshirt Hoodie and your personal protection in cold weather. Equipped with Climawarm \u2122 technology that lets you stay warm and made of fabric THERMOLITE sweat with practical pockets with zip closure. Drawcord hood. Ribbed cuffs and hem Fabric Climawarm \u2122 with THERMOLITE ensures heat and sweat away.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/FelpaHollow.jpg\" alt=\"Tabella taglie e misure Intimo Tecnico Originale Adidas  Felpa Hollow  pile  cappuccio  Uomo Blu\"><br \/> Codice Fornitore: adidas ad g83085<br \/> Codice ERP Interno: MG-1744<br \/>Tag Ricerca:  ad g83085",
+        "metadesc":"Sales and discounts on a fantastic Technical Underwear Mens Original Adidas fleece hooded sweatshirt Hollow, Blue Colour of the Season 2013",
+        "metakey":"Technical Underwear Adidas Original Hooded Fleece Sweatshirt Hollow Man Blue"
+    },
+    "productFR":{
+        "vmlang":"fr-FR",
+        "product_name":"Sous-v\u00eatement Adidas original Hooded Fleece Sweat creux Blue Man",
+        "product_s_desc":"Ventes et rabais sur un sous-v\u00eatement technique fantastique des hommes d&#39;Adidas sweat \u00e0 capuche en molleton Hollow, couleur bleue de la saison 2013",
+        "slug":"svmentdas-original-hooded-fleece-sweat-creux-blue-man-1744",
+        "product_desc":"Ventes et rabais sur un sous-v\u00eatement technique fantastique des hommes d&#39;Adidas sweat \u00e0 capuche en molleton Hollow, couleur bleue de la saison 2013<br>La version manches longues. Couleur dominante: bleu<br>Pointures hommes. Textile Composition: 95% polyester, 5% elastene<br>Fabriqu\u00e9 en Tha\u00eflande. Le produit a une coupe normale<br>L\u00e9ger et chaud, ce sweatshirt \u00e0 capuche sweat-shirt sportif et votre protection par temps froid. \u00c9quip\u00e9 de la technologie Climawarm \u2122 qui vous permet de rester au chaud et faites de tissu THERMOLITE sueur avec poches pratiques avec fermeture \u00e0 glissi\u00e8re. Capuche avec cordon. Poignets et ourlet Tissu Climawarm \u2122 en Thermolite assure chaleur et la sueur.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/FelpaHollow.jpg\" alt=\"Tabella taglie e misure Intimo Tecnico Originale Adidas  Felpa Hollow  pile  cappuccio  Uomo Blu\"><br \/> Codice Fornitore: adidas ad g83085<br \/> Codice ERP Interno: MG-1744<br \/>Tag Ricerca:  ad g83085",
+        "metadesc":"Ventes et rabais sur un sous-v\u00eatement technique fantastique des hommes d&#39;Adidas sweat \u00e0 capuche en molleton Hollow, couleur bleue de la saison 2013",
+        "metakey":"Sous-v\u00eatement Adidas original Hooded Fleece Sweat creux Blue Man"
+    },
+    "productDE":{
+        "vmlang":"de-DE",
+        "product_name":"Technische Unterw\u00e4sche Adidas Original Hooded Fleece Sweatshirt Hollow Man Blau",
+        "product_s_desc":"Umsatz und Rabatte auf eine fantastische Technical Underwear Herren Urspr\u00fcngliche Adidas Fleece-Kapuzenpulli Hollow, Blau Farbe der Saison 2013",
+        "slug":"tehe-che-adidas-original-hooded-fleece-sweatshirt-hollow-man-blau-1744",
+        "product_desc":"Umsatz und Rabatte auf eine fantastische Technical Underwear Herren Urspr\u00fcngliche Adidas Fleece-Kapuzenpulli Hollow, Blau Farbe der Saison 2013<br>Langarm-Version. Hauptfarbe: Blau<br>Herren-Gr\u00f6\u00dfen. Textile Zusammensetzung: 95% Polyester, 5% Elastene<br>Made in Thailand. Das Produkt hat eine normale Passform<br>Leicht und warm, diese sportliche Sweatshirt Hoodie und Ihren pers\u00f6nlichen Schutz bei kaltem Wetter. Ausgestattet mit Climawarm \u2122 Technologie, die Sie bleiben warm und aus Stoff THERMOLITE Schwei\u00df mit praktischen Taschen mit Rei\u00dfverschluss l\u00e4sst. Kapuze mit Kordelzug. B\u00fcndchen und Saum Material Climawarm \u2122 mit THERMOLITE sichert W\u00e4rme und Schwei\u00df entfernt.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/FelpaHollow.jpg\" alt=\"Tabella taglie e misure Intimo Tecnico Originale Adidas  Felpa Hollow  pile  cappuccio  Uomo Blu\"><br \/> Codice Fornitore: adidas ad g83085<br \/> Codice ERP Interno: MG-1744<br \/>Tag Ricerca:  ad g83085",
+        "metadesc":"Umsatz und Rabatte auf eine fantastische Technical Underwear Herren Urspr\u00fcngliche Adidas Fleece-Kapuzenpulli Hollow, Blau Farbe der Saison 2013",
+        "metakey":"Technische Unterw\u00e4sche Adidas Original Hooded Fleece Sweatshirt Hollow Man Blau"
+    },
+    "function":"addProduct"
+}
