@@ -1,90 +1,84 @@
 <?php
 
-if (!defined('ABSPATH')) {
-    exit;
-}
-
-class COMMWEB_HOSTED_API {
+class VM_COMMWEB_HOSTED_API {
 
     public $log;
     public $_live_url = "https://paymentgateway.commbank.com.au/api/nvp/version/36";
     public $_checkout_url_js = 'https://paymentgateway.commbank.com.au/checkout/version/36/checkout.js';
-    public $option = null;
+    
+    public $commweb_merchant_id;
+    public $commweb_api_password;
+    public $merchant_name;
+    public $commweb_checkout_method;
+    public $debug;
+    public $virtuemart_paymentmethod_id;
 
-    function __construct($feed) {
-        $this->_live_url = "https://paymentgateway.commbank.com.au/api/nvp/version/36";
-        $this->_checkout_url_js = 'https://paymentgateway.commbank.com.au/checkout/version/36/checkout.js';
-        $this->option = $feed;
+    function __construct($commweb_merchant_id, $commweb_api_password, $merchant_name, $commweb_checkout_method, $debug, $virtuemart_paymentmethod_id) {
+        $this->commweb_merchant_id = $commweb_merchant_id;
+        $this->commweb_api_password = $commweb_api_password;
+        $this->merchant_name = $merchant_name;
+        $this->commweb_checkout_method = $commweb_checkout_method;
+        $this->debug = $debug;
+        $this->virtuemart_paymentmethod_id = $virtuemart_paymentmethod_id;
     }
 
     public function log($message) {
-        if ($message) {
-            file_put_contents(dirname(dirname(dirname(__FILE__))) . "/log_payment.txt", print_r($message, true), FILE_APPEND);
-        }
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log($message);
-        }
-        return true;
+        
     }
 
     public function getSetting() {
-        return $this->option;
+        
+        $virtuemart_paymentmethod_id = $this->virtuemart_paymentmethod_id ;
+        $query = "SELECT payment_params FROM `#__virtuemart_paymentmethods` WHERE  virtuemart_paymentmethod_id = '" . $virtuemart_paymentmethod_id . "'";
+        $db = JFactory::getDBO();
+        $db->setQuery($query);
+        $params = $db->loadResult();
+
+        $payment_params = explode("|", $params);
+        foreach ($payment_params as $payment_param) {
+            if (empty($payment_param)) {
+                continue;
+            }
+            $param = explode('=', $payment_param);
+            $payment_params[$param[0]] = substr($param[1], 1, -1);
+        }
+        $options = $payment_params;
+        return $options;
     }
 
     public function getMerchantId() {
         $option = $this->getSetting();
-        return isset($option['commweb_merchant_id']) ? $option['commweb_merchant_id'] : "";
+        return $option['commweb_merchant_id'];
     }
 
     public function getApiPassword() {
         $option = $this->getSetting();
-        return isset($option['commweb_api_password']) ? $option['commweb_api_password'] : '';
-    }
-
-    //commweb_checkout_3d_source
-    public function getCommwebAllow3DSource() {
-        $option = $this->getSetting();
-        return isset($option['commweb_checkout_3d_source']) ? $option['commweb_checkout_3d_source'] : '';
-    }
-
-    public function getCommwebTitle() {
-        $option = $this->getSetting();
-        return isset($option['commweb_title']) ? $option['commweb_title'] : '';
-    }
-
-    //commweb_checkout_method
-    public function getCommwebCheckoutMethod() {
-        $option = $this->getSetting();
-        return isset($option['commweb_checkout_method']) ? $option['commweb_checkout_method'] : '';
+        return $option['commweb_api_password'];
     }
 
     public function getApiUsername() {
         $merchant_id = $this->getMerchantId();
         return 'merchant.' . $merchant_id;
     }
+    
+    //commweb_checkout_3d_source
+    public function getCommwebAllow3DSource() {
+        $option = $this->getSetting();
+        return isset($option['secure_3d']) ? $option['secure_3d'] : '';
+    }
 
     public function getDebug() {
         $option = $this->getSetting();
-        return isset($option['commweb_checkout_bug_log']) ? $option['commweb_checkout_bug_log'] : '';
+        return $option['debug'];
     }
 
-    /**
-     * Process Payment
-     * @param type $amount
-     * @param type $id_for_commweb
-     * @return boolean|string
-     */
-    public function getCheckoutSession($amount, $id_for_commweb,$entry_id) {
-        if(!session_id()){
-            session_start();
-        }
-        if (!$amount) {
-            return false;
-        }
-        $amount = number_format($amount, 2, '.', '');
+    public function getCheckoutSession($order, $id_for_commweb) {
+        
+        $amount = number_format($order['details']['BT']->order_total_aus, 2, '.', '');
         $merchant = $this->getMerchantId();
         $apiPassword = $this->getApiPassword();
         $url = $this->_live_url;
+        
         $fields = array(
             'apiOperation' => urlencode('CREATE_CHECKOUT_SESSION'),
             'apiPassword' => urlencode($apiPassword),
@@ -122,20 +116,16 @@ class COMMWEB_HOSTED_API {
             } else {
                 $session_id = $arr_session_id['session_id'];
                 $_SESSION['SuccessIndicator'] = $arr_session_id['successIndicator'];
-                $_SESSION['CurrentOrderId'] = $entry_id;
+                $_SESSION['CurrentOrderId'] = $order['details']['BT']->order_number;
             }
         } else {
             $this->log('Error: ' . print_r($error, true));
             $session_id = '';
         }
+        
         return $session_id;
     }
 
-    /**
-     * Get Result Payment
-     * @param type $id_for_commweb
-     * @return type
-     */
     public function getOrderCommwebDetail($id_for_commweb) {
         $url = $this->_live_url;
         $fields = array(

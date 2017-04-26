@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment" method="upgrade">
+    <name>VM Payment - ANZ VAS</name>
+    <creationDate>June 22 2016</creationDate>
+    <author>Fgc</author>
+    <authorUrl>http://www.fgc.vn</authorUrl>
+    <copyright>Copyright (C) 2004 - 2016 Fgc. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.0.0</version>
+    <description>ANZ VAS</description>
+    <files>
+        <filename plugin="anzvas">anzvas.php</filename>
+        <folder>anzvas</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_vmpayment_anzvas.ini</language>
+        <language tag="en-GB">en-GB.plg_vmpayment_anzvas.sys.ini</language>
+    </languages>
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="spacer" default="VMPAYMENT_ANZVAS" level="level1" />
+                <field type="spacer" default=" " level="level1" />
+                <field type="spacer" default="VMPAYMENT_ANZVAS_PARAMS" level="level1" />
+		
+                <field name="company_id" type="text" size="50" default="" label="VMPAYMENT_ANZVAS_COMPANY_ID" description=""/>
+                <field name="shared_key" type="text" size="50" default="" label="VMPAYMENT_ANZVAS_SHARED_KEY" description=""   />
+                <field name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_ANZVAS_PAYMENT_CURRENCY" description=""/>
+            </fieldset>
+        </fields>
+    </vmconfig>
+</extension>

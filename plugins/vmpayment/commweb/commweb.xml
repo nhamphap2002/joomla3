@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension version="2.5" type="plugin" group="vmpayment" method="upgrade">
-    <name>Commweb</name>
+    <name>VM Payment - Commweb</name>
     <creationDate>April 22 2017</creationDate>
     <author>The VirtueMart Development Team</author>
     <authorUrl>https://virtuemart.net</authorUrl>
@@ -30,10 +30,10 @@
                 <field name="merchant_name" type="text" size="50" default="" description="String to display on head of Lightbox or Payment Page of Commweb." label="Merchant name"   />
                 <field name="commweb_checkout_method" type="list" default=""
                        label="Checkout Method" description="Select option for payment menthod">
-                    <option value="commweb_hosted_lightbox">Lightbox</option>
+                    <option value="Lightbox">Lightbox</option>
                     <option value="part">Redirect</option>
                 </field>
-                <field name="secure_3d" type="text" size="50" default="" label="3D Secure" description="Enabled 3D Secure"   />
+                <field name="secure_3d" type="checkbox" size="50" default="0" label="3D Secure" description="Enabled 3D Secure"   />
                 <field name="debug" type="checkbox" size="50" default="" label="Debug Log" description="Log data of Commweb."   />
             </fieldset>
         </fields>

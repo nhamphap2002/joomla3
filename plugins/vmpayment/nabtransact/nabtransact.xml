@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment" method="upgrade">
+    <name>VM Payment - NabTransact</name>
+    <creationDate>28 09 2016</creationDate>
+    <author>Johnny Bang</author>
+    <copyright>charliesgarage.com.au</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>2.0</version>
+    <element>nabtransact</element>
+    <description>
+    </description>
+    <files>
+        <filename plugin="nabtransact">nabtransact.php</filename>				
+        <folder>nabtransact</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_vmpayment_nabtransact.ini</language>
+        <language tag="en-GB">en-GB.plg_vmpayment_nabtransact.sys.ini</language>
+    </languages>
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/plugins/vmpayment/nabtransact/nabtransact/fields">
+                <field type="spacer" default="VMPAYMENT_NAB" level="level1" />
+                <field type="spacer" default=" " level="level1" />
+                <field type="spacer" default="VMPAYMENT_NAB_PARAMS" level="level1" />
+		
+                <field name="login_id" type="text" size="50" default="" label="VMPAYMENT_NAB_CUSTOMER" description="VMPAYMENT_NAB_CUSTOMER_DESC"/>
+                <field name="pass" type="text" size="50" default="" label="VMPAYMENT_NAB_PASS" description="VMPAYMENT_NAB_PASS_DESC"   />
+
+                <field name="anti" type="radio" default="0" label="VMPAYMENT_NAB_ANTI" description="VMPAYMENT_NAB_ANTI_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+
+                <field name="testmod" type="radio" default="0" label="VMPAYMENT_NAB_TESTMOD" description="VMPAYMENT_NAB_TESTMOD_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+
+
+                <field type="spacer" default="VMPAYMENT_NAB_VIRTUEMART_PARAMS" level="level1" />
+                <field name="creditcards" type="nabtransactcreditcards" multiple="multiple"  default="" label="VMPAYMENT_NAB_CREDITCARDS" description="VMPAYMENT_NAB_CREDITCARDS_DESC">
+                    <option value="Visa">VMPAYMENT_NAB_VISA</option>
+                    <option value="Mastercard">VMPAYMENT_NAB_MASTERCARD</option>
+                    <option value="AmericanExpress">VMPAYMENT_NAB_AMERICANEXPRESS</option>
+                    <option value="Discover">VMPAYMENT_NAB_DISCOVER</option>
+                    <option value="DinersClub">VMPAYMENT_NAB_DINERSCLUB</option>
+                    <option value="JCB">VMPAYMENT_NAB_JCB</option>
+                </field>
+
+                <field name="payment_approved_status" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_NAB_ORDERSTATUS_APPROVED" description="VMPAYMENT_NAB_ORDERSTATUS_SUCCESS_DESC" />
+                <field name="payment_declined_status" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_NAB_ORDERSTATUS_DECLINED" description="VMPAYMENT_NAB_ORDERSTATUS_INVALID_DESC" />
+                <field name="payment_held_status" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_NAB_ORDERSTATUS_HELD" description="VMPAYMENT_NAB_ORDERSTATUS_CANCEL_DESC" />
+            </fieldset>
+        </fields>
+    </vmconfig>
+</extension>
