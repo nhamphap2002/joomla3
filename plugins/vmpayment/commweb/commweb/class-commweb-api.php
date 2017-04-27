@@ -5,7 +5,6 @@ class VM_COMMWEB_HOSTED_API {
     public $log;
     public $_live_url = "https://paymentgateway.commbank.com.au/api/nvp/version/41";
     public $_checkout_url_js = 'https://paymentgateway.commbank.com.au/checkout/version/41/checkout.js';
-    
     public $commweb_merchant_id;
     public $commweb_api_password;
     public $merchant_name;
@@ -22,13 +21,13 @@ class VM_COMMWEB_HOSTED_API {
         $this->virtuemart_paymentmethod_id = $virtuemart_paymentmethod_id;
     }
 
-    public function log($message) {
-        
+    public function log($filelog, $contentlog) {
+        file_put_contents(dirname(dirname(__FILE__)) . '/' . $filelog, $contentlog, FILE_APPEND);
     }
 
     public function getSetting() {
-        
-        $virtuemart_paymentmethod_id = $this->virtuemart_paymentmethod_id ;
+
+        $virtuemart_paymentmethod_id = $this->virtuemart_paymentmethod_id;
         $query = "SELECT payment_params FROM `#__virtuemart_paymentmethods` WHERE  virtuemart_paymentmethod_id = '" . $virtuemart_paymentmethod_id . "'";
         $db = JFactory::getDBO();
         $db->setQuery($query);
@@ -60,7 +59,7 @@ class VM_COMMWEB_HOSTED_API {
         $merchant_id = $this->getMerchantId();
         return 'merchant.' . $merchant_id;
     }
-    
+
     //commweb_checkout_3d_source
     public function getCommwebAllow3DSource() {
         $option = $this->getSetting();
@@ -73,12 +72,12 @@ class VM_COMMWEB_HOSTED_API {
     }
 
     public function getCheckoutSession($order, $id_for_commweb) {
-        
+
         $amount = number_format($order['details']['BT']->order_total_aus, 2, '.', '');
         $merchant = $this->getMerchantId();
         $apiPassword = $this->getApiPassword();
         $url = $this->_live_url;
-        
+
         $fields = array(
             'apiOperation' => urlencode('CREATE_CHECKOUT_SESSION'),
             'apiPassword' => urlencode($apiPassword),
@@ -90,7 +89,7 @@ class VM_COMMWEB_HOSTED_API {
         );
         $fields_string = '';
         if ($this->getDebug() == 'yes') {
-            $this->log('Checkout session request: ' . print_r($fields, true));
+            $this->log('commweb.log', 'Checkout session request: ' . print_r($fields, true));
         }
         foreach ($fields as $key => $value) {
             $fields_string .= $key . '=' . $value . '&';
@@ -109,7 +108,7 @@ class VM_COMMWEB_HOSTED_API {
             $arr_session_id = null;
             parse_str(html_entity_decode($result), $arr_session_id);
             if ($this->getDebug() == 'yes') {
-                $this->log('Checkout session response: ' . print_r($arr_session_id, true));
+                $this->log('commweb.log', date('Y-m-d H:i:s') . '\n Checkout session response: ' . print_r($arr_session_id, true) . '\n');
             }
             if (isset($arr_session_id['result']) && $arr_session_id['result'] == 'ERROR') {
                 $session_id = '';
@@ -119,10 +118,10 @@ class VM_COMMWEB_HOSTED_API {
                 $_SESSION['CurrentOrderId'] = $order['details']['BT']->order_number;
             }
         } else {
-            $this->log('Error: ' . print_r($error, true));
+            $this->log('commweb.log', date('Y-m-d H:i:s') . '\n Error: ' . print_r($error, true) . '\n');
             $session_id = '';
         }
-        
+
         return $session_id;
     }
 
@@ -152,7 +151,7 @@ class VM_COMMWEB_HOSTED_API {
         $output = null;
         parse_str(html_entity_decode($result), $output);
         if ($this->getDebug() == 'yes') {
-            $this->log('Order detail from commweb: ' . print_r($output, true));
+            $this->log('commweb.log', date('Y-m-d H:i:s') . '\n Order detail from commweb: ' . print_r($output, true) . '\n');
         }
         return $output;
     }

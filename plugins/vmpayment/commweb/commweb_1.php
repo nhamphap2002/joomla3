@@ -187,10 +187,9 @@ class plgVmPaymentCommweb extends vmPSPlugin {
         $commweb = new VM_COMMWEB_HOSTED_API($merchant_id, $api_password, $merchant_name, $checkout_method, $debug, $paymentmethod_id);
 
 
-        if ($this->getDebugCommweb()) {
+        if ($this->getDebugCommweb() == 'yes') {
             $commweb->log('commweb.log', 'start process Commweb \n');
         }
-
         $image_loading = JURI::root() . '/plugins/vmpayment/commweb/images/loading.gif';
 
         if ($this->getCheckoutMethod() == 'Lightbox') {
@@ -506,56 +505,56 @@ class plgVmPaymentCommweb extends vmPSPlugin {
 
         $successIndicator = $_SESSION['SuccessIndicator'];
 
+        if ($this->getDebugCommweb())
+            if (isset($_REQUEST['resultIndicator']) && $_REQUEST['resultIndicator'] == $successIndicator) {
 
-        if (isset($_REQUEST['resultIndicator']) && $_REQUEST['resultIndicator'] == $successIndicator) {
+                $merchant_id = $this->getMerchantId();
+                $api_password = $this->getApiPassword();
+                $merchant_name = $this->getMerchantName();
+                $checkout_method = $this->getCheckoutMethod();
+                $debug = $this->getDebugCommweb();
+                $paymentmethod_id = vRequest::getString('pm', 0);
 
-            $merchant_id = $this->getMerchantId();
-            $api_password = $this->getApiPassword();
-            $merchant_name = $this->getMerchantName();
-            $checkout_method = $this->getCheckoutMethod();
-            $debug = $this->getDebugCommweb();
-            $paymentmethod_id = vRequest::getString('pm', 0);
+                $commweb = new VM_COMMWEB_HOSTED_API($merchant_id, $api_password, $merchant_name, $checkout_method, $debug, $paymentmethod_id);
+                $order_detail_commweb = $commweb->getOrderCommwebDetail($_SESSION['id_for_commweb']);
 
-            $commweb = new VM_COMMWEB_HOSTED_API($merchant_id, $api_password, $merchant_name, $checkout_method, $debug, $paymentmethod_id);
-            $order_detail_commweb = $commweb->getOrderCommwebDetail($_SESSION['id_for_commweb']);
+                if ($this->getDebugCommweb())
+                    $commweb->log('commweb.log', date('Y-m-d H:i:s') . "\n Response from Complete callback of commweb: \n" . print_r($order_detail_commweb, true) . "\n");
 
-            if ($commweb->getDebug())
-                $commweb->log('commweb.log', date('Y-m-d H:i:s') . "\n Response from Complete callback of commweb: \n" . print_r($order_detail_commweb, true) . "\n");
-
-            if ($order_detail_commweb['result'] == 'SUCCESS') {
-                if ($this->getSecure3d() == 'yes') {
-                    if (isset($order_detail_commweb['transaction_3DSecure_authenticationStatus']) && $order_detail_commweb['transaction_3DSecure_authenticationStatus'] == 'AUTHENTICATION_SUCCESSFUL') {
-                        $process_order = true;
+                if ($order_detail_commweb['result'] == 'SUCCESS') {
+                    if ($this->getSecure3d() == 'yes') {
+                        if (isset($order_detail_commweb['transaction_3DSecure_authenticationStatus']) && $order_detail_commweb['transaction_3DSecure_authenticationStatus'] == 'AUTHENTICATION_SUCCESSFUL') {
+                            $process_order = true;
+                        } else {
+                            $process_order = false;
+                        }
                     } else {
-                        $process_order = false;
+                        $process_order = true;
                     }
-                } else {
-                    $process_order = true;
-                }
-                if ($process_order == true) {
-                    $order_number = vRequest::getString('on', 0);
-                    $virtuemart_order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($order_number);
-                    $orderModel = VmModel::getModel('orders');
-                    $order = $orderModel->getOrder($virtuemart_order_id);
-                    $order['customer_notified'] = 1;
-                    $order['virtuemart_order_id'] = $virtuemart_order_id;
-                    $order['order_status'] = 'F';
-                    $order['comments'] = JText::sprintf('Your order number [%s] was confirmed', $order_number) . '. ' . $anzvas_data;
-                    $orderModel->updateStatusForOneOrder($virtuemart_order_id, $order, true);
-                    $cart = VirtueMartCart::getCart();
-                    $cart->emptyCart();
-                    unset($_SESSION['order_number']);
-                    unset($_SESSION['jscommweb']);
-                    $url_success = $this->getSuccessUrl($order);
-                    $app = JFactory::getApplication();
-                    $app->redirect($url_success);
+                    if ($process_order == true) {
+                        $order_number = vRequest::getString('on', 0);
+                        $virtuemart_order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($order_number);
+                        $orderModel = VmModel::getModel('orders');
+                        $order = $orderModel->getOrder($virtuemart_order_id);
+                        $order['customer_notified'] = 1;
+                        $order['virtuemart_order_id'] = $virtuemart_order_id;
+                        $order['order_status'] = 'F';
+                        $order['comments'] = JText::sprintf('Your order number [%s] was confirmed', $order_number) . '. ' . $anzvas_data;
+                        $orderModel->updateStatusForOneOrder($virtuemart_order_id, $order, true);
+                        $cart = VirtueMartCart::getCart();
+                        $cart->emptyCart();
+                        unset($_SESSION['order_number']);
+                        unset($_SESSION['jscommweb']);
+                        $url_success = $this->getSuccessUrl($order);
+                        $app = JFactory::getApplication();
+                        $app->redirect($url_success);
+                    } else {
+                        $this->redirectToCart('Your transaction was unsuccessful, please check your details and try again');
+                    }
                 } else {
                     $this->redirectToCart('Your transaction was unsuccessful, please check your details and try again');
                 }
-            } else {
-                $this->redirectToCart('Your transaction was unsuccessful, please check your details and try again');
             }
-        }
     }
 
     protected function renderPluginName($activeMethod) {

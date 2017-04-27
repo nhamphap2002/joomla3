@@ -34,6 +34,8 @@ if (!class_exists('VM_COMMWEB_HOSTED_API')) {
 
 class plgVmPaymentCommweb extends vmPSPlugin {
 
+    private $_log_file = '';
+
     function __construct(& $subject, $config) {
         parent::__construct($subject, $config);
 
@@ -51,6 +53,9 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             'secure_3d' => array('', 'char'),
             'debug' => array('', 'int'),
         );
+
+        $this->_log_request_file = dirname(__FILE__) . '/commweb_request.log';
+        $this->_log_reponse_file = dirname(__FILE__) . '/commweb_reponse.log';
 
         $this->setConfigParameterable($this->_configTableFieldName, $varsToPush);
     }
@@ -87,6 +92,23 @@ class plgVmPaymentCommweb extends vmPSPlugin {
         return $this->createTableSQL('Payment commweb Table');
     }
 
+    public function onBeforeRender() {
+        ?>
+<script src="https://paymentgateway.commbank.com.au/checkout/version/41/checkout.js" 
+                data-return="completeCallback"
+                data-complete="completeCallback"
+                data-cancel="cancelCallback">
+        </script>
+
+        <script type="text/javascript">
+            completeCallback = "http://jl3.trongthang.wdev.fgct.net//index.php?option=com_virtuemart&view=pluginresponse&task=pluginnotification&pm=2&on=U3I4071&Itemid=0&lang=";
+            cancelCallback = "http://jl3.trongthang.wdev.fgct.net/index.php?option=com_virtuemart&view=vmplg&task=pluginUserPaymentCancel&on=U3I4071&pm=2&Itemid=0&lang=";
+            
+        </script>
+<?php
+        
+    }
+
     /**
      * @return array
      */
@@ -107,33 +129,6 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             'tax_id' => 'smallint(1)'
         );
         return $SQLfields;
-    }
-
-    public function onBeforeCompileHead() {
-
-        if (isset($_SESSION['order_number'])) {
-            if (!class_exists('VirtueMartModelOrders')) {
-                require(VMPATH_ADMIN . DS . 'models' . DS . 'orders.php');
-            }
-            $order_number = $_SESSION['order_number'];
-            $virtuemart_order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($order_number);
-            $orderModel = VmModel::getModel('orders');
-            $order = $orderModel->getOrder($virtuemart_order_id);
-            $complete_callback = $this->getNotificationUrl($order);
-            $cancel_callback = JURI::root() . 'index.php?option=com_virtuemart&view=vmplg&task=pluginUserPaymentCancel&on=' . $order['details']['BT']->order_number . '&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id . '&Itemid=' . vRequest::getInt('Itemid') . '&lang=' . vRequest::getCmd('lang', '');
-            ?>
-            <script src="https://paymentgateway.commbank.com.au/checkout/version/41/checkout.js" 
-
-                    data-complete="completeCallback"
-                    data-cancel="cancelCallback">
-            </script>
-
-            <script type="text/javascript">
-                completeCallback = "<?php echo $complete_callback; ?>";
-                cancelCallback = "<?php echo $cancel_callback; ?>";
-            </script>
-            <?php
-        }
     }
 
     function plgVmConfirmedOrder($cart, $order) {
@@ -187,10 +182,9 @@ class plgVmPaymentCommweb extends vmPSPlugin {
         $commweb = new VM_COMMWEB_HOSTED_API($merchant_id, $api_password, $merchant_name, $checkout_method, $debug, $paymentmethod_id);
 
 
-        if ($this->getDebugCommweb()) {
-            $commweb->log('commweb.log', 'start process Commweb \n');
+        if ($this->getDebugCommweb() == 'yes') {
+            $commweb->log('start process Commweb');
         }
-
         $image_loading = JURI::root() . '/plugins/vmpayment/commweb/images/loading.gif';
 
         if ($this->getCheckoutMethod() == 'Lightbox') {
@@ -210,137 +204,66 @@ class plgVmPaymentCommweb extends vmPSPlugin {
 
         $cancel_callback = JURI::root() . 'index.php?option=com_virtuemart&view=vmplg&task=pluginUserPaymentCancel&on=' . $order['details']['BT']->order_number . '&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id . '&Itemid=' . vRequest::getInt('Itemid') . '&lang=' . vRequest::getCmd('lang', '');
 
-        unset($_SESSION['order_number']);
-        unset($_SESSION['jscommweb']);
-
         ob_start();
-        if ($this->getCheckoutMethod() == 'Lightbox') {
-            ?>
-            <style>
-                #loading{
-                    position: fixed;
-                    left: 0px;
-                    top: 0px;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 9999;
-                    background: url('<?php echo $image_loading;
-            ?>') 50% 50% no-repeat;
-                }
-            </style>
+        ?>
 
-            <script src="<?php echo $commweb->_checkout_url_js; ?>" 
-                    data-return="completeCallback"
-                    data-complete="completeCallback"
-                    data-cancel="cancelCallback">
-            </script>
-
-            <script type="text/javascript">
-                completeCallback = "<?php echo $complete_callback; ?>";
-                cancelCallback = "<?php echo $cancel_callback; ?>";
-            </script>
-            <script type="text/javascript">
-                Checkout.configure({
-                    merchant: "<?php echo $this->getMerchantId(); ?>",
-                    session: {
-                        id: "<?php echo $checkout_session_id; ?>"
-                    },
-                    order: {
-                        amount: "<?php echo $total; ?>",
-                        currency: "AUD",
-                        description: "Commweb Order",
-                        id: "<?php echo $id_for_commweb; ?>"
-                    },
-                    billing: {
-                        address: {
-                            street: "<?php echo $street; ?>",
-                            city: "<?php echo $city; ?>",
-                            postcodeZip: "<?php echo $billing_postcode; ?>",
-                            stateProvince: "<?php echo $state; ?>",
-                            country: "<?php echo $country; ?>"
-                        }
-                    },
-                    interaction: {
-                        merchant: {
-                            name: "<?php echo $this->getMerchantName(); ?>"
-                        }
-                    }
-                });
-            <?php echo $payment_method; ?>
-            </script>
-            <div id="loading"></div>
-            <?php
-            $html = ob_get_contents();
-            ob_end_clean();
-        } else {
-            ?>
-            <style>
-                #loading{
-                    position: fixed;
-                    left: 0px;
-                    top: 0px;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 9999;
-                    background: url('<?php echo $image_loading;
-            ?>') 50% 50% no-repeat;
-                }
-            </style>
-
-            <script type="text/javascript">
-                Checkout.configure({
-                    merchant: "<?php echo $this->getMerchantId(); ?>",
-                    session: {
-                        id: "<?php echo $checkout_session_id; ?>"
-                    },
-                    order: {
-                        amount: "<?php echo $total; ?>",
-                        currency: "AUD",
-                        description: "Commweb Order",
-                        id: "<?php echo $id_for_commweb; ?>"
-                    },
-                    billing: {
-                        address: {
-                            street: "<?php echo $street; ?>",
-                            city: "<?php echo $city; ?>",
-                            postcodeZip: "<?php echo $billing_postcode; ?>",
-                            stateProvince: "<?php echo $state; ?>",
-                            country: "<?php echo $country; ?>"
-                        }
-                    },
-                    interaction: {
-                        merchant: {
-                            name: "<?php echo $this->getMerchantName(); ?>"
-                        }
-                    }
-                });
-            <?php echo $payment_method; ?>
-            </script>
-            <div id="loading"></div>
-            <?php
-            $html = ob_get_contents();
-            ob_end_clean();
-            $jscommweb = '';
-            if (!isset($_SESSION['order_number'])) {
-                ob_start();
-                ?>
-                <script src="<?php echo $commweb->_checkout_url_js; ?>" 
-                        data-return="completeCallback"
-                        data-complete="completeCallback"
-                        data-cancel="cancelCallback">
-                </script>
-
-                <script type="text/javascript">
-                    completeCallback = "<?php echo $complete_callback; ?>";
-                    cancelCallback = "<?php echo $cancel_callback; ?>";
-                </script>
-                <?php
-                $jscommweb = ob_get_contents();
-                ob_end_clean();
+        <title><?php echo $this->getMerchantName(); ?></title>
+        <style>
+            #loading{
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: url('<?php echo $image_loading;
+        ?>') 50% 50% no-repeat;
             }
-            $_SESSION['order_number'] = $order['details']['BT']->order_number;
-            $_SESSION['jscommweb'] = $jscommweb;
-        }
+        </style>
+        <script src="<?php echo $commweb->_checkout_url_js; ?>" 
+                data-return="completeCallback"
+                data-complete="completeCallback"
+                data-cancel="cancelCallback">
+        </script>
+
+        <script type="text/javascript">
+            completeCallback = "<?php echo $complete_callback; ?>";
+            cancelCallback = "<?php echo $cancel_callback; ?>";
+            Checkout.configure({
+                merchant: "<?php echo $this->getMerchantId(); ?>",
+                session: {
+                    id: "<?php echo $checkout_session_id; ?>"
+                },
+                order: {
+                    amount: "<?php echo $total; ?>",
+                    currency: "AUD",
+                    description: "Commweb Order",
+                    id: "<?php echo $id_for_commweb; ?>"
+                },
+                billing: {
+                    address: {
+                        street: "<?php echo $street; ?>",
+                        city: "<?php echo $city; ?>",
+                        postcodeZip: "<?php echo $billing_postcode; ?>",
+                        stateProvince: "<?php echo $state; ?>",
+                        country: "<?php echo $country; ?>"
+                    }
+                },
+                interaction: {
+                    merchant: {
+                        name: "<?php echo $this->getMerchantName(); ?>"
+                    }
+                }
+            });
+
+        <?php echo $payment_method; ?>
+
+        </script>
+        <div id="loading"></div>
+        <?php
+        $html = ob_get_contents();
+        ob_end_clean();
+        file_put_contents(dirname(__FILE__) . '/loadjs.php', $html);
         vRequest::setVar('html', $html);
     }
 
@@ -397,9 +320,6 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             return NULL;
         }
         $this->handlePaymentUserCancel($virtuemart_order_id);
-
-        unset($_SESSION['order_number']);
-        unset($_SESSION['jscommweb']);
         return TRUE;
     }
 
@@ -492,6 +412,10 @@ class plgVmPaymentCommweb extends vmPSPlugin {
 
     function plgVmOnPaymentNotification() {
 
+        if($_REQUEST['commweb']==1){
+            include_once dirname(__FILE__) . '/loadjs.php';
+            exit();
+        }
         if (!class_exists('VirtueMartCart')) {
             require(VMPATH_SITE . DS . 'helpers' . DS . 'cart.php');
         }
@@ -506,6 +430,8 @@ class plgVmPaymentCommweb extends vmPSPlugin {
 
         $successIndicator = $_SESSION['SuccessIndicator'];
 
+        if ($this->getDebugCommweb())
+            file_put_contents($this->_log_request_file, date('Y-m-d H:i:s') . "\n Request to REQUEST \n" . print_r($_REQUEST, true) . "\n", FILE_APPEND);
 
         if (isset($_REQUEST['resultIndicator']) && $_REQUEST['resultIndicator'] == $successIndicator) {
 
@@ -519,8 +445,8 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             $commweb = new VM_COMMWEB_HOSTED_API($merchant_id, $api_password, $merchant_name, $checkout_method, $debug, $paymentmethod_id);
             $order_detail_commweb = $commweb->getOrderCommwebDetail($_SESSION['id_for_commweb']);
 
-            if ($commweb->getDebug())
-                $commweb->log('commweb.log', date('Y-m-d H:i:s') . "\n Response from Complete callback of commweb: \n" . print_r($order_detail_commweb, true) . "\n");
+            if ($this->getDebugCommweb())
+                file_put_contents($this->_log_file2, date('Y-m-d H:i:s') . "\n Reponse \n" . print_r($order_detail_commweb, true) . "\n", FILE_APPEND);
 
             if ($order_detail_commweb['result'] == 'SUCCESS') {
                 if ($this->getSecure3d() == 'yes') {
@@ -544,8 +470,7 @@ class plgVmPaymentCommweb extends vmPSPlugin {
                     $orderModel->updateStatusForOneOrder($virtuemart_order_id, $order, true);
                     $cart = VirtueMartCart::getCart();
                     $cart->emptyCart();
-                    unset($_SESSION['order_number']);
-                    unset($_SESSION['jscommweb']);
+
                     $url_success = $this->getSuccessUrl($order);
                     $app = JFactory::getApplication();
                     $app->redirect($url_success);
