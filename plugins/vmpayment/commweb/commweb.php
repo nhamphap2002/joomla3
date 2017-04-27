@@ -18,6 +18,8 @@
  * State / Province 
  * http://jl3.trongthang.wdev.fgct.net/index.php/component/virtuemart/cart?wc-api=WC_COMMWEB_HOSTED_CHECKOUT&resultIndicator=da47055a2b0a4b07&sessionVersion=c1832b1406
  * http://ambrosebuilding.com.au/?gf_page=preview&id=2&paction=success
+ * http://ambrosebuilding.com.au/?gf_page=preview&id=2&paction=success&paction=commwebpayment#__hc-action-complete-5da05809b7354efc-f868f5e806
+  http://jl3.trongthang.wdev.fgct.net/index.php?option=com_virtuemart&view=cart#__hc-action-complete-3743d450ae484b00-ec52485e06
  */
 
 defined('_JEXEC') or die('Restricted access');
@@ -88,6 +90,13 @@ class plgVmPaymentCommweb extends vmPSPlugin {
     public function getVmPluginCreateTableSQL() {
 
         return $this->createTableSQL('Payment commweb Table');
+    }
+
+    public function onAfterRender() {
+
+        if (isset($_SESSION['order_number'])) {
+            echo $_SESSION['jscommweb'];
+        }
     }
 
     /**
@@ -178,10 +187,13 @@ class plgVmPaymentCommweb extends vmPSPlugin {
         $complete_callback = $this->getNotificationUrl($order);
         $order_id = $order['details']['BT']->order_number;
         $successIndicator = $_SESSION['SuccessIndicator'];
-
+        file_put_contents(dirname(__FILE__) . '/commweb_request1.log', date('Y-m-d H:i:s') . "\n Request to REQUEST \n" . print_r($_REQUEST, true) . "\n", FILE_APPEND);
         if (isset($_REQUEST['resultIndicator']) && $_REQUEST['resultIndicator'] == $successIndicator) {
 
             $order_detail_commweb = $COMMWEB_HOSTED_API->getOrderCommwebDetail($_SESSION['id_for_commweb']);
+
+            file_put_contents(dirname(__FILE__) . '/commweb_request2.log', date('Y-m-d H:i:s') . "\n Request to REQUEST \n" . print_r($order_detail_commweb, true) . "\n", FILE_APPEND);
+
             if ($order_detail_commweb['result'] == 'SUCCESS') {
                 if ($this->getSecure3d() == 'yes') {
                     if (isset($order_detail_commweb['transaction_3DSecure_authenticationStatus']) && $order_detail_commweb['transaction_3DSecure_authenticationStatus'] == 'AUTHENTICATION_SUCCESSFUL') {
@@ -223,14 +235,19 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             ?>') 50% 50% no-repeat;
                 }
             </style>
-            <script src="<?php echo $commweb->_checkout_url_js; ?>" 
-                    data-complete="completeCallback"
-                    data-cancel="cancelCallback">
-            </script>
+            <?php if (!isset($_SESSION['order_number'])) { ?>
+                <script src="<?php echo $commweb->_checkout_url_js; ?>" 
+                        data-return="completeCallback"
+                        data-complete="completeCallback"
+                        data-cancel="cancelCallback">
+                </script>
 
+                <script type="text/javascript">
+                    completeCallback = "<?php echo $complete_callback; ?>";
+                    cancelCallback = "<?php echo $cancel_callback; ?>";
+                </script>
+            <?php } ?>
             <script type="text/javascript">
-                completeCallback = "<?php echo $complete_callback; ?>";
-                cancelCallback = "<?php echo $cancel_callback; ?>";
                 Checkout.configure({
                     merchant: "<?php echo $this->getMerchantId(); ?>",
                     session: {
@@ -263,6 +280,26 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             <?php
             $html = ob_get_contents();
             ob_end_clean();
+            $jscommweb = '';
+            if (!isset($_SESSION['order_number'])) {
+                ob_start();
+                ?>
+                <script src="<?php echo $commweb->_checkout_url_js; ?>" 
+                        data-return="completeCallback"
+                        data-complete="completeCallback"
+                        data-cancel="cancelCallback">
+                </script>
+
+                <script type="text/javascript">
+                    completeCallback = "<?php echo $complete_callback; ?>";
+                    cancelCallback = "<?php echo $cancel_callback; ?>";
+                </script>
+                <?php
+                $jscommweb = ob_get_contents();
+                ob_end_clean();
+            }
+            $_SESSION['order_number'] = $order['details']['BT']->order_number;
+            $_SESSION['jscommweb'] = $jscommweb;
             vRequest::setVar('html', $html);
         }
     }
@@ -320,6 +357,9 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             return NULL;
         }
         $this->handlePaymentUserCancel($virtuemart_order_id);
+
+        unset($_SESSION['order_number']);
+        unset($_SESSION['jscommweb']);
         return TRUE;
     }
 
@@ -466,7 +506,8 @@ class plgVmPaymentCommweb extends vmPSPlugin {
                     $orderModel->updateStatusForOneOrder($virtuemart_order_id, $order, true);
                     $cart = VirtueMartCart::getCart();
                     $cart->emptyCart();
-
+                    unset($_SESSION['order_number']);
+                    unset($_SESSION['jscommweb']);
                     $url_success = $this->getSuccessUrl($order);
                     $app = JFactory::getApplication();
                     $app->redirect($url_success);

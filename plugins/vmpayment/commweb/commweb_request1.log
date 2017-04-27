@@ -1,0 +1,278 @@
+2017-04-26 10:51:05
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 10:53:49
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 10:54:09
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 10:58:39
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 10:59:04
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 11:53:40
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+            [1] => 1
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+            [1] => 1
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 11:54:32
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+            [1] => 1
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+            [1] => 1
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 11:55:58
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+            [1] => 1
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+            [1] => 1
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+
+2017-04-26 11:56:26
+ Request to REQUEST 
+Array
+(
+    [option] => com_virtuemart
+    [view] => cart
+    [billto] => 0
+    [shipto] => 0
+    [cartpos] => Array
+        (
+            [0] => 0
+            [1] => 1
+        )
+
+    [quantity] => Array
+        (
+            [0] => 2
+            [1] => 1
+        )
+
+    [coupon_code] => 
+    [virtuemart_paymentmethod_id] => 2
+    [customer_note] => 
+    [tos] => 1
+    [order_language] => en-GB
+    [task] => updatecart
+    [confirm] => 1
+    [Itemid] => 
+    [manage] => 0
+    [filter_product] => 
+)
+

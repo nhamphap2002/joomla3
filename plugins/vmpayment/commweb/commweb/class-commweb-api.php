@@ -3,8 +3,8 @@
 class VM_COMMWEB_HOSTED_API {
 
     public $log;
-    public $_live_url = "https://paymentgateway.commbank.com.au/api/nvp/version/36";
-    public $_checkout_url_js = 'https://paymentgateway.commbank.com.au/checkout/version/36/checkout.js';
+    public $_live_url = "https://paymentgateway.commbank.com.au/api/nvp/version/41";
+    public $_checkout_url_js = 'https://paymentgateway.commbank.com.au/checkout/version/41/checkout.js';
     
     public $commweb_merchant_id;
     public $commweb_api_password;
