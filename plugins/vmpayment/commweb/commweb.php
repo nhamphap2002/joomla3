@@ -160,9 +160,9 @@ class plgVmPaymentCommweb extends vmPSPlugin {
         $dbValues['virtuemart_paymentmethod_id'] = $cart->virtuemart_paymentmethod_id;
         $dbValues['cost_per_transaction'] = $this->_currentMethod->cost_per_transaction;
         $dbValues['cost_percent_total'] = $this->_currentMethod->cost_percent_total;
-        $dbValues['payment_currency'] = ShopFunctions::getCurrencyIDByName('AUD'); //$order['details']['BT']->user_currency_id;
-        $dbValues['payment_order_total'] = $this->getTotal($order['details']['BT']->order_total);
-        $order['details']['BT']->order_total_aus = $this->getTotal($order['details']['BT']->order_total);
+        $dbValues['payment_currency'] = $order['details']['BT']->user_currency_id;
+        $dbValues['payment_order_total'] = $order['details']['BT']->order_total;
+        $order['details']['BT']->order_total_aus = $order['details']['BT']->order_total;
         $dbValues['tax_id'] = $this->_currentMethod->tax_id;
         $this->storePSPluginInternalData($dbValues);
         VmConfig::loadJLang('com_virtuemart_orders', TRUE);
@@ -199,7 +199,7 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             $payment_method = 'Checkout.showPaymentPage();';
         }
 
-        $total = $this->getTotal(number_format($order['details']['BT']->order_total, 2, '.', ''));
+        $total = number_format($order['details']['BT']->order_total, 2, '.', '');
         $complete_callback = $this->getNotificationUrl($order);
         $order_id = $order['details']['BT']->order_number;
         $successIndicator = $_SESSION['SuccessIndicator'];
@@ -342,16 +342,6 @@ class plgVmPaymentCommweb extends vmPSPlugin {
             $_SESSION['jscommweb'] = $jscommweb;
         }
         vRequest::setVar('html', $html);
-    }
-
-    public function getTotal($total) {
-        if (!class_exists('CurrencyDisplay')) {
-            require(VMPATH_ADMIN . DS . 'helpers' . DS . 'currencydisplay.php');
-        }
-        if (!class_exists('shopFunctionsF')) {
-            require(VMPATH_SITE . DS . 'helpers' . DS . 'shopfunctionsf.php');
-        }
-        return vmPSPlugin::getAmountValueInCurrency($total, ShopFunctions::getCurrencyIDByName('AUD'));
     }
 
     /**
