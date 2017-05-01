@@ -20,7 +20,7 @@ $currency = $viewData["currency"];
     </tr>
     <?php if ($success) { ?>
         <tr>
-            <td><?php echo vmText::_('VMPAYMENT_PAYPAL_API_AMOUNT'); ?></td>
+            <td><?php echo vmText::_('VMPAYMENT_COMMWEB_API_AMOUNT'); ?></td>
             <td><?php echo  $viewData['displayTotalInPaymentCurrency']; ?></td>
         </tr>
 

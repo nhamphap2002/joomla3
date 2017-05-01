@@ -15,6 +15,7 @@
         <filename plugin="commweb">commweb.php</filename>
         <folder>commweb</folder>
         <folder>language</folder>
+        <folder>images</folder>
     </files>
     <vmconfig>
         <fields name="params">
@@ -23,7 +24,7 @@
                 <field type="spacer" default=" " level="level1" />
                 <field type="spacer" default="VMPAYMENT_COMMWEB_PARAMS" level="level1" />
 		
-                <field name="commweb_title" type="text" size="50" default="" description="Commweb Hosted Name" label="Title"/>
+                <field name="commweb_title" type="text" size="50" default="" description="Commweb Hosted Name" label="VMPAYMENT_COMMWEB_TITLE"/>
                 <field name="commweb_description" type="text" size="50" default="" description="This controls the description which the user sees during checkout." label="Description"/>
                 <field name="commweb_merchant_id" type="text" size="50" default="" description="Commweb Hosted Merchant Id" label="Marchant Id"/>
                 <field name="commweb_api_password" type="text" size="50" default="" description="Commweb Hosted API Password" label="API Password"   />

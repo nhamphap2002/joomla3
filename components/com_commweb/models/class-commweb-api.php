@@ -12,12 +12,7 @@ class VM_COMMWEB_HOSTED_API {
     public $debug;
     public $virtuemart_paymentmethod_id;
 
-    function __construct($commweb_merchant_id, $commweb_api_password, $merchant_name, $commweb_checkout_method, $debug, $virtuemart_paymentmethod_id) {
-        $this->commweb_merchant_id = $commweb_merchant_id;
-        $this->commweb_api_password = $commweb_api_password;
-        $this->merchant_name = $merchant_name;
-        $this->commweb_checkout_method = $commweb_checkout_method;
-        $this->debug = $debug;
+    function __construct($virtuemart_paymentmethod_id) {
         $this->virtuemart_paymentmethod_id = $virtuemart_paymentmethod_id;
     }
 
@@ -50,6 +45,11 @@ class VM_COMMWEB_HOSTED_API {
         return $option['commweb_merchant_id'];
     }
 
+    public function getMerchantName() {
+        $option = $this->getSetting();
+        return $option['merchant_name'];
+    }
+
     public function getApiPassword() {
         $option = $this->getSetting();
         return $option['commweb_api_password'];
@@ -66,9 +66,14 @@ class VM_COMMWEB_HOSTED_API {
         return isset($option['secure_3d']) ? $option['secure_3d'] : '';
     }
 
-    public function getDebug() {
+    public function getDebugCommweb() {
         $option = $this->getSetting();
         return $option['debug'];
+    }
+
+    public function getCheckoutMethod() {
+        $option = $this->getSetting();
+        return $option['commweb_checkout_method'];
     }
 
     public function getCheckoutSession($order, $id_for_commweb) {
@@ -88,7 +93,7 @@ class VM_COMMWEB_HOSTED_API {
             'order.currency' => urlencode('AUD')
         );
         $fields_string = '';
-        if ($this->getDebug() == 'yes') {
+        if ($this->getDebugCommweb()) {
             $this->log('commweb.log', 'Checkout session request: ' . print_r($fields, true));
         }
         foreach ($fields as $key => $value) {
@@ -107,7 +112,7 @@ class VM_COMMWEB_HOSTED_API {
         if ($result != '') {
             $arr_session_id = null;
             parse_str(html_entity_decode($result), $arr_session_id);
-            if ($this->getDebug() == 'yes') {
+            if ($this->getDebugCommweb()) {
                 $this->log('commweb.log', date('Y-m-d H:i:s') . '\n Checkout session response: ' . print_r($arr_session_id, true) . '\n');
             }
             if (isset($arr_session_id['result']) && $arr_session_id['result'] == 'ERROR') {
@@ -150,10 +155,14 @@ class VM_COMMWEB_HOSTED_API {
         $result = str_replace("%5B0%5D", '', $result);
         $output = null;
         parse_str(html_entity_decode($result), $output);
-        if ($this->getDebug() == 'yes') {
+        if ($this->getDebugCommweb()) {
             $this->log('commweb.log', date('Y-m-d H:i:s') . '\n Order detail from commweb: ' . print_r($output, true) . '\n');
         }
         return $output;
+    }
+
+    public function getNotificationUrl($order) {
+        return JURI::base() . "index.php?option=com_virtuemart&view=pluginresponse&task=pluginnotification&pm=" . $order['details']['BT']->virtuemart_paymentmethod_id . '&on=' . $order['details']['BT']->order_number . "&Itemid=" . vRequest::getInt('Itemid') . '&lang=' . vRequest::getCmd('lang', '');
     }
 
 }
