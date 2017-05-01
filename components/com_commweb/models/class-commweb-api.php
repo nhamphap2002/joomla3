@@ -78,7 +78,7 @@ class VM_COMMWEB_HOSTED_API {
 
     public function getCheckoutSession($order, $id_for_commweb) {
 
-        $amount = number_format($order['details']['BT']->order_total_aus, 2, '.', '');
+        $amount = number_format($order['details']['BT']->order_total, 2, '.', '');
         $merchant = $this->getMerchantId();
         $apiPassword = $this->getApiPassword();
         $url = $this->_live_url;
