@@ -18,7 +18,7 @@ class JConfig {
 	public $db = 'Joomla_3.6.5';
 	public $dbprefix = 'tv_';
 	public $live_site = '';
-	public $secret = 'J7ZzQtDnwXplyaNn';
+	public $secret = 'PoG8D8QWNu4XlAMJ';
 	public $gzip = '0';
 	public $error_reporting = 'default';
 	public $helpurl = 'https://help.joomla.org/proxy/index.php?keyref=Help{major}{minor}:{keyref}';
@@ -44,7 +44,7 @@ class JConfig {
 	public $cache_handler = 'file';
 	public $cachetime = '15';
 	public $cache_platformprefix = '0';
-	public $MetaDesc = 'Joomla_3.6.5';
+	public $MetaDesc = '';
 	public $MetaKeys = '';
 	public $MetaTitle = '1';
 	public $MetaAuthor = '1';
@@ -56,8 +56,8 @@ class JConfig {
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = 'G:\\www\\joomla\\Joomla_3.6.5\\administrator/logs';
-	public $tmp_path = 'G:\\www\\joomla\\Joomla_3.6.5/tmp';
+	public $log_path = 'D:\\www\\joomla\\Joomla_3.6.5\\administrator/logs';
+	public $tmp_path = 'D:\\www\\joomla\\Joomla_3.6.5/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 }
