@@ -7,8 +7,7 @@
 
  *  */
 
-/*
- * TESTAMBBUICOM201
+/* TESTAMBBUICOM201
  * Card number* 5111111111111118
  * Expiry date* 05 / 17
  * Cardholder name* admin test
@@ -491,7 +490,6 @@ class plgVmPaymentCommweb extends vmPSPlugin {
         $currency = CurrencyDisplay::getInstance('', $order['details']['BT']->payment_currency_id);
 
         $success = true;
-
         $payment_currency = $this->_currentMethod->commweb_payment_currency ? $this->_currentMethod->commweb_payment_currency : $method->payment_currency;
         $totalInPaymentCurrency = vmPSPlugin::getAmountInCurrency($order['details']['BT']->order_total, $payment_currency);
 

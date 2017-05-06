@@ -70,12 +70,12 @@ class VM_COMMWEB_HOSTED_API {
         $option = $this->getSetting();
         return $option['debug'];
     }
-
+    
     public function getStatusPendingCommweb() {
         $option = $this->getSetting();
         return $option['commweb_status_pending'];
     }
-
+    
     public function getPaymentCurrencyCommweb() {
         $option = $this->getSetting();
         return $option['commweb_payment_currency'];

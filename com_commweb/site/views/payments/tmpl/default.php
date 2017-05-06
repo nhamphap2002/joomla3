@@ -1,22 +1,5 @@
 <?php
-defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
-if (!class_exists('VmConfig'))
-    require(JPATH_ROOT . '/administrator/components/com_virtuemart/helpers/config.php');
-VmConfig::loadConfig();
-
-if (!class_exists('VirtueMartModelOrders')) {
-    require(VMPATH_ADMIN . DS . 'models' . DS . 'orders.php');
-}
-if (!class_exists('VirtueMartModelCurrency')) {
-    require(VMPATH_ADMIN . DS . 'models' . DS . 'currency.php');
-}
-if (!class_exists('VM_COMMWEB_HOSTED_API')) {
-    include_once JPATH_COMPONENT . DS . 'models' . DS . 'class-commweb-api.php';
-}
-if (!class_exists('ShopFunctions')) {
-    require(VMPATH_ADMIN . DS . 'helpers' . DS . 'shopfunctions.php');
-}
 
 function getTotal($total, $CurrencyID) {
     if (!class_exists('vmPSPlugin')) {

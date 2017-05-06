@@ -1,0 +1,438 @@
+start process Commweb \nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:02:17\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002148982244E1090110F00
+    [session_updateStatus] => SUCCESS
+    [session_version] => b6960c9e01
+    [successIndicator] => e1a08e2170e64b99
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:04:15\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002584795220E6413350J16
+    [session_updateStatus] => SUCCESS
+    [session_version] => fe9e74d601
+    [successIndicator] => 8b78a42764414ad7
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:05:09\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002759839795L5599670L67
+    [session_updateStatus] => SUCCESS
+    [session_version] => 1ff63c1001
+    [successIndicator] => 1a6c4293787f494f
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:06:08\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002223891379H1716272E15
+    [session_updateStatus] => SUCCESS
+    [session_version] => 3220119f01
+    [successIndicator] => 63fc9806b97641df
+)
+\nstart process Commweb \nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:07:05\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002626435045F8383242M80
+    [session_updateStatus] => SUCCESS
+    [session_version] => d5fb5e2201
+    [successIndicator] => 8dd71405647a413b
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:07:12\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002007028886M1898987E91
+    [session_updateStatus] => SUCCESS
+    [session_version] => 9bc9b3ac01
+    [successIndicator] => a74ae743f1b24109
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:07:34\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002960998486L2425723E74
+    [session_updateStatus] => SUCCESS
+    [session_version] => 94e7d27701
+    [successIndicator] => 1ec940e21d74448a
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:07:45\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002986890519H9462918G11
+    [session_updateStatus] => SUCCESS
+    [session_version] => 5e2b20bb01
+    [successIndicator] => bc2e159610434589
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:07:50\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002603581763N5498817M63
+    [session_updateStatus] => SUCCESS
+    [session_version] => d9e6ae8d01
+    [successIndicator] => 6c367013ef534475
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:08:21\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002870987923I4593280F26
+    [session_updateStatus] => SUCCESS
+    [session_version] => 92d0e1c901
+    [successIndicator] => 3ccf79ae108c4740
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:08:33\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002658419934G0878010F40
+    [session_updateStatus] => SUCCESS
+    [session_version] => 5b2fc0f801
+    [successIndicator] => 39c8d1662fde4f99
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:09:07\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002819016527H6171196N58
+    [session_updateStatus] => SUCCESS
+    [session_version] => f3cdea0501
+    [successIndicator] => 139043bcd9224ada
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:10:11\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002041254837G4225922F08
+    [session_updateStatus] => SUCCESS
+    [session_version] => 8539d26a01
+    [successIndicator] => 80b88b60d4ba47a3
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:10:29\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002658785979M9351154N51
+    [session_updateStatus] => SUCCESS
+    [session_version] => ca9fc8fe01
+    [successIndicator] => 4e72396e0b204a86
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:10:38\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002653633613I5545650I70
+    [session_updateStatus] => SUCCESS
+    [session_version] => ba4f0c2701
+    [successIndicator] => f2077792a39e4cba
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:10:57\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002974288443F6460093E80
+    [session_updateStatus] => SUCCESS
+    [session_version] => 76da295001
+    [successIndicator] => 55d994b875d14172
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:11:30\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002002954871L3198827N87
+    [session_updateStatus] => SUCCESS
+    [session_version] => d064498401
+    [successIndicator] => 05f30dcf5d224d75
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:11:52\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002030984791G8745857E30
+    [session_updateStatus] => SUCCESS
+    [session_version] => 32693e3c01
+    [successIndicator] => 24be6d7a9f9d4363
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:12:11\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002501913009G7586668E93
+    [session_updateStatus] => SUCCESS
+    [session_version] => 7829e7a501
+    [successIndicator] => 456d7258b2304682
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:12:41\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002987469614H0565201I85
+    [session_updateStatus] => SUCCESS
+    [session_version] => 7b062fcc01
+    [successIndicator] => e0805029eaf44345
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:12:52\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002754726261K0897243I84
+    [session_updateStatus] => SUCCESS
+    [session_version] => 5e72f21401
+    [successIndicator] => e83ac70739394e84
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:12:59\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002546505473F3732281F26
+    [session_updateStatus] => SUCCESS
+    [session_version] => c00790f001
+    [successIndicator] => 357a483d25ad4e7d
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
+    [apiUsername] => merchant.TESTHUNQUOCOM201
+    [merchant] => TESTHUNQUOCOM201
+    [order.id] => 5PIG0104
+    [order.amount] => 0.00
+    [order.currency] => AUD
+)
+2017-05-01 05:13:25\n Checkout session response: Array
+(
+    [merchant] => TESTHUNQUOCOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002619855195K1578298N15
+    [session_updateStatus] => SUCCESS
+    [session_version] => eb418bbb01
+    [successIndicator] => c8198cfd199f408f
+)
+\n

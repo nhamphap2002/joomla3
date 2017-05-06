@@ -1,58 +1,109 @@
 start process Commweb \nCheckout session request: Array
 (
     [apiOperation] => CREATE_CHECKOUT_SESSION
-    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
-    [apiUsername] => merchant.TESTHUNQUOCOM201
-    [merchant] => TESTHUNQUOCOM201
-    [order.id] => 86P103
-    [order.amount] => 0.00
+    [apiPassword] => test
+    [apiUsername] => merchant.test
+    [merchant] => test
+    [order.id] => CJSK012
+    [order.amount] => 19.74
     [order.currency] => AUD
 )
-2017-05-01 09:27:42\n Checkout session response: Array
+2017-05-05 11:49:22\n Checkout session response: Array
 (
-    [merchant] => TESTHUNQUOCOM201
-    [result] => SUCCESS
-    [session_id] => SESSION0002535214605L0850252M35
-    [session_updateStatus] => SUCCESS
-    [session_version] => 3a7be84a01
-    [successIndicator] => 36d8cc2ee7234625
+    [error_cause] => INVALID_REQUEST
+    [error_explanation] => Invalid credentials.
+    [result] => ERROR
 )
 \nstart process Commweb \nCheckout session request: Array
 (
     [apiOperation] => CREATE_CHECKOUT_SESSION
-    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
-    [apiUsername] => merchant.TESTHUNQUOCOM201
-    [merchant] => TESTHUNQUOCOM201
-    [order.id] => 3IYD04
-    [order.amount] => 0.00
+    [apiPassword] => test
+    [apiUsername] => merchant.test
+    [merchant] => test
+    [order.id] => CJSK012
+    [order.amount] => 13.36
     [order.currency] => AUD
 )
-2017-05-01 09:29:37\n Checkout session response: Array
+2017-05-05 11:50:27\n Checkout session response: Array
 (
-    [merchant] => TESTHUNQUOCOM201
-    [result] => SUCCESS
-    [session_id] => SESSION0002800086796I1911744N72
-    [session_updateStatus] => SUCCESS
-    [session_version] => c8bf464e01
-    [successIndicator] => 2a39a48cb10e4ded
+    [error_cause] => INVALID_REQUEST
+    [error_explanation] => Invalid credentials.
+    [result] => ERROR
 )
 \nstart process Commweb \nCheckout session request: Array
 (
     [apiOperation] => CREATE_CHECKOUT_SESSION
-    [apiPassword] => 061547d836e2eb794bc978318b4d70ea
-    [apiUsername] => merchant.TESTHUNQUOCOM201
-    [merchant] => TESTHUNQUOCOM201
-    [order.id] => 9DT205
-    [order.amount] => 79.59
+    [apiPassword] => fad718b6a0bd99aaed8d2a2c127fffd0
+    [apiUsername] => merchant.TESTAMBBUICOM201
+    [merchant] => TESTAMBBUICOM201
+    [order.id] => CJSK012
+    [order.amount] => 0.00
     [order.currency] => AUD
 )
-2017-05-01 10:27:53\n Checkout session response: Array
+2017-05-05 11:51:07\n Checkout session response: Array
 (
-    [merchant] => TESTHUNQUOCOM201
+    [merchant] => TESTAMBBUICOM201
     [result] => SUCCESS
-    [session_id] => SESSION0002133743148F2369491N32
+    [session_id] => SESSION0002846238742G8215827E21
     [session_updateStatus] => SUCCESS
-    [session_version] => 9f7b5b4601
-    [successIndicator] => 5d43ce1651a34852
+    [session_version] => 4ce1129201
+    [successIndicator] => 4da2e1eaef354aec
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => fad718b6a0bd99aaed8d2a2c127fffd0
+    [apiUsername] => merchant.TESTAMBBUICOM201
+    [merchant] => TESTAMBBUICOM201
+    [order.id] => CJSK012
+    [order.amount] => 19.74
+    [order.currency] => AUD
+)
+2017-05-05 11:51:43\n Checkout session response: Array
+(
+    [merchant] => TESTAMBBUICOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002254330415N7188882E84
+    [session_updateStatus] => SUCCESS
+    [session_version] => 02ad0f8f01
+    [successIndicator] => 28cb4d826254417d
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => fad718b6a0bd99aaed8d2a2c127fffd0
+    [apiUsername] => merchant.TESTAMBBUICOM201
+    [merchant] => TESTAMBBUICOM201
+    [order.id] => CJSK012
+    [order.amount] => 13.36
+    [order.currency] => AUD
+)
+2017-05-05 11:52:16\n Checkout session response: Array
+(
+    [merchant] => TESTAMBBUICOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002663276293K4871295N17
+    [session_updateStatus] => SUCCESS
+    [session_version] => 39788f8a01
+    [successIndicator] => a86b458bb4d04f56
+)
+\nstart process Commweb \nCheckout session request: Array
+(
+    [apiOperation] => CREATE_CHECKOUT_SESSION
+    [apiPassword] => fad718b6a0bd99aaed8d2a2c127fffd0
+    [apiUsername] => merchant.TESTAMBBUICOM201
+    [merchant] => TESTAMBBUICOM201
+    [order.id] => TZKL013
+    [order.amount] => 13.36
+    [order.currency] => AUD
+)
+2017-05-05 11:56:00\n Checkout session response: Array
+(
+    [merchant] => TESTAMBBUICOM201
+    [result] => SUCCESS
+    [session_id] => SESSION0002870044809L6764750E70
+    [session_updateStatus] => SUCCESS
+    [session_version] => 2ae8aed801
+    [successIndicator] => ae98db4d5378451d
 )
 \n

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.5" method="upgrade">
+    <name>com_commweb</name>
+    <creationDate>2017-04-29</creationDate>
+    <copyright>2017 Thang Tran</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Thang Tran</author>
+    <authorEmail>thang.fgc1207@gmail.com</authorEmail>
+    <authorUrl>http://</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description></description>
+    <!--Runs on install/uninstall/update -->
+    <scriptfile>script.php</scriptfile>
+    
+    
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>commweb.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_commweb" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="languages/site">
+        
+        <language tag="en-GB">en-GB/en-GB.com_commweb.ini</language>
+    </languages>
+    <administration>
+       
+    </administration>
+    
+    <plugins>
+        <plugin plugin="commweb" group="vmpayment" />
+    </plugins>
+
+        
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
