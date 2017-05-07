@@ -1,6 +1,5 @@
 <?php
 
-
 function getTotal($total, $CurrencyID) {
     if (!class_exists('vmPSPlugin')) {
         require(JPATH_VM_PLUGINS . DS . 'vmpsplugin.php');
@@ -48,7 +47,14 @@ $successIndicator = $_SESSION['SuccessIndicator'];
 
 $id_for_commweb = $order_id;
 $_SESSION['id_for_commweb'] = $id_for_commweb;
-$checkout_session_id = $commweb->getCheckoutSession($order, $id_for_commweb);
+if (isset($_SESSION['CurrentOrderId']) && $_SESSION['CurrentOrderId'] == $order_id) {
+    $checkout_session_id = '';
+    $id_for_commweb = '';
+    unset($_SESSION['CurrentOrderId']);
+} else {
+    $checkout_session_id = $commweb->getCheckoutSession($order, $id_for_commweb);
+    $_SESSION['CurrentOrderId'] = $id_for_commweb;
+}
 
 $cancel_callback = JURI::root() . 'index.php?option=com_virtuemart&view=vmplg&task=pluginUserPaymentCancel&on=' . $order['details']['BT']->order_number . '&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id . '&Itemid=' . vRequest::getInt('Itemid') . '&lang=' . vRequest::getCmd('lang', '');
 ?>
@@ -69,8 +75,9 @@ $cancel_callback = JURI::root() . 'index.php?option=com_virtuemart&view=vmplg&ta
     completeCallback = "<?php echo $complete_callback; ?>";
     cancelCallback = "<?php echo $cancel_callback; ?>";
     function errorCallback(error) {
-        console.log(JSON.stringify(error))
-        alert(JSON.stringify(error.explanation));
+        console.log(error)
+        if (error.field != 'session.id')
+            alert(JSON.stringify(error.explanation));
     }
 </script>
 
