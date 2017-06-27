@@ -24,6 +24,7 @@
                 "product_override_price": [0],
                 "use_desired_price": [1],
                 "price_quantity_start": [""],
+                "override" :   [0],
                 "price_quantity_end": [""]
             },
             "intnotes": "",
@@ -35,6 +36,24 @@
             "metarobot": "",
             "metaauthor": "modacalcio.it e-reall sport barbiero",
             "product_in_stock": "20",
+            
+            "product_discontinued" : 0,  
+        "product_mpn" : "MPN09876",
+  "virtuemart_manufacturer_id" : [1] ,
+  
+ "product_url" : "",
+"virtuemart_shoppergroup_set" : "1",
+ "searchMedia" : "", 
+"file_is_product_image" : "1",
+  "option" : "com_virtuemart",
+  "search" : "",
+  "customlist" : "7",
+            
+  "step_order_level" : "",
+    "customer_email_type" : "customer",   
+  "notification_template" : "1",      
+  "notify_number" : "", 
+  
             "product_ordered": "0",
             "low_stock_notification": "1",
             "min_order_level": "0",
@@ -161,6 +180,7 @@
                     "product_override_price": [0],
                     "use_desired_price": [1],
                     "price_quantity_start": [""],
+                    "override" :   [0],
                     "price_quantity_end": [""]
                 },
                 "intnotes": "",
@@ -176,6 +196,25 @@
                 "low_stock_notification": "1",
                 "min_order_level": "0",
                 "max_order_level": "0",
+                
+                "product_discontinued" : 0,  
+        "product_mpn" : "MPN09876",
+  "virtuemart_manufacturer_id" : [1] ,
+  
+ "product_url" : "",
+"virtuemart_shoppergroup_set" : "1",
+ "searchMedia" : "", 
+"file_is_product_image" : "1",
+  "option" : "com_virtuemart",
+  "search" : "",
+  "customlist" : "7",
+  
+  
+  "step_order_level" : "",
+    "customer_email_type" : "customer",   
+  "notification_template" : "1",      
+  "notify_number" : "", 
+                
                 "product_available_date_text": "03\/21\/12",
                 "product_available_date": "2012-03-21 18:15:34",
                 "product_availability": "24h.gif",
@@ -479,6 +518,7 @@
                     "product_override_price": [0],
                     "use_desired_price": [1],
                     "price_quantity_start": [""],
+                    "override" :   [0],
                     "price_quantity_end": [""]
                 },
                 "intnotes": "",
@@ -498,6 +538,25 @@
                 "product_available_date": "2012-03-21 18:15:34",
                 "product_availability": "24h.gif",
                 "image": "24h.gif",
+                
+                
+                "product_discontinued" : 0,  
+        "product_mpn" : "MPN09876",
+  "virtuemart_manufacturer_id" : [1] ,
+  
+ "product_url" : "",
+"virtuemart_shoppergroup_set" : "1",
+ "searchMedia" : "", 
+"file_is_product_image" : "1",
+  "option" : "com_virtuemart",
+  "search" : "",
+  "customlist" : "7",
+  
+  "step_order_level" : "",
+    "customer_email_type" : "customer",   
+  "notification_template" : "1",      
+  "notify_number" : "", 
+                
                 "product_length": "0.0000",
                 "product_lwh_uom": "IN",
                 "product_width": "0.0000",

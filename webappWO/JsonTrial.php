@@ -1220,7 +1220,7 @@ class ProductWebservice extends VmModel {
 	return $arrToadd;
     }
     
-    public function createProductGiuseppeTrial($product, $hash) {
+    public function createProductGiuseppeTrial($product, $hash, $_ParentId ,$childrenArrayIds) {
 
 		
 	//vmdebug('in product migrate $oldProducts ',$oldProducts);
@@ -1230,25 +1230,17 @@ class ProductWebservice extends VmModel {
 //			$alreadyKnownIds = $this->getMigrationProgress('products');
 //			$oldToNewCats = $this->getMigrationProgress('cats');
 	$arrToadd = array();
-	
-//                                        $this->mine_printOnfile($product, 'product');
-
-        /**
-         * *********************************************************
-         * Start Commmenting to do A very simple Trial
-         * *********************************************************
-         
-	$product['product_currency'] = $this->_ensureUsingCurrencyId($product['product_currency']);
-//                                        $arrToadd['product_currency'] = $product['product_currency'];
-	// Here we  look for the url product_full_image and check which media has the same
-	//@import full_image url   -- Qui si imposta la galleria 
-
-	if ($product['virtuemart_product_id']) {
-	    $mediaModel = VmModel::getModel('media');
+        
+        $mediaModel = VmModel::getModel('media');
+        if ($product['virtuemart_product_id']) {
+	    
 	    $medias = $mediaModel->getFiles(false, false, $product['virtuemart_product_id']); //, $cat_id=null, $where=array(),$nbr=false);
 	    if (count($medias) >= 0) {
-                foreach($medias as $media)
-		$this->deletePictureFileFromFolder($media->file_url, $media->file_url_thumb);
+                foreach($medias as $media){
+                    $this->deletePictureFileFromFolder($media->file_url, $media->file_url_thumb);
+                    $mediaRemoved = $mediaModel->remove($media->virtuemart_media_id);
+                }
+		
 	    }
 	}
         
@@ -1257,18 +1249,13 @@ class ProductWebservice extends VmModel {
                 if ($pos !== false) { 
                     $folderForCalc = str_replace('http://www.easycommercemanager.com/immaginiEbay' , '' ,$product['product_full_image']); 
                     } else { 
-                        $folderForCalc = str_replace('http://easycommercemanager.com/immaginiEbay' , '' ,$product['product_full_image']); 
-                                
+                          if (strrpos($product['product_full_image'], "localhost") !== false) {
+                                $folderForCalc = str_replace('http://localhost.dev/immaginiEbay' , '' ,$product['product_full_image']); 
+                            } else {
+                                $folderForCalc = str_replace('http://easycommercemanager.com/immaginiEbay' , '' ,$product['product_full_image']); 
+                            }
                     }
-        
-// $fromImmToTheEnd =  substr($prooova, 13);  // should be immaginiEbay/ --> in poi
-                    
-                    
-                   
-                                           
-                    
-                    
-              $imgFiln = substr(strrchr($product['product_full_image'], "/"), 1);
+                    $imgFiln = substr(strrchr($product['product_full_image'], "/"), 1);
 		
 		$folder = str_replace($imgFiln, "", $folderForCalc);
                $imgs_id = array() ;
@@ -1281,7 +1268,9 @@ class ProductWebservice extends VmModel {
                array_unshift($product['pictures'], array('thumb' => $product['product_thumb_image'], 'big'=>$product['product_full_image'] ));
         
         $key = 0;
-        foreach($product['pictures'] as $key => $picture){
+        $arrayVirtuemart_media_id = array();
+        $arrayVirtuemart_media_ordering= array();
+        foreach($product['imagesArray'] as $key => $picture){
              // let's save thumb also 
 	     if (!is_array($picture)) continue; 
                 $filename=  substr(strrchr($picture['thumb'], "/"), 1);
@@ -1311,22 +1300,72 @@ class ProductWebservice extends VmModel {
 	    $imgId = $this->insertANewImageForGallery($arrayMedia, $url, $hash);
            
             
-            $product['virtuemart_media_id'][$key] = $imgId;
-            $product['virtuemart_media_ordering'][$imgId] = $key;
+            $arrayVirtuemart_media_id[$key] = $imgId;
+            $arrayVirtuemart_media_ordering[$imgId] = $key;
             $key++;
                              
         }
         
+            $product['virtuemart_media_id']= $arrayVirtuemart_media_id;
+            $product['virtuemart_media_ordering'] = $arrayVirtuemart_media_ordering;
+        
 	
+//                                        $this->mine_printOnfile($product, 'product');
 
-//					
-//                                         $productModel->
-	$old_price_ids = $productModel->loadProductPrices($product['virtuemart_product_id'], '', NULL, false);
-	if (is_array($old_price_ids) and count($old_price_ids) > 0) {
-	    $product['mprices']['virtuemart_product_price_id'] = array($old_price_ids[0]['virtuemart_product_price_id']);
-	}
+        /**
+         * *********************************************************
+         * Start Commmenting to do A very simple Trial
+         * *********************************************************
+          if children array is set I am creating father so let's inserti also the children array information
+         * 
+         * 
+         * 'childs' => 
+  array (
+    71 =>   // children id 
+    array (
+      'product_name' => 'Product Father - color 1',
+      'product_gtin' => '',
+      'mprices' => 
+      array (
+        'product_price' => 
+        array (
+          0 => '',
+        ),
+        'virtuemart_product_price_id' => 
+        array (
+          0 => '',
+        ),
+      ),
+      'pordering' => '0',
+      'published' => '1',
+    ),
          * 
          */
+            
+            $childrensArr = array();
+            if (isset($childrenArrayIds) && count($childrenArrayIds)>0) {
+                $count= 0;
+                foreach ($childrenArrayIds as $prodId => $children){
+                    $child = array();
+                    $count++;
+                    $child ['product_name'] = $children['product_name'] ;
+                    $child ['product_gtin'] = $children['product_gtin'] ;
+                        
+                    $child['mprices'] = array ('product_price' => array (0 => '',), 'virtuemart_product_price_id' => array (0 => '',),);
+                        $child['pordering'] = $count;
+                        $child['published'] = 1;
+                    
+                        $childrensArr[$children['virtuemart_product_id']] = $child ;
+                }
+                
+                $product['childs']=$childrensArr ;
+                var_export($childrensArr);
+//                echo '<h1 style="color:purple"> Deactivate Jsontrial line 1363 </h1>';
+//                exit(1);
+            }
+            
+            
+            
 	$product['virtuemart_product_id'] = $productModel->store($product);
 	$arrToadd['virtuemart_product_id'] = $product['virtuemart_product_id'];
 
@@ -1377,7 +1416,7 @@ class ProductWebservice extends VmModel {
 //						vmdebug('Product add error',$product);
 	    $productModel->resetErrors();
 	    $continue = false;
-	    break;
+//	    break;
 	} elseif ($this->_dev)
 	    $_SESSION['vmInfo'][] = 'Product Save ok with id ' . $product['virtuemart_product_id'] . ' in function CreateProduct con host ' . $_SERVER['HTTP_HOST'] . ' e dati' . json_encode($product);
 	else
@@ -1773,7 +1812,7 @@ class ProductWebservice extends VmModel {
 //						vmdebug('Product add error',$product);
 	    $productModel->resetErrors();
 	    $continue = false;
-	    break;
+//	    break;
 	} else {
 
 	    $_SESSION['vmInfo']['result'] = 'Success';
@@ -1807,7 +1846,7 @@ class ProductWebservice extends VmModel {
 	    vmdebug('Product add error', $product);
 	    $productModel->resetErrors();
 	    $continue = false;
-	    break;
+//	    break;
 	} elseif ($this->_dev) {
 	    $_SESSION['vmInfo']['result'] = 'Success';
 	    ($data['field']) ? $dati = 'arrivati correttamente ' : $dati = 'non arrivati correttamente';
@@ -1887,7 +1926,7 @@ class ProductWebservice extends VmModel {
 //						vmdebug('Product add error',$product);
 	    $productModel->resetErrors();
 	    $continue = false;
-	    break;
+//	    break;
 	} elseif ($this->_dev)
 	    $_SESSION['vmInfo'][] = 'Product Save ok with id in editProduct ' . $data['virtuemart_product_id'] . 'con host ' . $_SERVER['HTTP_HOST'] . ' e dati' . json_encode($product);
 	else
@@ -2675,7 +2714,7 @@ class ProductWebservice extends VmModel {
 //						vmdebug('Product add error',$product);
 	    $productModel->resetErrors();
 	    $continue = false;
-	    break;
+//	    break;
 	} else {
 
 	    $_SESSION['vmInfo']['result'] = 'Success';
@@ -2746,31 +2785,58 @@ WHERE product_sku =  '%s' ";
 	$this->mediaModel = VmModel::getModel('Media');
 
 	$data = null;
-	$data = array('file_title' => $datag['filename'],
-	    'virtuemart_vendor_id' => 1,
-	    'file_description' => $datag['filename'],
-	    'file_meta' => $datag['filename'],
-	    'file_url' => $url,
-	    'file_type' => "product",
-	    'media_published' => 1,
-	    'file_mimetype' => 'image/jpeg',
-	    "media_roles" => 'file_is_displayable',
-	    'file_url_thumb' => $datag['file_url_thumb'],
-	    'media_action' => 0,
-	    "view" => "media",
-	    "task" => "apply",
+	$data = array(
+            "option" => "com_virtuemart",
+            "view" => "media",
+            "task" => "apply",
+            'media' => 
+  array (
+      	    'media_published' => 1,
+            'file_title' => $datag['filename'],
+      	    'file_description' => $datag['filename'],
+      	    'file_meta' => $datag['filename'],
+      	    
+            'file_class' => '',
+            'file_url' => $url,  // needs like 'images/stories/virtuemart/product/TurboCharge.jpg',
+      	    'file_url_thumb' => $datag['file_url_thumb'],  // it gives  '(Default URL) images/stories/virtuemart/product/resized/TurboCharge_200x200.jpg',
+            'media_roles' => 'file_is_displayable',
+            'media_attributes' => 'product',
+//             'media_action' => 'upload',
+            'active_media_id' => '0',
+      ),
+//            
+//	    'virtuemart_vendor_id' => 1,
+//	    'virtuemart_media_id' => '105',  this can be needed for file editing
+
+	    'file_type' => 'product',
+            'media_published' => 1,
+            'file_title' => $datag['filename'],
+      	    'file_description' => $datag['filename'],
+            'file_meta' => $datag['filename'],
+	    'file_class' => '',
+            'file_url' => $url,  // needs like 'images/stories/virtuemart/product/TurboCharge.jpg',
+      	    'file_url_thumb' => $datag['file_url_thumb'],  // it gives  '(Default URL) images/stories/virtuemart/product/resized/TurboCharge_200x200.jpg',
+            'media_attributes' => 'product', // provare con 0
+//            'media_action' => 'upload',
+            'active_media_id' => '0',
+            
 	    $hash => 1,
-	    "option" => "com_virtuemart"
+	    
+            'theme_url' => 'components/com_virtuemart/',
+            'virtuemart_vendor_id' => 0,
+            'file_mimetype' => '',
+            'published' => 1
+            
 	);
 
 //			$data['file_is_product_image'] = 1;
 	$this->mediaModel->setId(0);
 	$success = $this->mediaModel->store($data, $type);
-	$errors = $this->mediaModel->getErrors();
-	foreach ($errors as $error) {
-	    $this->_app->enqueueMessage('Migrator ' . $error);
-	}
-	$this->mediaModel->resetErrors();
+//	$errors = $this->mediaModel->getErrors();
+//	foreach ($errors as $error) {
+//	    $this->_app->enqueueMessage('Migrator ' . $error);
+//	}
+//	$this->mediaModel->resetErrors();
 //			if($success) 
 //			if((microtime(true)-$this->starttime) >= ($this->maxScriptTime)){
 //				vmError('Attention script time too short, no time left to store the media, please rise script execution time');

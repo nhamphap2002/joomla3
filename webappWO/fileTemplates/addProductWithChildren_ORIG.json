@@ -1,0 +1,777 @@
+{
+    "Parent": {
+        "productIT": {
+            "vmlang": "it-IT",
+            "published": "1",
+            "product_sku": "5945-Parent-IT",
+            "product_name": "5945-Parent-IT",
+            "categories": [],
+            "layout": "0",
+            "product_special": "0",
+            "product_thumb_image": "",
+            "product_full_image": "",
+            "mprices": {
+                "product_price": [72.727272727273],
+                "virtuemart_product_price_id": [""],
+                "product_currency": ["47"],
+                "virtuemart_shoppergroup_id": [""],
+                "basePrice": [72.727272727273],
+                "product_tax_id": ["1"],
+                "salesPrice": [87.75],
+                "product_discount_id": [19],
+                "product_price_publish_up": [""],
+                "product_price_publish_down": [""],
+                "product_override_price": [0],
+                "use_desired_price": [1],
+                "price_quantity_start": [""],
+                "price_quantity_end": [""]
+            },
+            "intnotes": "",
+            "product_s_desc": "5945-Parent-IT",
+            "product_desc": "5945-Parent-IT<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure 5945-Parent-IT\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+            "customtitle": "",
+            "metadesc": "5945-Parent-IT",
+            "metakey": "5945-Parent-IT",
+            "metarobot": "",
+            "metaauthor": "modacalcio.it e-reall sport barbiero",
+            "product_in_stock": "20",
+            "product_ordered": "0",
+            "low_stock_notification": "1",
+            "min_order_level": "0",
+            "max_order_level": "0",
+            "product_available_date_text": "03\/21\/12",
+            "product_available_date": "2012-03-21 18:15:34",
+            "product_availability": "24h.gif",
+            "image": "24h.gif",
+            "product_length": "0.0000",
+            "product_lwh_uom": "IN",
+            "product_width": "0.0000",
+            "product_height": "0.0000",
+            "product_weight": "0.800",
+            "product_weight_uom": "KG",
+            "product_unit": "pezz",
+            "product_packaging": "0",
+            "product_box": "0",
+            "pictures": [{
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-bianco-2.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-bianco-2.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-bianco-2.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-Blu-2.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-Blu-2.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-Blu-2.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5595-5.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5595-5.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5595-5.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5597-1.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5597-1.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5597-1.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5598-5.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5598-5.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5598-5.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-Blu-1.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-Blu-1.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-Blu-1.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-bianco-1.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-bianco-1.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-bianco-1.jpg"
+                }, {
+                    "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5598-6.jpg",
+                    "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5598-6.jpg",
+                    "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5598-6.jpg"
+                }],
+            "task": "apply",
+            "boxchecked": "0",
+            "controller": "product",
+            "view": "product",
+            "product_parent_id": 0,
+            "metadesc ": "5945-Parent-IT",
+            "slug": "5945-parent-it",
+            "field": [{
+                    "withParent": 0,
+                    "parentOrderable": 0,
+                    "custom_value": "product_sku",
+                    "custom_price": 0,
+                    "field_type": "A",
+                    "virtuemart_custom_id": 111,
+                    "admin_only": 0,
+                    "ordering": 0
+                }],
+            "custom_param": "",
+            "save_customfields": 1,
+            "customlist": 3
+        },
+        "productUK": {
+            "vmlang": "en-GB",
+            "product_name": "5945-Parent-UK",
+            "product_s_desc": "5945-Parent-UK",
+            "slug": "5945-parent-uk",
+            "product_desc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.<br>Season 2016 17. Version: Training.<br>Men&#39;s sizes. The pants have zip pockets useful in having to store items during sports.<br>NARROW ELASTIC with adjustable ankle without zip.<br>Textile composition: 100% polyester Climawarm. Sweatshirt with a ribbed crew neck. Logo and emblem applied. FORUM ON THE SLEEVES FOR THREAD THUMB for maximum comfort during the ride. trousers with elastic waist with adjustable laces.<br>The product may be narrower than usual, please control themselves the extent sizes. breathable fabric hypoallergenic ideal for training and sport. Product machine washable.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+            "metadesc": "5945-Parent-UK",
+            "metakey": "5945-Parent-UK"
+        },
+        "productFR": {
+            "vmlang": "fr-FR",
+            "product_name": "5945-Parent-FR",
+            "product_s_desc": "5945-Parent-FR",
+            "slug": "5945-parent-fr",
+            "product_desc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.<br>Saison 2016 17. Version: Formation.<br>Tailles pour homme. Les pantalons ont poches zipp\u00e9es utiles \u00e0 avoir pour stocker des objets lors d\\'activit\u00e9s sportives.<br>NARROW ELASTIC avec la cheville r\u00e9glable sans zip.<br>Composition Textile: 100% polyester Climawarm. Sweat-shirt avec col ras du cou c\u00f4tel\u00e9. Logo et de l\\'embl\u00e8me appliqu\u00e9s. FORUM SUR LES MANCHES POUR FILETAGE POUCE pour un confort maximum pendant le trajet. pantalon \u00e0 taille \u00e9lastique avec des lacets r\u00e9glables.<br>Le produit peut \u00eatre plus \u00e9troite que d\\'habitude, s\\'il vous pla\u00eet contr\u00f4ler eux-m\u00eames la mesure o\u00f9 les tailles. tissu respirant id\u00e9al hypoallerg\u00e9nique pour la formation et le sport. Machine de produit lavable.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+            "metadesc": "5945-Parent-FR",
+            "metakey": "5945-Parent-FR"
+        },
+        "productDE": {
+            "vmlang": "de-DE",
+            "product_name": "5945-Parent-DE",
+            "product_s_desc": "5945-Parent-DE",
+            "slug": "5945-parent-de",
+            "product_desc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.<br>Saison 2016 17. Version: Training.<br>Die Gr\u00f6\u00dfen der M\u00e4nner. Die Hose hat Rei\u00dfverschlusstaschen geeignet, die beim Sport zu speichern Gegenst\u00e4nde.<br>SCHMALE ELASTIC mit verstellbarem Fessel ohne Rei\u00dfverschluss.<br>Textile Zusammensetzung: 100% Polyester Climawarm. Sweatshirt mit einem gerippten Rundhalsausschnitt. Logo und Emblem angewendet. FORUM an den \u00c4rmeln f\u00fcr Gewinde DAUMEN f\u00fcr maximalen Komfort w\u00e4hrend der Fahrt. Hose mit elastischem Bund mit verstellbarer Schn\u00fcrung.<br>Das Produkt kann schmaler als \u00fcblich, sich bitte die Extentgr\u00f6\u00dfen steuern. atmungsaktive Gewebe hypoallergen ideal f\u00fcr das Training und Sport. Produkt maschinenwaschbar.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+            "metadesc": "5945-Parent-DE",
+            "metakey": "5945-Parent-DE"
+        }
+    },
+    "Children": {
+        "ChidrensKeyArray": [54838, 54842],
+        "54838": {
+            "productIT": {
+                "vmlang": "it-IT",
+                "published": "1",
+                "product_sku": "IdGrid:5945 , Code:AP5595 AP5597 AP5598 Color:Blu",
+                "product_name": " Chelsea Fc Adidas Tuta Allenamento Training 2016 17 Uomo Climawarm -Blu",
+                "categories": ["286", "306", 322, 375, 368, 319, "429"],
+                "layout": "0",
+                "product_special": "0",
+                "product_thumb_image": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/det-Blu-1.jpg",
+                "product_full_image": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/det-Blu-1.jpg",
+                "mprices": {
+                    "product_price": [72.727272727273],
+                    "virtuemart_product_price_id": [""],
+                    "product_currency": ["47"],
+                    "virtuemart_shoppergroup_id": [""],
+                    "basePrice": [72.727272727273],
+                    "product_tax_id": ["1"],
+                    "salesPrice": [87.75],
+                    "product_discount_id": [19],
+                    "product_price_publish_up": [""],
+                    "product_price_publish_down": [""],
+                    "product_override_price": [0],
+                    "use_desired_price": [1],
+                    "price_quantity_start": [""],
+                    "price_quantity_end": [""]
+                },
+                "intnotes": "",
+                "product_s_desc": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.",
+                "product_desc": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.<br>Stagione 2016 17. Versione: Allenamento .<br>Taglie Da Uomo.  Il pantalone ha tasche a zip utili nel dover conservare oggetti durante lo sport.<br>Caviglia STRETTA senza ELASTICO con zip regolabile.<br>Composizione Tessile: 100% poliestere Climawarm . Felpa con girocollo a costine. Logo e stemma applicati. FORO SULLE MANICHE PER INFILARE IL POLLICE  per il massimo comfort durante la corsa. pantalone con elastico in vita regolabile con lacci.<br>Il prodotto potrebbe risultare pi\u00f9 stretto del solito, prego controllarsi la misura taglie . Tessuto  traspirante ipoallergenico  ideale per l allenamento e lo sport. Prodotto lavabile in lavatrice.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "customtitle": "",
+                "metadesc": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.",
+                "metakey": " Chelsea Fc Adidas Tuta Allenamento Training 2016 17 Uomo Climawarm -Blu",
+                "metarobot": "",
+                "metaauthor": "modacalcio.it e-reall sport barbiero",
+                "product_in_stock": "20",
+                "product_ordered": "0",
+                "low_stock_notification": "1",
+                "min_order_level": "0",
+                "max_order_level": "0",
+                "product_available_date_text": "03\/21\/12",
+                "product_available_date": "2012-03-21 18:15:34",
+                "product_availability": "24h.gif",
+                "image": "24h.gif",
+                "product_length": "0.0000",
+                "product_lwh_uom": "IN",
+                "product_width": "0.0000",
+                "product_height": "0.0000",
+                "product_weight": "0.800",
+                "product_weight_uom": "KG",
+                "product_unit": "pezz",
+                "product_packaging": "0",
+                "product_box": "0",
+                "pictures": [{
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-bianco-2.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-bianco-2.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-bianco-2.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-Blu-2.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-Blu-2.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-Blu-2.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5595-5.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5595-5.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5595-5.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5597-1.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5597-1.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5597-1.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5598-5.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5598-5.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5598-5.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-Blu-1.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-Blu-1.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-Blu-1.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-bianco-1.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-bianco-1.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-bianco-1.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5598-6.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5598-6.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5598-6.jpg"
+                    }],
+                "task": "apply",
+                "boxchecked": "0",
+                "controller": "product",
+                "view": "product",
+                "product_parent_id": 0,
+                "metadesc ": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.",
+                "slug": "5945-blu--chelsea-fc-adidas-tuta-allenamento-training-2016-17-uomo-climawarm-",
+                "field": [{
+                        "custom_value": "2016 17",
+                        "custom_price": 0,
+                        "field_type": "Stagione",
+                        "virtuemart_custom_id": 6,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 0
+                    }, {
+                        "custom_value": "Uomo",
+                        "custom_price": 0,
+                        "field_type": "Genere",
+                        "virtuemart_custom_id": 44,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 1
+                    }, {
+                        "custom_value": "pantalone con tasche a zip",
+                        "custom_price": 0,
+                        "field_type": "Tasche",
+                        "virtuemart_custom_id": 9,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 2
+                    }, {
+                        "custom_value": "caviglia stretta senza elastico con zip regolabile",
+                        "custom_price": 0,
+                        "field_type": "Caviglia",
+                        "virtuemart_custom_id": 43,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 3
+                    }, {
+                        "custom_value": "Climawarm",
+                        "custom_price": 0,
+                        "field_type": "Materiale",
+                        "virtuemart_custom_id": 21,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 4
+                    }, {
+                        "custom_value": "Sped. Immediata",
+                        "custom_price": 0,
+                        "field_type": "Spedizione in",
+                        "virtuemart_custom_id": 8,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 5
+                    }, {
+                        "custom_value": "Chelsea",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Squadra",
+                        "virtuemart_custom_id": 117,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 6
+                    }, {
+                        "custom_value": "Adidas",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Marca",
+                        "virtuemart_custom_id": 118,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 7
+                    }, {
+                        "custom_value": "COM_VM_ERP_TRACKSUIT",
+                        "custom_price": 0,
+                        "field_type": "Tipo Prodotto",
+                        "virtuemart_custom_id": 10,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 8
+                    }, {
+                        "custom_value": "XS",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 9
+                    }, {
+                        "custom_value": "XS",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 10
+                    }, {
+                        "custom_value": "S",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 11
+                    }, {
+                        "custom_value": "S",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 12
+                    }, {
+                        "custom_value": "M",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 13
+                    }, {
+                        "custom_value": "M",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 14
+                    }, {
+                        "custom_value": "L",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 15
+                    }, {
+                        "custom_value": "L",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 16
+                    }, {
+                        "custom_value": "XL",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 17
+                    }, {
+                        "custom_value": "XL",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 18
+                    }, {
+                        "custom_value": "XXL",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 19
+                    }, {
+                        "custom_value": "XXL",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 20
+                    }, {
+                        "custom_value": "XXXL",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 21
+                    }, {
+                        "custom_value": "XXXL",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 22
+                    }, {
+                        "custom_value": "COM_PRICE_LEVEL_80",
+                        "custom_price": 0,
+                        "field_type": "COM_PRICE_LEVEL",
+                        "virtuemart_custom_id": 15,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 23
+                    }],
+                "custom_param": null,
+                "save_customfields": 1,
+                "customlist": 3 
+            },
+            "productUK": {
+                "vmlang": "en-GB",
+                "product_name": "Training Tracksuit FC Chelsea adidas Original Climawarm Man 2016 17-Blue",
+                "product_s_desc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.",
+                "slug": "5945-blue-training-tracksuit-fc-chelsea-adidas-original-climawarm-man-2016-17",
+                "product_desc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.<br>Season 2016 17. Version: Training.<br>Men&#39;s sizes. The pants have zip pockets useful in having to store items during sports.<br>NARROW ELASTIC with adjustable ankle without zip.<br>Textile composition: 100% polyester Climawarm. Sweatshirt with a ribbed crew neck. Logo and emblem applied. FORUM ON THE SLEEVES FOR THREAD THUMB for maximum comfort during the ride. trousers with elastic waist with adjustable laces.<br>The product may be narrower than usual, please control themselves the extent sizes. breathable fabric hypoallergenic ideal for training and sport. Product machine washable.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "metadesc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.",
+                "metakey": "Training Tracksuit FC Chelsea adidas Original Climawarm Man 2016 17"
+            },
+            "productFR": {
+                "vmlang": "fr-FR",
+                "product_name": "Surv\u00eatement adidas Training  FC Chelsea origine Climawarm Man 2016 17-Blue",
+                "product_s_desc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.",
+                "slug": "5945-blue-survtement-adidas-training--fc-chelsea-origine-climawarm-man-2016-17",
+                "product_desc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.<br>Saison 2016 17. Version: Formation.<br>Tailles pour homme. Les pantalons ont poches zipp\u00e9es utiles \u00e0 avoir pour stocker des objets lors d\\'activit\u00e9s sportives.<br>NARROW ELASTIC avec la cheville r\u00e9glable sans zip.<br>Composition Textile: 100% polyester Climawarm. Sweat-shirt avec col ras du cou c\u00f4tel\u00e9. Logo et de l\\'embl\u00e8me appliqu\u00e9s. FORUM SUR LES MANCHES POUR FILETAGE POUCE pour un confort maximum pendant le trajet. pantalon \u00e0 taille \u00e9lastique avec des lacets r\u00e9glables.<br>Le produit peut \u00eatre plus \u00e9troite que d\\'habitude, s\\'il vous pla\u00eet contr\u00f4ler eux-m\u00eames la mesure o\u00f9 les tailles. tissu respirant id\u00e9al hypoallerg\u00e9nique pour la formation et le sport. Machine de produit lavable.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "metadesc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.",
+                "metakey": "Surv\u00eatement adidas Training  FC Chelsea origine Climawarm Man 2016 17"
+            },
+            "productDE": {
+                "vmlang": "de-DE",
+                "product_name": "Trainingsanzug FC Chelsea Adidas Original Climawarm Man 2016 17-Blau",
+                "product_s_desc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.",
+                "slug": "5945-blau-trainingsanzug-fc-chelsea-adidas-original-climawarm-man-2016-17",
+                "product_desc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.<br>Saison 2016 17. Version: Training.<br>Die Gr\u00f6\u00dfen der M\u00e4nner. Die Hose hat Rei\u00dfverschlusstaschen geeignet, die beim Sport zu speichern Gegenst\u00e4nde.<br>SCHMALE ELASTIC mit verstellbarem Fessel ohne Rei\u00dfverschluss.<br>Textile Zusammensetzung: 100% Polyester Climawarm. Sweatshirt mit einem gerippten Rundhalsausschnitt. Logo und Emblem angewendet. FORUM an den \u00c4rmeln f\u00fcr Gewinde DAUMEN f\u00fcr maximalen Komfort w\u00e4hrend der Fahrt. Hose mit elastischem Bund mit verstellbarer Schn\u00fcrung.<br>Das Produkt kann schmaler als \u00fcblich, sich bitte die Extentgr\u00f6\u00dfen steuern. atmungsaktive Gewebe hypoallergen ideal f\u00fcr das Training und Sport. Produkt maschinenwaschbar.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "metadesc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.",
+                "metakey": "Trainingsanzug FC Chelsea Adidas Original Climawarm Man 2016 17"
+            }
+        },
+        "54842": {
+            "productIT": {
+                "vmlang": "it-IT",
+                "published": "1",
+                "product_sku": "IdGrid:5945 , Code:AP5595 AP5597 AP5598 Color:Bianco",
+                "product_name": " Chelsea Fc Adidas Tuta Allenamento Training 2016 17 Uomo Climawarm -Bianco",
+                "categories": ["286", "306", 322, 375, 368, 319, "429"],
+                "layout": "0",
+                "product_special": "0",
+                "product_thumb_image": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/det-bianco-1.jpg",
+                "product_full_image": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/det-bianco-1.jpg",
+                "mprices": {
+                    "product_price": [72.727272727273],
+                    "virtuemart_product_price_id": [""],
+                    "product_currency": ["47"],
+                    "virtuemart_shoppergroup_id": [""],
+                    "basePrice": [72.727272727273],
+                    "product_tax_id": ["1"],
+                    "salesPrice": [87.75],
+                    "product_discount_id": [19],
+                    "product_price_publish_up": [""],
+                    "product_price_publish_down": [""],
+                    "product_override_price": [0],
+                    "use_desired_price": [1],
+                    "price_quantity_start": [""],
+                    "price_quantity_end": [""]
+                },
+                "intnotes": "",
+                "product_s_desc": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.",
+                "product_desc": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.<br>Stagione 2016 17. Versione: Allenamento .<br>Taglie Da Uomo.  Il pantalone ha tasche a zip utili nel dover conservare oggetti durante lo sport.<br>Caviglia STRETTA senza ELASTICO con zip regolabile.<br>Composizione Tessile: 100% poliestere Climawarm . Felpa con girocollo a costine. Logo e stemma applicati. FORO SULLE MANICHE PER INFILARE IL POLLICE  per il massimo comfort durante la corsa. pantalone con elastico in vita regolabile con lacci.<br>Il prodotto potrebbe risultare pi\u00f9 stretto del solito, prego controllarsi la misura taglie . Tessuto  traspirante ipoallergenico  ideale per l allenamento e lo sport. Prodotto lavabile in lavatrice.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "customtitle": "",
+                "metadesc": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.",
+                "metakey": " Chelsea Fc Adidas Tuta Allenamento Training 2016 17 Uomo Climawarm -Bianco",
+                "metarobot": "",
+                "metaauthor": "modacalcio.it e-reall sport barbiero",
+                "product_in_stock": "20",
+                "product_ordered": "0",
+                "low_stock_notification": "1",
+                "min_order_level": "0",
+                "max_order_level": "0",
+                "product_available_date_text": "03\/21\/12",
+                "product_available_date": "2012-03-21 18:15:34",
+                "product_availability": "24h.gif",
+                "image": "24h.gif",
+                "product_length": "0.0000",
+                "product_lwh_uom": "IN",
+                "product_width": "0.0000",
+                "product_height": "0.0000",
+                "product_weight": "0.800",
+                "product_weight_uom": "KG",
+                "product_unit": "pezz",
+                "product_packaging": "0",
+                "product_box": "0",
+                "pictures": [{
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-bianco-2.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-bianco-2.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-bianco-2.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-Blu-2.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-Blu-2.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-Blu-2.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5595-5.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5595-5.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5595-5.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5597-1.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5597-1.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5597-1.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5598-5.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5598-5.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5598-5.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-Blu-1.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-Blu-1.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-Blu-1.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-bianco-1.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-bianco-1.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-bianco-1.jpg"
+                    }, {
+                        "big": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/det-AP5598-6.jpg",
+                        "med": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/mid-det-AP5598-6.jpg",
+                        "thumb": "http:\/\/easycommercemanager.com\/immaginiEbay\/maglie\/\/chelsea\/tutaEU201617\/\/\/tmb\/tmb_det-AP5598-6.jpg"
+                    }],
+                "task": "apply",
+                "boxchecked": "0",
+                "controller": "product",
+                "view": "product",
+                "product_parent_id": 0,
+                "metadesc ": "Saldi e sconti su acquisto di Tuta Allenamento FC Chelsea Originale adidas Uomo, della Stagione 2016 17, in Offerta.",
+                "slug": "5945-bianco--chelsea-fc-adidas-tuta-allenamento-training-2016-17-uomo-climawarm-",
+                "field": [{
+                        "custom_value": "2016 17",
+                        "custom_price": 0,
+                        "field_type": "Stagione",
+                        "virtuemart_custom_id": 6,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 0
+                    }, {
+                        "custom_value": "Uomo",
+                        "custom_price": 0,
+                        "field_type": "Genere",
+                        "virtuemart_custom_id": 44,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 1
+                    }, {
+                        "custom_value": "pantalone con tasche a zip",
+                        "custom_price": 0,
+                        "field_type": "Tasche",
+                        "virtuemart_custom_id": 9,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 2
+                    }, {
+                        "custom_value": "caviglia stretta senza elastico con zip regolabile",
+                        "custom_price": 0,
+                        "field_type": "Caviglia",
+                        "virtuemart_custom_id": 43,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 3
+                    }, {
+                        "custom_value": "Climawarm",
+                        "custom_price": 0,
+                        "field_type": "Materiale",
+                        "virtuemart_custom_id": 21,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 4
+                    }, {
+                        "custom_value": "Sped. Immediata",
+                        "custom_price": 0,
+                        "field_type": "Spedizione in",
+                        "virtuemart_custom_id": 8,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 5
+                    }, {
+                        "custom_value": "Chelsea",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Squadra",
+                        "virtuemart_custom_id": 117,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 6
+                    }, {
+                        "custom_value": "Adidas",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Marca",
+                        "virtuemart_custom_id": 118,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 7
+                    }, {
+                        "custom_value": "COM_VM_ERP_TRACKSUIT",
+                        "custom_price": 0,
+                        "field_type": "Tipo Prodotto",
+                        "virtuemart_custom_id": 10,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 8
+                    }, {
+                        "custom_value": "XS",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 9
+                    }, {
+                        "custom_value": "XS",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 10
+                    }, {
+                        "custom_value": "S",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 11
+                    }, {
+                        "custom_value": "S",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 12
+                    }, {
+                        "custom_value": "M",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 13
+                    }, {
+                        "custom_value": "M",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 14
+                    }, {
+                        "custom_value": "L",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 15
+                    }, {
+                        "custom_value": "L",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 16
+                    }, {
+                        "custom_value": "XL",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 17
+                    }, {
+                        "custom_value": "XL",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 18
+                    }, {
+                        "custom_value": "XXL",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 19
+                    }, {
+                        "custom_value": "XXL",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 20
+                    }, {
+                        "custom_value": "XXXL",
+                        "custom_price": 0,
+                        "field_type": "Taglia",
+                        "virtuemart_custom_id": 3,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 21
+                    }, {
+                        "custom_value": "XXXL",
+                        "custom_price": 0,
+                        "field_type": "Pseudo-Taglia",
+                        "virtuemart_custom_id": 116,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 22
+                    }, {
+                        "custom_value": "COM_PRICE_LEVEL_80",
+                        "custom_price": 0,
+                        "field_type": "COM_PRICE_LEVEL",
+                        "virtuemart_custom_id": 15,
+                        "virtuemart_customfield_id": 0,
+                        "admin_only": 0,
+                        "ordering": 23
+                    }],
+                "custom_param": null,
+                "save_customfields": 1,
+                "customlist": 3 
+            },
+            "productUK": {
+                "vmlang": "en-GB",
+                "product_name": "Training Tracksuit FC Chelsea adidas Original Climawarm Man 2016 17-White",
+                "product_s_desc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.",
+                "slug": "5945-white-training-tracksuit-fc-chelsea-adidas-original-climawarm-man-2016-17",
+                "product_desc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.<br>Season 2016 17. Version: Training.<br>Men&#39;s sizes. The pants have zip pockets useful in having to store items during sports.<br>NARROW ELASTIC with adjustable ankle without zip.<br>Textile composition: 100% polyester Climawarm. Sweatshirt with a ribbed crew neck. Logo and emblem applied. FORUM ON THE SLEEVES FOR THREAD THUMB for maximum comfort during the ride. trousers with elastic waist with adjustable laces.<br>The product may be narrower than usual, please control themselves the extent sizes. breathable fabric hypoallergenic ideal for training and sport. Product machine washable.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "metadesc": "Sales and discounts on purchase of Training tracksuit FC Chelsea adidas Original Man, the 2016 17 Season, Specials.",
+                "metakey": "Training Tracksuit FC Chelsea adidas Original Climawarm Man 2016 17"
+            },
+            "productFR": {
+                "vmlang": "fr-FR",
+                "product_name": "Surv\u00eatement adidas Training  FC Chelsea origine Climawarm Man 2016 17-Blanc",
+                "product_s_desc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.",
+                "slug": "5945-blanc-survtement-adidas-training--fc-chelsea-origine-climawarm-man-2016-17",
+                "product_desc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.<br>Saison 2016 17. Version: Formation.<br>Tailles pour homme. Les pantalons ont poches zipp\u00e9es utiles \u00e0 avoir pour stocker des objets lors d\\'activit\u00e9s sportives.<br>NARROW ELASTIC avec la cheville r\u00e9glable sans zip.<br>Composition Textile: 100% polyester Climawarm. Sweat-shirt avec col ras du cou c\u00f4tel\u00e9. Logo et de l\\'embl\u00e8me appliqu\u00e9s. FORUM SUR LES MANCHES POUR FILETAGE POUCE pour un confort maximum pendant le trajet. pantalon \u00e0 taille \u00e9lastique avec des lacets r\u00e9glables.<br>Le produit peut \u00eatre plus \u00e9troite que d\\'habitude, s\\'il vous pla\u00eet contr\u00f4ler eux-m\u00eames la mesure o\u00f9 les tailles. tissu respirant id\u00e9al hypoallerg\u00e9nique pour la formation et le sport. Machine de produit lavable.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "metadesc": "Les ventes et des r\u00e9ductions sur l\\'achat de surv\u00eatement de formation FC Chelsea adidas original Man, 2016 17 Saison, Promotions.",
+                "metakey": "Surv\u00eatement adidas Training  FC Chelsea origine Climawarm Man 2016 17"
+            },
+            "productDE": {
+                "vmlang": "de-DE",
+                "product_name": "Trainingsanzug FC Chelsea Adidas Original Climawarm Man 2016 17-Wei\u00df",
+                "product_s_desc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.",
+                "slug": "5945-weiss-trainingsanzug-fc-chelsea-adidas-original-climawarm-man-2016-17",
+                "product_desc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.<br>Saison 2016 17. Version: Training.<br>Die Gr\u00f6\u00dfen der M\u00e4nner. Die Hose hat Rei\u00dfverschlusstaschen geeignet, die beim Sport zu speichern Gegenst\u00e4nde.<br>SCHMALE ELASTIC mit verstellbarem Fessel ohne Rei\u00dfverschluss.<br>Textile Zusammensetzung: 100% Polyester Climawarm. Sweatshirt mit einem gerippten Rundhalsausschnitt. Logo und Emblem angewendet. FORUM an den \u00c4rmeln f\u00fcr Gewinde DAUMEN f\u00fcr maximalen Komfort w\u00e4hrend der Fahrt. Hose mit elastischem Bund mit verstellbarer Schn\u00fcrung.<br>Das Produkt kann schmaler als \u00fcblich, sich bitte die Extentgr\u00f6\u00dfen steuern. atmungsaktive Gewebe hypoallergen ideal f\u00fcr das Training und Sport. Produkt maschinenwaschbar.<br><br><br>Per la scelta delle taglie controllate le misure sottostanti<br \/>\n\/\/                          <img src=\"http:\/\/www.easycommercemanager.com\/immaginiEbay\/taglie\/adidas\/TutaTrainingMilan.jpg\" alt=\"Tabella taglie e misure Tuta Allenamento FC Chelsea  Originale adidas Climawarm Uomo 2016 17\"><br \/> Codice Fornitore: AP5595 AP5597 AP5598<br \/> Codice ERP Interno: MG-5945<br \/>Tag Ricerca:  AP5595 AP5597 AP5598",
+                "metadesc": "Umsatz und Rabatte beim Kauf von Trainingsanzug FC Chelsea adidas Original-Mann, der 2016 17 Saison, Specials.",
+                "metakey": "Trainingsanzug FC Chelsea Adidas Original Climawarm Man 2016 17"
+            }
+        }
+    },
+    "function": "addProductWithChildren"
+}

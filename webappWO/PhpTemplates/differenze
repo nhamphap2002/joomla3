@@ -1,0 +1,74 @@
+dal nuovo al vecchio
+
+aggiungere nella root
+
+'product_discontinued' => '0',  // chissà cchi bbo di
+'product_mpn' => 'MPN09876',
+  'virtuemart_manufacturer_id' => 
+  array (
+    0 => '1',
+  ),
+
+ 'product_url' => '',
+'virtuemart_shoppergroup_set' => '1',
+ 'searchMedia' => '', // a che serve ? 
+'file_is_product_image' => '1',
+
+'file_is_product_image' => '1',
+  'option' => 'com_virtuemart',
+  'search' => '',
+  'customlist' => '7',
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Dal vecchio template addProduct al nuovo 
+
+da controllare
+
+'categories' =>   // che sia array
+
+  array (
+    0 => '5',
+    1 => '4',
+  ),
+
+da modificare
+
+'virtuemart_shoppergroup_id' // => da aggiungere nel root array ( certo va visto pure senza che succede ) 
+  array (
+    0 => '2',
+  ),
+
+
+ da aggiungere
+product_gtin --> del prodotto padre 
+
+'mprices' => 
+  array (
+     
+    'virtuemart_product_price_id' =>     array (      0 => '25',    ),  // provare a lasciarlo com'era , cioè non valorizzato
+// questgo non c'è -->     'override' =>     array (      0 => '0',    ), 
+    ),
+  ),
+
+'step_order_level' => '',  // gestisce gli step di quantità , da rivedere
+
+'customer_email_type' => 'customer',   // aggiungere alla root
+  'notification_template' => '1',      // aggiungere alla root
+  'notify_number' => '',               // aggiungere alla root
+
+correggere 
+'product_packaging' => '',
+  'product_unit' => 'KG',
+  'product_box' => '',
+  'searchMedia' => '',
+
+ "custom_param": "", non mi sembra di vederlo
+
+save_customfields": 1,
