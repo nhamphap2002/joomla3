@@ -5,7 +5,7 @@ if( !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not 
 
 /**
  *
- * @version $Id: currencydisplay.php 9495 2017-03-29 16:23:54Z Milbo $
+ * @version $Id: currencydisplay.php 9523 2017-05-04 10:23:55Z Milbo $
  * @package VirtueMart
  * @subpackage classes
  *
@@ -286,7 +286,6 @@ class CurrencyDisplay {
 			$nb = abs($nb);
 		}
 
-		//$res = $this->formatNumber($nb, $nbDecimal, $this->_thousands, $this->_decimal);
 		$res = number_format((float)$nb,(int)$nbDecimal,$this->_decimal,$this->_thousands);
 		$search = array('{sign}', '{number}', '{symbol}');
 		$replace = array($sign, $res, $this->_symbol);
@@ -320,7 +319,11 @@ class CurrencyDisplay {
 
 		//This is a fallback because we removed the "salesPriceWithDiscount" ;
 		if(is_array($product_price)){
-			$price = $product_price[$name] ;
+			if(isset($product_price[$name])){
+				$price = $product_price[$name] ;
+			} else {
+				return '';
+			}
 		} else {
 			$price = $product_price;
 		}

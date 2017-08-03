@@ -15,7 +15,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: default.php 9460 2017-02-28 13:54:01Z kkmediaproduction $
+ * @version $Id: default.php 9523 2017-05-04 10:23:55Z Milbo $
  */
 
 defined ('_JEXEC') or die('Restricted access');
@@ -61,7 +61,7 @@ if (!empty($this->showcategory_desc) and empty($this->keyword) and !empty($this-
 }
 
 // Show child categories
-if ($this->showcategory and $this->keyword === false) {
+if ($this->showcategory and empty($this->keyword)) {
 	if (!empty($this->category->haschildren)) {
 		echo ShopFunctionsF::renderVmSubLayout('categories',array('categories'=>$this->category->children, 'categories_per_row'=>$this->categories_per_row));
 	}

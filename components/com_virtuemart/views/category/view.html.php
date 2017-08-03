@@ -13,7 +13,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: view.html.php 9486 2017-03-23 07:55:05Z Milbo $
+* @version $Id: view.html.php 9503 2017-04-12 21:27:12Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -145,7 +145,7 @@ class VirtuemartViewCategory extends VmView {
 		'categorylayout' => VmConfig::get('categorylayout', 0),
 		'show_store_desc' => VmConfig::get('show_store_desc',1),
 		'showcategory_desc' => VmConfig::get('showcategory_desc', 1),
-		'showcategory' => VmConfig::get('showCategory',1),
+		'showcategory' => VmConfig::get('showcategory',1),
 		'categories_per_row' => VmConfig::get('categories_per_row',3),
 		'showproducts' => VmConfig::get('showproducts',1),
 		'showsearch' => VmConfig::get('showsearch',0),

@@ -28,8 +28,9 @@ $mainframe = JFactory::getApplication();
 			<fieldset>
 				<legend><?php echo vmText::_('COM_VIRTUEMART_FORM_GENERAL'); ?></legend>
 				<table width="100%" border="0">
-					<?php echo VmHTML::row('input','COM_VIRTUEMART_CATEGORY_NAME','category_name',$this->category->category_name,'class="required"'); ?>
-					<?php echo VmHTML::row('input','COM_VIRTUEMART_SLUG','slug',$this->category->slug); ?>
+					<?php echo VmHTML::row('raw','COM_VIRTUEMART_CATEGORY_NAME',VmHtml::input('category_name',$this->category->category_name,'class="required inputbox"').$this->origLang); ?>
+					<?php echo VmHTML::row('raw','COM_VIRTUEMART_SLUG',VmHtml::input('slug',$this->category->slug).$this->origLang); ?>
+					<?php //echo VmHTML::row('input','COM_VIRTUEMART_SLUG','slug',$this->category->slug); ?><?php //echo $this->origLang ?>
 					<?php echo VmHTML::row('checkbox','COM_VIRTUEMART_PUBLISHED','published',$this->category->published); ?>
 					<?php if($this->showVendors() ){
 						echo VmHTML::row('checkbox','COM_VIRTUEMART_SHARED', 'shared', $this->category->shared );
@@ -40,7 +41,7 @@ $mainframe = JFactory::getApplication();
         </td>
         <td valign="top" style="width: 50%;" rowspan="2">
             <fieldset>
-                <legend><?php echo vmText::_('COM_VIRTUEMART_METAINFO'); ?></legend>
+                <legend><?php echo vmText::_('COM_VIRTUEMART_METAINFO'); echo $this->origLang; ?></legend>
 				<?php echo shopFunctions::renderMetaEdit($this->category); ?>
             </fieldset>
         </td>

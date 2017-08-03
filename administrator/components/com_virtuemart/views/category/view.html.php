@@ -14,7 +14,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: view.html.php 9427 2017-01-23 10:18:58Z Milbo $
+ * @version $Id: view.html.php 9499 2017-04-11 13:42:24Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -51,7 +51,9 @@ class VirtuemartViewCategory extends VmViewAdmin {
 			vmLanguage::loadJLang('com_virtuemart_config');
 
 			$category = $model->getCategory('', false, false);
-
+			if(!empty($category->_loadedWithLangFallback)){
+				vmInfo('COM_VM_LOADED_WITH_LANGFALLBACK',$category->_loadedWithLangFallback);
+			}
 			if(!class_exists('VirtuemartViewConfig')) require (VMPATH_ADMIN .'/views/config/view.html.php');
 			// Toolbar
 			$text='';

@@ -11,7 +11,7 @@ defined ('_JEXEC') or die('Direct Access to ' . basename (__FILE__) . ' is not a
  * @author Max Milbers
  * @author Patrick Kohl
  * @copyright Copyright (c) 2004-2008 Soeren Eberhardt-Biermann, 2009 VirtueMart Team. All rights reserved.
- * @version $Id: shopfunctions.php 9458 2017-02-27 11:08:31Z Milbo $
+ * @version $Id: shopfunctions.php 9538 2017-05-10 17:25:03Z Milbo $
  */
 class ShopFunctions {
 
@@ -1052,41 +1052,50 @@ class ShopFunctions {
 			$safePath = $sPath;
 		}
 
+		if(VmConfig::$installed==false or vRequest::getInt('nosafepathcheck',false)){
+			return $safePath;
+		}
+
 		$warn = false;
 		$uri = JFactory::getURI();
 
-		vmLanguage::loadJLang('com_virtuemart');
+
 		if(empty($safePath)){
-			$warn = 'COM_VIRTUEMART_WARN_NO_SAFE_PATH_SET';
+			$warn = 'EMPTY';
 		} else {
 			if(!class_exists('JFolder')) require_once(VMPATH_LIBS.DS.'joomla'.DS.'filesystem'.DS.'folder.php');
 			$exists = JFolder::exists($safePath);
 			if(!$exists){
-				$warn = 'COM_VIRTUEMART_WARN_SAFE_PATH_WRONG';
-			} else{
-				if(!is_writable( $safePath )){
-					vmLanguage::loadJLang('com_virtuemart_config');
-					vmdebug('checkSafePath $safePath not writeable '.$safePath);
-					VmError(vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE',vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'),$safePath)
-						,vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE','',''));
-				} else {
-					if(!is_writable(self::getInvoicePath($safePath) )){
-						vmLanguage::loadJLang('com_virtuemart_config');
-						vmdebug('checkSafePath $safePath/invoice not writeable '.addslashes($safePath));
-						VmError(vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE',vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'),$safePath)
-						,vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE','',''));
-					}
-				}
+				$warn = 'WRONG';
 			}
 		}
 
 		if($warn){
+			vmLanguage::loadJLang('com_virtuemart');
 			$safePath = false;
 			$suggestedPath = shopFunctions::getSuggestedSafePath();
 			$suggestedPath2 = VMPATH_ADMIN.DS.self::generateRandomString(12).DS;
 			vmLanguage::loadJLang('com_virtuemart_config');
 			$configlink = $uri->root() . 'administrator/index.php?option=com_virtuemart&view=config';
-			VmError(vmText::sprintf($warn,vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'),$suggestedPath,$configlink,$suggestedPath2));
+
+			$c = vmText::sprintf('COM_VM_SAFEPATH_EXPLAIN', htmlspecialchars($suggestedPath), $configlink, htmlspecialchars($suggestedPath2));
+			$t = vmText::sprintf('COM_VM_SAFEPATH_WARN_'.$warn, vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'), $c);
+			VmError($t);
+		} else {
+			if(!is_writable( $safePath )){
+				vmLanguage::loadJLang('com_virtuemart_config');
+				vmdebug('checkSafePath $safePath not writeable '.$safePath);
+				VmError(vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE',vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'),$safePath)
+				,vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE','',''));
+			} else {
+				if(!is_writable(self::getInvoicePath($safePath) )){
+					vmLanguage::loadJLang('com_virtuemart_config');
+					vmdebug('checkSafePath $safePath/invoice not writeable '.addslashes($safePath));
+					VmError(vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE',vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'),htmlspecialchars($safePath))
+					,vmText::sprintf('COM_VIRTUEMART_WARN_SAFE_PATH_INV_NOT_WRITEABLE','',''));
+				}
+			}
+
 		}
 
 		return $safePath;

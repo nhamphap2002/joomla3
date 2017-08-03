@@ -13,7 +13,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: view.json.php 9461 2017-02-28 15:37:01Z Milbo $
+* @version $Id: view.json.php 9515 2017-04-29 10:58:57Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -54,20 +54,65 @@ class VirtuemartViewProduct extends VmViewAdmin {
 		} else {
 			$product_id = (int)$virtuemart_product_id;
 		}
-		//$customfield = $this->model->getcustomfield();
+		$useFb = vmLanguage::getUseLangFallback();
+		$useFb2 = vmLanguage::getUseLangFallbackSecondary();
 		/* Get the task */
 		if ($this->type=='relatedproducts') {
-			$query = "SELECT l.virtuemart_product_id AS id, CONCAT(product_name, '::', product_sku) AS value
-				FROM #__virtuemart_products_".VmConfig::$vmlang." as l
-				 JOIN `#__virtuemart_products` AS p ON p.virtuemart_product_id=l.virtuemart_product_id";
-			if (!empty($filter)) $query .= " WHERE product_name LIKE '%". $this->db->escape( $filter, true ) ."%' or product_sku LIKE '%". $this->db->escape( $filter, true ) ."%'";
+
+			$query = "SELECT p.virtuemart_product_id AS id, ";
+
+			$langField = 'product_name';
+			if($useFb){
+				$f2 = 'ld.'.$langField;
+				if($useFb2){
+					$f2 = 'IFNULL(ld.'.$langField.', ljd.'.$langField.')';
+				}
+				$field = 'IFNULL(l.'.$langField.','.$f2.')';
+			} else {
+				$field = 'l.'.$langField;
+			}
+
+			$query .= ' CONCAT('.$field.', "::", product_sku) AS value';
+			$query .= ' FROM `#__virtuemart_products` AS p ';
+
+			$joinedTables = VmModel::joinLangTables('#__virtuemart_products','p','virtuemart_product_id');
+			$query .= " \n".implode(" \n",$joinedTables);
+			if (!empty($filter)){
+				$filter = '"%'.$this->db->escape( $filter, true ).'%"';
+				$fields = VmModel::joinLangWhereFields(array('product_name'),$filter);
+				$query .=  ' WHERE '.implode (' OR ', $fields) ;
+				$query .= ' OR product_sku LIKE '.$filter;
+			}
+
 			self::setRelatedHtml($product_id,$query,'R');
 		}
-		else if ($this->type=='relatedcategories')
-		{
-			$query = "SELECT l.virtuemart_category_id AS id, CONCAT(category_name, '::', virtuemart_category_id) AS value
-				FROM #__virtuemart_categories_".VmConfig::$vmlang." as l";
-			if (!empty($filter)) $query .= " WHERE category_name LIKE '%". $this->db->escape(  $filter, true ) ."%'";
+		else if ($this->type=='relatedcategories') {
+
+
+			$query = "SELECT c.virtuemart_category_id AS id, ";
+
+			$langField = 'category_name';
+			if($useFb){
+				$f2 = 'ld.'.$langField;
+				if($useFb2){
+					$f2 = 'IFNULL(ld.'.$langField.', ljd.'.$langField.')';
+				}
+				$field = 'IFNULL(l.'.$langField.','.$f2.')';
+			} else {
+				$field = 'l.'.$langField;
+			}
+
+			$query .= ' CONCAT('.$field.', "::", c.virtuemart_category_id) AS value';
+			$query .= ' FROM `#__virtuemart_categories` AS c ';
+
+			$joinedTables = VmModel::joinLangTables('#__virtuemart_categories','c','virtuemart_category_id');
+			$query .= " \n".implode(" \n",$joinedTables);
+			if (!empty($filter)){
+				$filter = '"%'.$this->db->escape( $filter, true ).'%"';
+				$fields = VmModel::joinLangWhereFields(array('category_name'),$filter);
+				$query .=  ' WHERE '.implode (' OR ', $fields) ;
+			}
+
 			self::setRelatedHtml($product_id,$query,'Z');
 		}
 		else if ($this->type=='custom')

@@ -13,7 +13,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: product_edit.php 9413 2017-01-04 17:20:58Z Milbo $
+* @version $Id: product_edit.php 9499 2017-04-11 13:42:24Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -24,6 +24,14 @@ $document = JFactory::getDocument();
 
 vmJsApi::JvalideForm();
 $this->editor = JFactory::getEditor();
+
+$origLang = '';
+if(!empty($this->product->_loadedWithLangFallback)){
+	$origLang = '(<span class="allflags flag-'.$this->product->_loadedWithLangFallback.'"></span>)';
+}
+
+$this->origLang = '<span class="langfallback">'.$origLang.'</span>';
+
 
 ?>
 <form method="post" name="adminForm" action="index.php" enctype="multipart/form-data" id="adminForm">

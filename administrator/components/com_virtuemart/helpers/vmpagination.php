@@ -601,7 +601,7 @@ class VmPagination extends vObject {
 	 */
 	protected function _list_footer($list)
 	{
-		$html = "<div class=\"list-footer\">\n";
+		$html = "<div class=\"list-footer pagination pagination-toolbar clearfix\">\n";
 
 		$html .= "\n<div class=\"limit\">" . vmText::_('JGLOBAL_DISPLAY_NUM') . $list['limitfield'] . "</div>";
 		$html .= $list['pageslinks'];

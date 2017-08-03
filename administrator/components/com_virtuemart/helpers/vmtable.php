@@ -74,6 +74,7 @@ class VmTable extends vObject implements JObservableInterface, JTableInterface {
 	public $_cryptedFields = false;
 	protected $_langTag = null;
 	public $_ltmp = false;
+	public $_loadedWithLangFallback = 0;
 	public $_loaded = false;
 	protected $_updateNulls = false;
 
@@ -1076,7 +1077,7 @@ class VmTable extends vObject implements JObservableInterface, JTableInterface {
 
 				//vmdebug('No result for '.$this->_ltmp.', lets check for Fallback lang '.$this->_langTag);
 				//vmSetStartTime('lfallback');
-
+				$this->_loadedWithLangFallback = VmConfig::$defaultLangTag;
 				$this->load($oid, $overWriteLoadName, $andWhere, $tableJoins, $joinKey) ;
 				//vmTime('Time to load language fallback '.$this->_langTag, 'lfallback');
 			} else {
@@ -1443,9 +1444,10 @@ class VmTable extends vObject implements JObservableInterface, JTableInterface {
 				$this->virtuemart_vendor_id = 1;
 				return true;
 			} else {
-				$user = JFactory::getUser();
-				$loggedVendorId = vmAccess::isSuperVendor($user->id);
-				vmdebug('Table '.$this->_tbl.' check '.$loggedVendorId);
+				//$user = JFactory::getUser();
+				//$loggedVendorId = vmAccess::isSuperVendor($user->id);
+				$loggedVendorId = vmAccess::isSuperVendor();
+				//vmdebug('Table '.$this->_tbl.' check '.$loggedVendorId,$user->id);
 				$user_is_vendor = 0;
 				$tbl_key = $this->_tbl_key;
 				$className = get_class($this);

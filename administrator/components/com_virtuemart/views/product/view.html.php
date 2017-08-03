@@ -13,7 +13,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: view.html.php 9461 2017-02-28 15:37:01Z Milbo $
+ * @version $Id: view.html.php 9499 2017-04-11 13:42:24Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -64,12 +64,17 @@ class VirtuemartViewProduct extends VmViewAdmin {
 				}
 
 				$product = $model->getProductSingle($virtuemart_product_id,false);
+
+				if(!empty($product->_loadedWithLangFallback)){
+					vmInfo('COM_VM_LOADED_WITH_LANGFALLBACK',$product->_loadedWithLangFallback);
+				}
+
 				//$user = JFactory::getUser();
 				//$superVendor =  vmAccess::isSuperVendor();
 				//vmdebug('$superVendor by vmAccess::isSuperVendor',$superVendor);
 				$superVendor = vmAccess::getVendorId();
 				vmdebug('$superVendor by vmAccess::getVendorId',$superVendor);
-				if( $superVendor !=1 and $superVendor!=$product->virtuemart_vendor_id){
+				if(!empty($product->virtuemart_vendor_id) and $superVendor !=1 and $superVendor!=$product->virtuemart_vendor_id){
 					vmdebug('Product view.html.php '.$superVendor,$product->virtuemart_vendor_id);
 					JFactory::getApplication()->redirect( 'index.php?option=com_virtuemart&view=virtuemart', vmText::_('COM_VIRTUEMART_ALERTNOTAUTHOR'), 'error');
 				}
@@ -558,13 +563,7 @@ class VirtuemartViewProduct extends VmViewAdmin {
 		static $c = array(0=>'');
 		if(!isset($c[$product_parent_id])){
 
-			//$parent = $this->model->getProductSingle($product_parent_id, false, 1, false, 0, false);
 			$parent = $this->model->getProductSingle($product_parent_id, false);
-			//$langFback = ( !VmConfig::get('prodOnlyWLang',false) and VmConfig::$defaultLang!=VmConfig::$vmlang and VmConfig::$langCount>1 );
-			/*$db = JFactory::getDBO();
-			$q = ' SELECT * FROM `#__virtuemart_products` AS p INNER JOIN `#__virtuemart_products_'.VmConfig::$vmlang.'` as l ON p.virtuemart_product_id=l.virtuemart_product_id WHERE p.`virtuemart_product_id` = "'.$product_parent_id.'"';
-			$db->setQuery($q);
-			if ($parent = $db->loadObject()){//*/
 
 			if (!empty($parent->product_name)){
 				$result = vmText::sprintf('COM_VIRTUEMART_LIST_CHILDREN_FROM_PARENT', htmlentities($parent->product_name));

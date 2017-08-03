@@ -13,14 +13,14 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: edit_address.php 9413 2017-01-04 17:20:58Z Milbo $
+ * @version $Id: edit_address.php 9523 2017-05-04 10:23:55Z Milbo $
  */
 // Check to ensure this file is included in Joomla!
 defined ('_JEXEC') or die('Restricted access');
 
 // Implement Joomla's form validation
 vmJsApi::vmValidator();
-JHtml::stylesheet ('vmpanels.css', JURI::root () . 'components/com_virtuemart/assets/css/');
+vmJsApi::css('vmpanels');
 
 if (!class_exists('VirtueMartCart')) require(VMPATH_SITE . DS . 'helpers' . DS . 'cart.php');
 $this->cart = VirtueMartCart::getCart();

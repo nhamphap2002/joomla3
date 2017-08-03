@@ -16,7 +16,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: orders.php 9494 2017-03-29 16:19:53Z Milbo $
+ * @version $Id: orders.php 9500 2017-04-11 19:50:26Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -990,7 +990,7 @@ vmdebug('my prices',$data);
 
 				foreach( $inputOrder as $item_id => $order_item_data ) {
 
-					if($item_id=='customer_notified') continue;
+					if(!empty($item_id) and $item_id=='customer_notified') continue;	//Attention, we need the check against empty, else it continues for "0"
 
 					$order_item_data['current_order_status'] = $order_item_data['order_status'];
 					if(!isset( $order_item_data['comments'] )) $order_item_data['comments'] = '';

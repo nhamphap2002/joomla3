@@ -13,12 +13,12 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: details.php 9413 2017-01-04 17:20:58Z Milbo $
+* @version $Id: details.php 9523 2017-05-04 10:23:55Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
-JHtml::stylesheet('vmpanels.css', JURI::root().'components/com_virtuemart/assets/css/');
+vmJsApi::css('vmpanels');
 if($this->print){
 	?>
 

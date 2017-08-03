@@ -13,7 +13,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: view.html.php 9448 2017-02-16 20:37:26Z Milbo $
+* @version $Id: view.html.php 9514 2017-04-29 10:49:15Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -88,6 +88,7 @@ class VirtuemartViewConfig extends VmViewAdmin {
 
 		$this->currConverterList = $model->getCurrencyConverterList();
 
+		$this->activeShopLanguage = $model->getActiveLanguages( VmConfig::get('vmDefLang'), 'vmDefLang', false, 'COM_VIRTUEMART_ADMIN_CFG_POOS_GLOBAL' );
 		$this->activeLanguages = $model->getActiveLanguages( VmConfig::get('active_languages') );
 
 		$this->orderByFieldsProduct = $model->getProductFilterFields('browse_orderby_fields');

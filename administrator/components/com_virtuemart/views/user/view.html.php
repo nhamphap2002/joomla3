@@ -13,7 +13,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: view.html.php 9493 2017-03-29 16:10:08Z Milbo $
+ * @version $Id: view.html.php 9523 2017-05-04 10:23:55Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -136,7 +136,7 @@ class VirtuemartViewUser extends VmViewAdmin {
 			// Load the required stylesheets
 			if (count($userFieldsBT['links']) > 0) {
 				foreach ($userFieldsBT['links'] as $_link => $_path) {
-					JHtml::stylesheet($_link, $_path);
+					vmJsApi::css($_link, $_path);
 				}
 			}
 

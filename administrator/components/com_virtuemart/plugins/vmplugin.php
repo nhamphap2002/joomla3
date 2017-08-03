@@ -89,6 +89,8 @@ abstract class vmPlugin extends JPlugin {
 			foreach($this->_toConvertDec as $f){
 				if(!empty($data[$f])){
 					$data[$f] = str_replace(array(',',' '),array('.',''),$data[$f]);
+				} else if(isset($data[$f])){
+					$data[$f] = 0.0;
 				}
 			}
 		}
@@ -329,7 +331,7 @@ abstract class vmPlugin extends JPlugin {
 		$db = JFactory::getDBO ();
 
 		$q = 'SELECT j.`extension_id` AS c FROM #__extensions AS j
-					WHERE j.element = "' . $this->_name . '" AND j.`folder` = "' . $this->_type . '"';
+					WHERE j.element = "' . $this->_name . '" AND j.`folder` = "' . $this->_type . '" and `enabled`= "1" and `state`="0" ';
 
 		$db->setQuery ($q);
 		$this->_jid = $db->loadResult ();
@@ -374,7 +376,7 @@ abstract class vmPlugin extends JPlugin {
 			vmdebug('onStoreInstallPluginTable result of table already exists? ',$result);
 			if ($result) {
 				$update[$this->_tablename] = array($tablesFields, array(), array());
-				vmdebug(get_class($this) . ':: VirtueMart2 update ' . $this->_tablename);
+				vmdebug(get_class($this) . ':: VirtueMart update ' . $this->_tablename);
 				if (!class_exists('GenericTableUpdater'))
 					require(VMPATH_ADMIN . DS . 'helpers' . DS . 'tableupdater.php');
 				$updater = new GenericTableUpdater();

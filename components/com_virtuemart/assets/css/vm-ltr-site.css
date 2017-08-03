@@ -44,6 +44,11 @@
   height: auto;
 }
 
+.additional-images .vm-img-desc{
+  width: inherit;
+  height: auto;
+}
+
 .product-price{
   margin: 0 0 6px;
   text-align: right;
@@ -1386,7 +1391,7 @@ div[class*="-view"] .row{
 }
 
 .vm-payment-plugin-single label, .vm-shipment-plugin-single label {
-  display: inline-block;
+  display: inline;
 }
 /* Chosen */
 .chzn-container, .chzn-drop{

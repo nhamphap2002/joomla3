@@ -14,7 +14,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: updatesmigration.php 9496 2017-03-29 19:08:32Z Milbo $
+ * @version $Id: updatesmigration.php 9538 2017-05-10 17:25:03Z Milbo $
  */
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
@@ -428,7 +428,7 @@ class VirtuemartControllerUpdatesMigration extends VmController{
 
 			if($sample) $model->installSampleData($sid);
 
-			if(!class_exists('VmConfig')) require_once(VMPATH_ADMIN .'/models/config.php');
+			if(!class_exists('VirtueMartModelConfig')) require_once(VMPATH_ADMIN .'/models/config.php');
 			VirtueMartModelConfig::installVMconfigTable();
 
 			//Now lets set some joomla variables
@@ -467,7 +467,7 @@ class VirtuemartControllerUpdatesMigration extends VmController{
 			$msg = $this->_getMsgDangerousTools();
 		}
 
-		$this->setRedirect('index.php?option=com_virtuemart&view=updatesmigration&layout=insfinished', $msg);
+		$this->setRedirect('index.php?option=com_virtuemart&view=updatesmigration&layout=insfinished&nosafepathcheck=1', $msg);
 	}
 
 	/**

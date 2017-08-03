@@ -20,10 +20,11 @@
 defined('_JEXEC') or die('Restricted access');
 
 $categories = $viewData['categories'];
-$categories_per_row = !empty($viewData['categories_per_row'])? $viewData['categories_per_row']:VmConfig::get ( 'categories_per_row', 3 );
-
 
 if ($categories) {
+
+$categories_per_row = !empty($viewData['categories_per_row'])? $viewData['categories_per_row']:VmConfig::get ( 'categories_per_row', 3 );
+if(empty($categories_per_row)) $categories_per_row = 3;
 
 // Category and Columns Counter
 $iCol = 1;

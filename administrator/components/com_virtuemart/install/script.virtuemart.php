@@ -127,8 +127,8 @@ if (!defined('_VM_SCRIPT_INCLUDED')) {
 			$this->loadVm(true);
 
 			$_REQUEST['install'] = 1;
-			if(!class_exists('JFile')) require(VMPATH_LIBS.DS.'joomla'.DS.'filesystem'.DS.'file.php');
-			if(!class_exists('JFolder')) require(VMPATH_LIBS.DS.'joomla'.DS.'filesystem'.DS.'folder.php');
+			if(!class_exists('JFile')) require(VMPATH_LIBS .'/joomla/filesystem/file.php');
+			if(!class_exists('JFolder')) require(VMPATH_LIBS .'/joomla/filesystem/folder.php');
 
 			$this -> joomlaSessionDBToMediumText();
 
@@ -166,11 +166,9 @@ if (!defined('_VM_SCRIPT_INCLUDED')) {
 			$this->createIndexFolder(VMPATH_ROOT .DS. 'images'.DS.'virtuemart'.DS.'forSale'.DS.'resized');
 			$this->createIndexFolder(VMPATH_ROOT .DS. 'images'.DS.'virtuemart'.DS.'typeless');
 
+			$this->installLanguageTables();
 
 
-			if(!class_exists('GenericTableUpdater')) require($this->path . DS . 'helpers' . DS . 'tableupdater.php');
-			$updater = new GenericTableUpdater();
-			$updater->createLanguageTables();
 
 			$this->checkAddDefaultShoppergroups();
 
@@ -275,7 +273,8 @@ if (!defined('_VM_SCRIPT_INCLUDED')) {
 			$updater = new GenericTableUpdater();
 
 			$updater->updateMyVmTables();
-			$result = $updater->createLanguageTables();
+			$this->installLanguageTables();
+
 
 			$this->checkAddDefaultShoppergroups();
 
@@ -301,7 +300,12 @@ if (!defined('_VM_SCRIPT_INCLUDED')) {
 			$model->updateJoomlaUpdateServer('component','com_virtuemart', $this->source_path.DS.'virtuemart.xml');
 
 			//fix joomla BE menu
-			$this->checkFixJoomlaBEMenuEntries();
+			if(version_compare(JVERSION,'3.7.0','ge')) {
+				$this->removeOldMenuLinks();
+			} else {
+				$this->checkFixJoomlaBEMenuEntries();
+			}
+
 
 			$this->deleteSwfUploader();
 
@@ -309,6 +313,11 @@ if (!defined('_VM_SCRIPT_INCLUDED')) {
 			if($loadVm) $this->displayFinished(true);
 
 			return true;
+		}
+
+		private function installLanguageTables(){
+			VmModel::getModel('config');
+			VirtueMartModelConfig::installLanguageTables();
 		}
 
 		private function updateOldConfigEntries(){
@@ -602,6 +611,20 @@ if (!defined('_VM_SCRIPT_INCLUDED')) {
 						$ok = false;
 					}
 				}
+			}
+
+		}
+
+		public function removeOldMenuLinks(){
+
+			$db = JFactory::getDbo();
+			$db->setQuery('SELECT `extension_id` FROM `#__extensions` WHERE `type` = "component" AND `element`="com_virtuemart" and state="0"');
+			$jId = $db->loadResult();
+
+			if($jId){
+				$db = JFactory::getDbo();
+				$db->setQuery('DELETE FROM `#__menu` WHERE `component_id` = "'.$jId.'" AND `type` = "component" AND `menutype`="vmadmin"');
+				$db->execute();
 			}
 
 		}

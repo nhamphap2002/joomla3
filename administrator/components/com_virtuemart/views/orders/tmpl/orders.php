@@ -13,7 +13,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: orders.php 9480 2017-03-16 23:52:37Z Milbo $
+ * @version $Id: orders.php 9522 2017-05-02 14:23:52Z StefanSTS $
  */
 // Check to ensure this file is included in Joomla!
 defined ('_JEXEC') or die('Restricted access');
@@ -80,7 +80,7 @@ $styleDateCol = 'style="width:5%;min-width:110px"';
 				$checked = JHtml::_ ('grid.id', $i, $order->virtuemart_order_id);
 				//vmdebug('My order',$order);
 				?>
-			<tr class="row<?php echo $k; ?>">
+			<tr class="row<?php echo $k . ' status-'. strtolower($order->order_status); ?>">
 				<!-- Checkbox -->
 				<td class="admin-checkbox"><?php echo $checked; ?></td>
 				<!-- Order id -->

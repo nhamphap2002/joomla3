@@ -33,6 +33,7 @@
 .bartext { display: block;font-size: 12px;font-weight: bold;line-height: 32px;vertical-align: inherit;white-space: nowrap;width: auto !important;}
 /* Pagination Override Bluestork */
 .pagination div.limit {display: inline-flex;}
+.list-footer.pagination.pagination-toolbar div.limit {float: right;}
 div#limit_chzn {margin: 0 0 0 6px;}
 div#limit_chzn .chzn-search {display: none;}
 
@@ -228,9 +229,13 @@ a:hover.signin-button-link {text-decoration:none;background: #D7D7D7;}
 .menu-collapsed a:hover .menu-subtitle{ opacity: 1; border: 1px solid #ccc;}
 .menu-collapsed #admin-ui-menu h3.menu-title:hover, .menu-collapsed #admin-ui-menu .menu-list ul li a:hover { width: auto;}
 .menu-collapsed .vm-installed-version { opacity: 0;}
-
+.menu-collapsed > div > div > p {overflow: hidden;}
 .vm-lang-list-container{ z-index:20;}
 .vm-lang-list-container img{float:right;}
 .vm-drop{min-width:100px;width:100%;max-width:207px;}
 
 .pr-price-derivated {color:#808080}
+
+#show_hide_prices.admintable tr:nth-child(2n) {background-color: #f8f8f8;}
+#show_hide_prices.admintable th, #show_hide_prices.admintable td {min-width: 72px;padding: 0 4px;text-align: center;border-left: 1px solid #ccc;}
+#show_hide_prices.admintable th:first-child, #show_hide_prices.admintable td:first-child {border-left: 0;text-align: left;}

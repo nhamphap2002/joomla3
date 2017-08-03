@@ -13,7 +13,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: view.html.php 9413 2017-01-04 17:20:58Z Milbo $
+ * @version $Id: view.html.php 9533 2017-05-09 14:23:06Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -52,6 +52,7 @@ class VirtuemartViewUpdatesMigration extends VmViewAdmin {
 			$this->setLayout('install');
 		}
 
+		vmLanguage::loadJLang('com_virtuemart_config');
 		parent::display($tpl);
 	}
 

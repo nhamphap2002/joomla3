@@ -14,7 +14,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: shopfunctionsf.php 9457 2017-02-27 10:55:17Z Milbo $
+ * @version $Id: shopfunctionsf.php 9517 2017-04-29 11:03:43Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -523,7 +523,7 @@ class shopFunctionsF {
 			$vu = JFactory::getUser($vendorUserId);
 			$vLang = $vu->getParam('admin_language',VmConfig::$jDefLangTag);
 
-			vmLanguage::setLanguageByTag($vLang);
+			self::loadOrderLanguages($vLang);
 			self::sendVmMail( $view, $view->vendorEmail, TRUE );
 		}
 

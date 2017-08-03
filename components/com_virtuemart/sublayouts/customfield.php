@@ -20,7 +20,6 @@ class VirtueMartCustomFieldRenderer {
 
 	static function renderCustomfieldsFE(&$product,&$customfields,$virtuemart_category_id){
 
-
 		static $calculator = false;
 		if(!$calculator){
 			if (!class_exists ('calculationHelper')) {
@@ -76,7 +75,6 @@ class VirtueMartCustomFieldRenderer {
 			switch ($type) {
 
 				case 'C':
-
 					$html = '';
 
 					$dropdowns = array();
@@ -609,14 +607,45 @@ class VirtueMartCustomFieldRenderer {
 					if(!$related) break;
 
 					$thumb = '';
-					if($customfield->wImage){
-						if (!empty($related->virtuemart_media_id[0])) {
-							$thumb = VirtueMartModelCustomfields::displayCustomMedia ($related->virtuemart_media_id[0],'product',$customfield->width,$customfield->height).' ';
+					if($customfield->wImage) {
+						if(!empty( $related->virtuemart_media_id[0] )) {
+							$thumb = VirtueMartModelCustomfields::displayCustomMedia( $related->virtuemart_media_id[0], 'product', $customfield->width, $customfield->height ).' ';
 						} else {
-							$thumb = VirtueMartModelCustomfields::displayCustomMedia (0,'product',$customfield->width,$customfield->height).' ';
+							$thumb = VirtueMartModelCustomfields::displayCustomMedia( 0, 'product', $customfield->width, $customfield->height ).' ';
 						}
 					}
 
+					if($customfield->waddtocart){
+						if (!empty($related->customfields)) {
+
+							if (!class_exists ('vmCustomPlugin')) {
+								require(JPATH_VM_PLUGINS . DS . 'vmcustomplugin.php');
+							}
+							$customfieldsModel = VmModel::getModel ('customfields');
+							if(empty($customfield->from)) {
+								$customfield->from = $related->virtuemart_product_id;
+								$customfieldsModel -> displayProductCustomfieldFE ($related, $related->customfields);
+							} else if($customfield->from!=$related->virtuemart_product_id){
+								$customfieldsModel -> displayProductCustomfieldFE ($related, $related->customfields);
+							}
+
+						}
+						$isCustomVariant = false;
+						if (!empty($related->customfields)) {
+							foreach ($related->customfields as $k => $custom) {
+								if($custom->field_type == 'C' and $custom->virtuemart_product_id != (int)$customfield->customfield_value){
+									$isCustomVariant = $custom;
+								}
+								if (!empty($custom->layout_pos)) {
+									$related->customfieldsSorted[$custom->layout_pos][] = $custom;
+								} else {
+									$related->customfieldsSorted['normal'][] = $custom;
+								}
+								unset($related->customfields);
+							}
+
+						}
+					}
 					$customfield->display = shopFunctionsF::renderVmSubLayout('related',array('customfield'=>$customfield,'related'=>$related, 'thumb'=>$thumb));
 
 					break;
@@ -643,17 +672,19 @@ class VirtueMartCustomFieldRenderer {
 			$variantmods = json_decode($variantmods,true);
 		}
 
-		//if(empty($variantmods)){
+		//We let that here as Fallback
+		if(empty($product->customfields)){
+
 			$productDB = VmModel::getModel('product')->getProduct($product->virtuemart_product_id);
-			if($productDB and isset($productDB->customfields)){
+			if($productDB and $productDB->customfields){
+
 				$product->customfields = $productDB->customfields;
 			} else {
 				$product->customfields = array();
 			}
-		//}
-
+		}
+		vmdebug('renderCustomfieldsCart $variantmods',$variantmods);
 		$productCustoms = array();
-
 		foreach( (array)$product->customfields as $prodcustom){
 
 			//We just add the customfields to be shown in the cart to the variantmods
@@ -661,16 +692,21 @@ class VirtueMartCustomFieldRenderer {
 
 				//We need this here to ensure that broken customdata of order items is shown updated info, or at least displayed,
 				if($prodcustom->is_cart_attribute or $prodcustom->is_input){
-					if(!isset($variantmods[$prodcustom->virtuemart_custom_id])){
-						$variantmods[$prodcustom->virtuemart_custom_id] = $prodcustom->virtuemart_customfield_id;
+
+					//The problem here is that a normal value and an array can be valid. The function should complement, or update the product. So we are not allowed
+					//to override existing values. When the $variantmods array is not set for the key, then we add an array, when the customproto is used more than one time
+					//the missing values are added with an own key.
+					if(!isset($variantmods[$prodcustom->virtuemart_custom_id]) or (is_array($variantmods[$prodcustom->virtuemart_custom_id]) and !isset($variantmods[$prodcustom->virtuemart_custom_id][$prodcustom->virtuemart_customfield_id])) ){
+						$variantmods[$prodcustom->virtuemart_custom_id][$prodcustom->virtuemart_customfield_id] = $prodcustom->virtuemart_customfield_id;
+						//vmdebug('foreach $variantmods $customfield_id ', $prodcustom->virtuemart_custom_id, $prodcustom->virtuemart_customfield_id,$variantmods);
 					}
 				}
 
 				$productCustoms[$prodcustom->virtuemart_customfield_id] = $prodcustom;
 			}
 		}
-
-		foreach ( (array)$variantmods as $custom_id => $customfield_ids) {
+		vmdebug('renderCustomfieldsCart $variantmods foreach',$variantmods);
+		foreach ( (array)$variantmods as $i => $customfield_ids) {
 
 			if(!is_array($customfield_ids)){
 				$customfield_ids = array( $customfield_ids =>false);
@@ -679,7 +715,7 @@ class VirtueMartCustomFieldRenderer {
 			foreach($customfield_ids as $customfield_id=>$params){
 
 				if(empty($productCustoms) or !isset($productCustoms[$customfield_id])){
-					vmdebug('displayProductCustomfieldSelected continue');
+					//vmdebug('displayProductCustomfieldSelected continue',$customfield_id,$productCustoms);
 					continue;
 				}
 				$productCustom = $productCustoms[$customfield_id];

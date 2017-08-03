@@ -113,18 +113,35 @@ class vmJsApi{
 		foreach(self::$_jsAdd as $name => &$jsToAdd){
 
 			if($jsToAdd['written']) continue;
-			if($jsToAdd['inline'] or !$jsToAdd['script'] or (strpos($jsToAdd['script'],'/')===0 and strpos($jsToAdd['script'],'//<![CDATA[')!==0)){ //strpos($script,'/')===0){
 
-				if(!$jsToAdd['script']){
-					$file = $name;
-				} else {
-					$file = $jsToAdd['script'];
+			$urlType = 0;
+			if(!$jsToAdd['script']){
+				$file = $name;
+				$cdata = false;
+			} else {
+				$file = $jsToAdd['script'];
+				$cdata = (strpos($file,'//<![CDATA['));
+			}
+
+			if($cdata!==false){
+				$cdata = true;
+				vmdebug('found CDATA '.$name);
+			} else {
+				if(strpos($file,'/')===0) {
+					$urlType = 1;
 				}
+				if(strpos($file,'//')===0 or strpos($file,'http://')===0 or strpos($file,'https://')===0){
+					$urlType = 2;
+				}
+			}
 
-				if(strpos($file,'/')!==0 and !$jsToAdd['inline']){
+			if($jsToAdd['inline'] or !$jsToAdd['script'] or $urlType){
+
+
+
+				if(!$urlType and !$jsToAdd['inline']){
 					$file = vmJsApi::setPath($file,false,'');
-				}
-				else if(strpos($file,'//')!==0){
+				} else if($urlType === 1){
 					$file = JURI::root(true).$file;
 				}
 
@@ -162,7 +179,7 @@ class vmJsApi{
 				if(!empty($script)) {
 					$script = trim($script,chr(13));
 					$script = trim($script,chr(10));
-					if(strpos($script,'//<![CDATA[')===false){
+					if($cdata===false){
 						$html .= '<script id="'.$name.'_js" type="text/javascript">//<![CDATA[ '.chr(10).$script.' //]]>'.chr(10).'</script>';
 					} else {
 						$html .= '<script id="'.$name.'_js" type="text/javascript"> '.$script.' </script>';
@@ -188,7 +205,7 @@ class vmJsApi{
 	 * @param   boolean  load minified version
 	 * @return  nothing
 	 */
-	public static function js($namespace,$path=FALSE,$version='', $minified = false) {
+	public static function js($namespace, $path=FALSE, $version='', $minified = false) {
 		self::addJScript($namespace,false,false);
 	}
 
@@ -201,7 +218,7 @@ class vmJsApi{
 	 * @return  nothing
 	 */
 
-	public static function css($namespace,$path = FALSE ,$version='', $minified = NULL)
+	public static function css($namespace, $path = FALSE, $version='', $minified = NULL)
 	{
 
 		static $loaded = array();
@@ -513,8 +530,7 @@ jQuery(document).ready(function($) {
 	Virtuemart.updateChosenDropdownLayout = function() {
 		var vm2string = {'.$vm2string.'};
 		'.$selector.'.each( function () {
-			var swidth = jQuery(this).css("width")+10;
-			jQuery(this).chosen({enable_select_all: true,select_all_text : vm2string.select_all_text,select_some_options_text:vm2string.select_some_options_text,disable_search_threshold: 5, width: swidth});
+			jQuery(this).chosen({enable_select_all: true,select_all_text : vm2string.select_all_text,select_some_options_text:vm2string.select_some_options_text,disable_search_threshold: 5});
 		});
 	}
 	jQuery(document).ready( function() {

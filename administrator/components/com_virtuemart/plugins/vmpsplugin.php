@@ -773,8 +773,10 @@ abstract class vmPSPlugin extends vmPlugin {
 			}
 			foreach ($logo_list as $logo) {
 				if(!empty($logo)){
-					$alt_text = substr ($logo, 0, strpos ($logo, '.'));
-					$img .= '<span class="vmCart' . ucfirst($this->_psType) . 'Logo" ><img align="middle" src="' . JUri::root(true).$url.'/'.$logo . '"  alt="' . $alt_text . '" /></span> ';
+					if(JFile::exists(VMPATH_ROOT .$url .DS.$logo)){
+						$alt_text = substr ($logo, 0, strpos ($logo, '.'));
+						$img .= '<span class="vmCart' . ucfirst($this->_psType) . 'Logo" ><img align="middle" src="' . JUri::root().$url.'/'.$logo . '"  alt="' . $alt_text . '" /></span> ';
+					}
 				}
 			}
 		}
@@ -1035,12 +1037,11 @@ abstract class vmPSPlugin extends vmPlugin {
 
 				$calculator = calculationHelper::getInstance ();
 				foreach($this->_toConvert as $c){
-					if(isset($method->$c)){
+					if(!empty($method->$c)){
 						$method->$c = $calculator->_currencyDisplay->convertCurrencyTo($method->currency_id,$method->$c,true);
 					} else {
 						$method->$c = 0.0;
 					}
-
 				}
 				$method->converted = 1;
 

@@ -193,7 +193,6 @@ class VirtueMartModelCustomfields extends VmModel {
 
 	static function bindCustomEmbeddedFieldParams(&$obj,$fieldtype){
 
-		//vmdebug('bindCustomEmbeddedFieldParams begin',$obj);
 		if(!class_exists('VirtueMartModelCustom')) require(VMPATH_ADMIN.DS.'models'.DS.'custom.php');
 
 		if ($obj->field_type == 'E') {
@@ -703,9 +702,13 @@ class VirtueMartModelCustomfields extends VmModel {
 						$mM = VmModel::getModel('media');
 
 						foreach ($values as $key => $val) {
+							if(empty($val)) continue;
 							$mM->setId($val);
 							$file = $mM->getFile();
-
+							if(empty($file->file_type)){
+								vmAdminInfo('The media customfield "'.$field->custom_title.'" with custom_id = '.$field->virtuemart_custom_id.' tries to load a non existing media with id = '.$val);
+								continue;
+							}
 							$tmp = array('value' => $val, 'text' => $file->file_name);
 							$options[] = (object)$tmp;
 						}
@@ -899,9 +902,6 @@ class VirtueMartModelCustomfields extends VmModel {
 		if (!class_exists ('VmMediaHandler'))
 			require(VMPATH_ADMIN . DS . 'helpers' . DS . 'mediahandler.php');
 		$media = VmMediaHandler::createMedia ($data, $table);
-
-		if(!$width) $width = VmConfig::get('img_width',90);
-		if(!$height) $height = VmConfig::get('img_height',90);
 
 		return $media->displayMediaThumb ('', FALSE, '', TRUE, TRUE, $absUrl, $width, $height);
 	}

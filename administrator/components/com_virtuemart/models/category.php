@@ -14,7 +14,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: category.php 9458 2017-02-27 11:08:31Z Milbo $
+* @version $Id: category.php 9515 2017-04-29 10:58:57Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -193,18 +193,23 @@ class VirtueMartModelCategory extends VmModel {
 		if(!$lang){
 			$lang = VmConfig::$vmlang;
 		}
-
-		if(VmConfig::$defaultLang!=$lang and VmConfig::$langCount>1){
+		$langFb = vmLanguage::getUseLangFallback();
+		if($langFb){
 
 			$langFields = array('category_name','category_description','metadesc','metakey','customtitle','slug');
 
 			$joins = array();
-			$useJLback = false;
-			$method = 'INNER';
-			if(VmConfig::$defaultLang!=VmConfig::$jDefLang){
+			$useJLback = vmLanguage::getUseLangFallbackSecondary();
+
+
+			$method = 'LEFT';
+			if(!VmConfig::get('dualFallback',false)){
+				$method = 'INNER';
+			}
+
+			if($useJLback ){
 				$joins[] = ' '.$method.' JOIN `#__virtuemart_categories_'.VmConfig::$jDefLang.'` as ljd ON ljd.`virtuemart_category_id` = c.`virtuemart_category_id`';
 				$method = 'LEFT';
-				$useJLback = true;
 			}
 			$select = 'SELECT c.*';
 			foreach($langFields as $langField){
@@ -250,6 +255,7 @@ class VirtueMartModelCategory extends VmModel {
 				$child->virtuemart_media_id = $xrefTable->load($child->virtuemart_category_id);
 			}
 		}
+		//vmdebug('my categories',$childList);
 		return $childList;
 	}
 
@@ -341,35 +347,24 @@ class VirtueMartModelCategory extends VmModel {
 			$vendorId = vmAccess::isSuperVendor();
 		}
 
-		if($vendorId!=1){
+		$app = JFactory::getApplication();
+		$isSite = true;
+		if($app->isAdmin() or (vRequest::get('manage',false) and vmAccess::manager('manage')) ){
+			$isSite = false;
+		}
 
+		if($vendorId!=1){
+			if($isSite and $vendorId==0){
+				$vendorId = 1;
+			}
 			$where[] = ' (c.`virtuemart_vendor_id` = "'. (int)$vendorId. '" OR c.`shared` = "1") ';
 		}
 
 		$langFields = array('category_description','category_name');
 
-		$langFback = ( !VmConfig::get('prodOnlyWLang',false) and VmConfig::$defaultLang!=VmConfig::$vmlang and VmConfig::$langCount>1 );
-
-		if($langFback){
-
-			$useJLback = false;
-			if(VmConfig::$defaultLang!=VmConfig::$jDefLang){
-				$joins .= ' LEFT JOIN `#__virtuemart_categories_'.VmConfig::$jDefLang.'` as ljd ON ljd.`virtuemart_category_id` = c.`virtuemart_paymentmethod_id`';
-				$useJLback = true;
-			}
-			foreach($langFields as $langField){
-				$expr2 = 'ld.'.$langField;
-				if($useJLback){
-					$expr2 = 'IFNULL(ld.'.$langField.',ljd.'.$langField.')';
-				}
-				$select .= ', IFNULL(l.'.$langField.','.$expr2.') as '.$langField.'';
-			}
-			$joins .= ' LEFT JOIN `#__virtuemart_categories_'.VmConfig::$defaultLang.'` as ld ON ld.`virtuemart_category_id` = c.`virtuemart_category_id`';
-			$joins .= ' LEFT JOIN `#__virtuemart_categories_'.VmConfig::$vmlang.'` as l ON l.`virtuemart_category_id` = c.`virtuemart_category_id`';
-		} else {
-			$select .= ', category_description, category_name';
-			$joins .= ' LEFT JOIN `#__virtuemart_categories_'.VmConfig::$vmlang.'` as l ON l.`virtuemart_category_id` = c.`virtuemart_category_id` ';
-		}
+		$langFback = vmLanguage::getUseLangFallback();
+		$select .= ', '.implode(', ',self::joinLangSelectFields($langFields));
+		$joins .= implode(' ',self::joinLangTables($this->_maintable,'c','virtuemart_category_id'));
 
 		$joins .= ' LEFT JOIN `#__virtuemart_category_categories` AS cx ON c.`virtuemart_category_id` = cx.`category_child_id`';
 
@@ -377,16 +372,11 @@ class VirtueMartModelCategory extends VmModel {
 		$whereOr = array();
 		if( !empty( $keyword ) ) {
 			$db = JFactory::getDBO();
-			$keyword = '"%' . $db->escape( $keyword, true ) . '%"' ;
-			foreach ($langFields as $langField) {
-				$whereOr[] =  '`l`.'.$langField . ' LIKE ' . $keyword;
-				if($langFback){
-					$whereOr[] =  '`ld`.'.$langField . ' LIKE ' . $keyword;
-					if(VmConfig::$defaultLang!=VmConfig::$jDefLang){
-						$whereOr[] =  '`ljd`.'.$langField . ' LIKE ' . $keyword;
-					}
-				}
-			}
+			$keyword = $db->escape( $keyword, true );
+			$keyword =  '"%' .str_replace(array(' ','-'),'%', $keyword). '%"';
+			//$keyword = $db->escape( $keyword, true );
+			$fields = self::joinLangWhereFields($langFields,$keyword);
+			$whereOr = array_merge($whereOr, $fields);
 		}
 
 		$whereString = '';

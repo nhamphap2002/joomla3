@@ -13,7 +13,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: edit.php 9427 2017-01-23 10:18:58Z Milbo $
+* @version $Id: edit.php 9515 2017-04-29 10:58:57Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -21,7 +21,12 @@ defined('_JEXEC') or die('Restricted access');
 
 AdminUIHelper::startAdminArea($this);
 $editor = JFactory::getEditor();
+$origLang = '';
+if(!empty($this->category->_loadedWithLangFallback)){
+	$origLang = '(<span class="allflags flag-'.$this->category->_loadedWithLangFallback.'"></span>)';
+}
 
+$this->origLang = '<span class="langfallback">'.$origLang.'</span>';
 ?>
 
 <form action="index.php" method="post" id="adminForm" name="adminForm" enctype="multipart/form-data">

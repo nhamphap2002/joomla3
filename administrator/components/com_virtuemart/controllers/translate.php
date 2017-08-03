@@ -56,6 +56,7 @@ class VirtuemartControllerTranslate extends VmController {
 		}
 		//Todo create method to load lang fields only
 		$table->load($id);
+
 		$vs = $table->loadFieldValues();
 		$lf = $table->getTranslatableFields();
 
@@ -70,9 +71,10 @@ class VirtuemartControllerTranslate extends VmController {
 		if ($table->getLoaded()) {
 			$json['structure'] = 'filled' ;
 			$json['msg'] = vmText::_('COM_VIRTUEMART_SELECTED_LANG').':'.$lang;
+			$json['byfallback'] = $table->_loadedWithLangFallback;
 
 		} else {
-			$db =JFactory::getDBO();
+			$db = JFactory::getDBO();
 
 			$json['structure'] = 'empty' ;
 			$db->setQuery('SHOW COLUMNS FROM '.$tableName);

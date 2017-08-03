@@ -7,14 +7,14 @@
  * @subpackage Config
  * @author Max Milbers
  * @author RickG
- * @link https://virtuemart.net
+ * @link ${PHING.VM.MAINTAINERURL}
  * @copyright Copyright (c) 2004 - 2014 VirtueMart Team. All rights reserved.
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  * VirtueMart is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: config.php 9468 2017-03-08 22:53:50Z Milbo $
+ * @version $Id: config.php 9544 2017-05-16 12:55:33Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -285,7 +285,7 @@ class VirtueMartModelConfig extends VmModel {
 	/*
 	 * Get the joomla list of languages
 	 */
-	function getActiveLanguages($active_languages, $name = 'active_languages[]') {
+	function getActiveLanguages($active_languages, $name = 'active_languages[]', $multiple = true, $placeholder = 'COM_VIRTUEMART_DRDOWN_NOTMULTILINGUAL') {
 
 		$activeLangs = array() ;
 		$language =JFactory::getLanguage();
@@ -296,7 +296,15 @@ class VirtueMartModelConfig extends VmModel {
 			$activeLangs[] = JHtml::_('select.option', $jLang['tag'] , $jLang['name']) ;
 		}
 
-		return JHtml::_('select.genericlist', $activeLangs, $name, 'size=10 multiple="multiple" data-placeholder="'.vmText::_('COM_VIRTUEMART_DRDOWN_NOTMULTILINGUAL').'"', 'value', 'text', $active_languages );// $activeLangs;
+		if($multiple){
+			$multiple = 'multiple="multiple"';
+		} else {
+			$multiple = '';
+			$emptyOption = JHTML::_ ('select.option', '', vmText::_ ($placeholder));
+			array_unshift ($activeLangs, $emptyOption);
+
+		}
+		return JHtml::_('select.genericlist', $activeLangs, $name, 'size=10  '.$multiple.' data-placeholder="'.vmText::_($placeholder).'"', 'value', 'text', $active_languages );// $activeLangs;
 	}
 
 
@@ -443,7 +451,7 @@ class VirtueMartModelConfig extends VmModel {
 			}
 			$config->set('forSale_path',$safePath);
 		} else {
-			VmWarn('COM_VIRTUEMART_WARN_SAFE_PATH_NO_INVOICE',vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'));
+			//VmWarn('COM_VIRTUEMART_WARN_SAFE_PATH_NO_INVOICE',vmText::_('COM_VIRTUEMART_ADMIN_CFG_MEDIA_FORSALE_PATH'));
 		/*	$safePath = VMPATH_ROOT.DS.'administrator'.DS.'components'.DS.'com_virtuemart'.DS.'vmfiles';
 
 			$exists = JFolder::exists($safePath);
@@ -483,10 +491,10 @@ class VirtueMartModelConfig extends VmModel {
 			}
 		}
 
+		$conf_langs = self::getContentLanguages();
 		$active_langs = $config->get('active_languages');
 		if(empty($active_langs)){
-			$active_langs = array(VmConfig::$jDefLangTag);
-			$config->set('active_languages',$active_langs);
+			$config->set('active_languages',$conf_langs);
 		}
 
 		//ATM we want to ensure that only one config is used
@@ -501,9 +509,7 @@ class VirtueMartModelConfig extends VmModel {
 
 		$d = array_diff($active_langs,$oldLangs);
 		if(!empty($d)){
-			if(!class_exists('GenericTableUpdater')) require(VMPATH_ADMIN . DS . 'helpers' . DS . 'tableupdater.php');
-			$updater = new GenericTableUpdater();
-			$result = $updater->createLanguageTables();
+			self::installLanguageTables();
 		}
 
 		$cache = VmConfig::getCache();
@@ -522,6 +528,33 @@ class VirtueMartModelConfig extends VmModel {
 		$cache->clean('page');
 
 		return true;
+	}
+
+	static public function getContentLanguages(){
+		$langs = VmConfig::get('active_languages',false);
+		if(empty($langs)){
+			if (class_exists('JLanguageHelper') && (method_exists('JLanguageHelper', 'getLanguages'))) {
+				$languages = JLanguageHelper::getLanguages('lang_code');
+				foreach($languages as $k=>$v){
+					if($v->published==1 and $v->access==1){
+						$langs[] = $k;
+					}
+				}
+			}
+			if(empty($langs)){
+				$langs = array(VmConfig::$jDefLangTag);
+			}
+		}
+		return $langs;
+	}
+
+	static public function installLanguageTables(){
+
+		if(!class_exists('GenericTableUpdater')) require(VMPATH_ADMIN .'/helpers/tableupdater.php');
+		$updater = new GenericTableUpdater();
+		$langs = self::getContentLanguages();
+
+		$updater->createLanguageTables($langs);
 	}
 
 	static public function checkConfigTableExists(){
@@ -591,7 +624,7 @@ class VirtueMartModelConfig extends VmModel {
 				return FALSE;
 			}
 		} else {
-			vmInfo('Taking config from file');
+			vmInfo('Loaded virtuemart default configuration from file virtuemart.cfg');
 		}
 
 		$_section = '[CONFIG]';

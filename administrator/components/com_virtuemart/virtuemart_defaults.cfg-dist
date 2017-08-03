@@ -22,7 +22,7 @@
 #dbpsdescsize
 #dbnamesize
 #updelcols  //controlls if columns are deleted
-#prodOnlyWLang          //dont use fallbacks for products
+#vmDefLang				//Virtuemart Shop Language
 #vm_lfbs                //eg vm_lfbs=it-IT~de-DE; maps the fallback of the it-IT language to de-DE
 #product.published=1    //controlls if new products are automatically published
 #seo_full=1             //with 0 no categories are added to the URL of products
@@ -34,10 +34,10 @@
 #sef_for_cart_links
 #full_catname_tree
 #pricesbyCurrency       //currency depended selected price; the selected currency determines the selected price of the product if availabe
-#vm_num_ratings_show     //amojunt of ratings to show
+#vm_num_ratings_show     //amount of ratings to show
 #invoiceInUserLang
 #invoiceNameInShopLang
-#debug_mail
+
 
 
 useSSL=0

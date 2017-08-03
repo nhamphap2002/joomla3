@@ -27,21 +27,26 @@ class JFormFieldVMFiles extends JFormFieldFileList {
 
 	protected function getInput() {
 
-		//Fallback for old directories
-		$dir = $this->getAttribute('directory');
-		if(strpos($dir,'images/stories')!==false){
+		if(JVM_VERSION < 3) {
+			$this->element['directory'] = 'images/stories';
+		} else {
+			//Fallback for old directories
+			$dir = $this->getAttribute('directory');
+			if(strpos($dir,'images/stories')!==false){
 
-			$dirNew = str_replace('images/stories','images',$dir);
-			if(!class_exists('JFolder')){
-				require(VMPATH_LIBS.DS.'joomla'.DS.'filesystem'.DS.'folder.php');
+				$dirNew = str_replace('images/stories','images',$dir);
+				if(!class_exists('JFolder')){
+					require(VMPATH_LIBS.DS.'joomla'.DS.'filesystem'.DS.'folder.php');
+				}
+				if(JFolder::exists(VMPATH_ROOT .$dirNew)){
+					$this->directory = $dirNew;
+				}
 			}
-			if(JFolder::exists(VMPATH_ROOT .$dirNew)){
-				$this->directory = $dirNew;
-			}
+
+			return parent::getInput();
 		}
-
-		return parent::getInput();
 	}
+
 	protected function getOptions(){
 		return parent::getOptions();
 	}

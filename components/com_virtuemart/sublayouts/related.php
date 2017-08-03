@@ -21,7 +21,7 @@ if($customfield->wPrice){
 
 if($customfield->waddtocart){
 	?><div class="vm3pr-related" ><?php
-	echo shopFunctionsF::renderVmSubLayout('addtocart',array('product'=>$related,'rowHeights'=>1, 'position' => array('ontop', 'addtocart')));
+	echo shopFunctionsF::renderVmSubLayout('addtocart',array('product'=>$related, 'position' => array('ontop', 'addtocart')));
 	?></div><?php
 }
 

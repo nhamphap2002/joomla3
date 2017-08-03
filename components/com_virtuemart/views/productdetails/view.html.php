@@ -14,7 +14,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: view.html.php 9493 2017-03-29 16:10:08Z Milbo $
+ * @version $Id: view.html.php 9536 2017-05-10 08:09:11Z Milbo $
  */
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
@@ -34,7 +34,7 @@ class VirtueMartViewProductdetails extends VmView {
     /**
 		 * Collect all data to show on the template
 		 *
-		 * @author RolandD, Max Milbers
+		 * @author Max Milbers
 		 */
 		function display($tpl = null) {
 
@@ -177,6 +177,16 @@ class VirtueMartViewProductdetails extends VmView {
 
 			shopFunctionsF::setLastVisitedCategoryId($product->virtuemart_category_id);
 
+			if(!empty($menu) ){
+				$t = $menu->params->get('cat_productdetails','');
+				if($t!=''){
+					$this->cat_productdetails = $t;
+				}
+			}
+			if(!isset($this->cat_productdetails)){
+				$this->cat_productdetails = VmConfig::get('cat_productdetails',0);
+			}
+
 			if ($category_model) {
 
 				$category = $category_model->getCategory($product->virtuemart_category_id);
@@ -196,8 +206,11 @@ class VirtueMartViewProductdetails extends VmView {
 					}
 				}
 
-				$category->children = $category_model->getChildCategoryList($product->virtuemart_vendor_id, $product->virtuemart_category_id);
-				$category_model->addImages($category->children, 1);
+				if($this->cat_productdetails){
+					$category->children = $category_model->getChildCategoryList($product->virtuemart_vendor_id, $product->virtuemart_category_id);
+					$category_model->addImages($category->children, 1);
+				}
+
 			}
 
 			$pathway->addItem(strip_tags(html_entity_decode($product->product_name,ENT_QUOTES)));

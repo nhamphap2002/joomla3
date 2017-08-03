@@ -12,7 +12,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: order.php 9496 2017-03-29 19:08:32Z Milbo $
+ * @version $Id: order.php 9523 2017-05-04 10:23:55Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -86,10 +86,10 @@ vmJsApi::addJScript('/administrator/components/com_virtuemart/assets/js/orders.j
 			<tr>
 				<td class="key"><strong><?php echo vmText::_('COM_VIRTUEMART_ORDER_PRINT_PO_NUMBER') ?></strong></td>
 				<?php
-
+				$orderLink=JURI::root() .'index.php?option=com_virtuemart&view=orders&layout=details&order_number='.$this->orderbt->order_number.'&order_pass='.$this->orderbt->order_pass;
 
 				?>
-				<td><?php echo $this->orderbt->order_number; ?></td>
+				<td><a href="<?php echo $orderLink ?>" target="_blank" title="<?php echo  vmText::_ ('COM_VIRTUEMART_ORDER_VIEW_ORDER_FRONTEND')?>"><?php echo $this->orderbt->order_number; ?></a></td>
 				<?php /*<td><?php echo  $print_link;?></td> */ ?>
 			</tr>
 			<tr>
@@ -108,8 +108,8 @@ vmJsApi::addJScript('/administrator/components/com_virtuemart/assets/js/orders.j
 				<td class="key"><strong><?php echo vmText::_('COM_VIRTUEMART_ORDER_PRINT_NAME') ?></strong></td>
 				<td><?php
 					if ($this->orderbt->virtuemart_user_id) {
-						$userlink = JROUTE::_ ('index.php?option=com_virtuemart&view=user&task=edit&virtuemart_user_id[]=' . $this->orderbt->virtuemart_user_id);
-						echo JHtml::_ ('link', JRoute::_ ($userlink), $this->orderbt->order_name, array('title' => vmText::_ ('COM_VIRTUEMART_ORDER_EDIT_USER') . ' ' . $this->orderbt->order_name));
+						$userlink = JRoute::_ ('index.php?option=com_virtuemart&view=user&task=edit&virtuemart_user_id[]=' . $this->orderbt->virtuemart_user_id);
+						echo JHtml::_ ('link', $userlink, $this->orderbt->order_name, array('title' => vmText::_ ('COM_VIRTUEMART_ORDER_EDIT_USER') . ' ' . $this->orderbt->order_name));
 					} else {
 						echo $this->orderbt->first_name.' '.$this->orderbt->last_name;
 					}

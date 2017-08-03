@@ -659,7 +659,7 @@ class GenericTableUpdater extends VmModel{
 					$query = 'ALTER TABLE `'.$tablename.'` CHANGE COLUMN `'.$fieldname.'` `'.$fieldname.'` '.$alterCommand.' '.$after.$pr;
 					$action = 'CHANGE';
 					$altered++;
-					vmdebug('alterColumns '.$tablename,$fieldname,$oldColumn,$alterCommand);
+					vmdebug('alterColumns '.$tablename.' from to,',$fieldname,$oldColumn,$alterCommand);
 				}
 			}
 			else {

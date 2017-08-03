@@ -891,6 +891,94 @@ class VmModel extends vObject{
 
 	}
 
+	static public function joinLangTables($tablename, $prefix, $on){
+
+		static $useFb = null, $useFb2 = null, $isSite = null;
+		if($useFb === null){
+			$useFb = vmLanguage::getUseLangFallback();
+			$useFb2 = vmLanguage::getUseLangFallbackSecondary();
+			$isSite = vmConfig::isSite();
+		}
+
+		$method = 'LEFT';
+		if($isSite and !VmConfig::get('dualFallback',false)){
+			$method = 'INNER';
+		}
+
+		if($useFb2){
+			$joinedTables[] = ' '.$method.' JOIN `'.$tablename.'_' .VmConfig::$jDefLang . '` as ljd ON ljd.`'.$on.'` = '.$prefix.'.`'.$on.'`';
+			$method = 'LEFT';
+		}
+
+		if($useFb){
+			$joinedTables[] = ' '.$method.' JOIN `'.$tablename.'_' .VmConfig::$defaultLang . '` as ld ON ld.`'.$on.'` = '.$prefix.'.`'.$on.'`';
+			$method = 'LEFT';
+		}
+
+		$joinedTables[] = ' '.$method.' JOIN `'.$tablename.'_' . VmConfig::$vmlang . '` as l ON l.`'.$on.'` = '.$prefix.'.`'.$on.'`';
+
+		return $joinedTables;
+	}
+
+	static public function joinLangSelectFields($langFields){
+
+		static $useFb = null, $useFb2 = null;
+		if($useFb === null){
+			$useFb = vmLanguage::getUseLangFallback();
+			$useFb2 = vmLanguage::getUseLangFallbackSecondary();
+		}
+
+		$langFields = array_unique($langFields);
+		$fields = array();
+		if(count($langFields)>0){
+			foreach($langFields as $langField){
+				if($useFb){
+					$f2 = 'ld.'.$langField;
+					if($useFb2){
+						$f2 = 'IFNULL(ld.'.$langField.', ljd.'.$langField.')';
+					}
+					$fields[] = 'IFNULL(l.'.$langField.','.$f2.') as '.$langField;
+				} else {
+					$fields[] = 'l.'.$langField;
+				}
+			}
+		}
+		return $fields;
+	}
+
+	static public function joinLangWhereFields($langFields, $keyword){
+		$r = array();
+		foreach ($langFields as $langField) {
+			$t = self::joinLangWhereField($langField, $keyword);
+			$r = array_merge($r, $t);
+		}
+		return $r;
+	}
+
+	static public function joinLangWhereField($searchField, $keyword){
+
+		static $useFb = null, $useFb2 = null;
+		if($useFb === null){
+			$useFb = vmLanguage::getUseLangFallback();
+			$useFb2 = vmLanguage::getUseLangFallbackSecondary();
+		}
+
+		if (strpos ($searchField, '`') !== FALSE){
+			$searchField = str_replace('`','',$searchField);
+		}
+
+		$keywords_plural = preg_replace('/\s+/', '%" AND `'.$searchField.'` LIKE "%', $keyword);
+		$filter_search[] =  'l.`'.$searchField . '` LIKE ' . $keywords_plural;
+		if($useFb){
+			$filter_search[] =  'ld.`'.$searchField . '` LIKE ' . $keywords_plural;
+			if($useFb2){
+				$filter_search[] =  'ljd.`'.$searchField . '` LIKE ' . $keywords_plural;
+			}
+		}
+
+		return $filter_search;
+	}
+
 	public function emptyCache(){
 		$this->_cache = array();
 	}

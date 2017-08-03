@@ -137,7 +137,7 @@ Virtuemart.prdcustomer = jQuery(function($) {
 
 				var $body = '';
 				var $subject = '';
-				if (jQuery('input:checkbox[name=notification_template]').is(':checked')); else {
+				if (jQuery('input:checkbox[name=notification_template]').not(':checked')) {
 					$subject = jQuery('#mail-subject').val();
 					$body = jQuery('#mail-body').val();
 				}
@@ -165,7 +165,7 @@ Virtuemart.prdcustomer = jQuery(function($) {
 				);
 
 			}
-			else if (email_type = 'customer') {
+			else if (email_type == 'customer') {
 				var $subject = jQuery('#mail-subject').val();
 				var $body = jQuery('#mail-body').val();
 				if ($subject == '') {

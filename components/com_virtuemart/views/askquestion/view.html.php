@@ -184,7 +184,7 @@ class VirtueMartViewAskquestion extends VmView {
 
 		$vendorModel->addImages ($this->vendor);
 
-		$this->vendorEmail = $vendorModel->getVendorEmail($this->vendor->virtuemart_vendor_id);;
+		$this->vendorEmail = $vendorModel->getVendorEmail($this->vendor->virtuemart_vendor_id);
 
 		// in this particular case, overwrite the value for fix the recipient name
 		$this->vendor->vendor_name = $this->user->get('name');

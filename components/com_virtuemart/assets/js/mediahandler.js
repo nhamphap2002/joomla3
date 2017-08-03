@@ -31,7 +31,7 @@ jQuery(document).ready(function($){
 			media.start = 0;
 		} else if ($(this).hasClass('js-next')) media.start = media.start+16 ;
 		else if (media.start > 0) media.start = media.start-16 ;
-		searchMedia.autocomplete( 'option' , 'source' , medialink+'&start='+media.start );
+		searchMedia.autocomplete( 'option' , 'source' , Virtuemart.medialink+'&start='+media.start );
 		searchMedia.autocomplete( 'search');
 	});
 	$('[name="upload"]').on ('change', function (){

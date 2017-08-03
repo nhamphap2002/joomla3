@@ -13,7 +13,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: user.php 9420 2017-01-12 09:35:36Z Milbo $
+ * @version $Id: user.php 9517 2017-04-29 11:03:43Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -245,6 +245,9 @@ class VirtueMartControllerUser extends JControllerLegacy
 				if(!$cartObj and !isset($data['virtuemart_shoppergroup_id']) and vmAccess::manager('user.edit')){
 					$data['virtuemart_shoppergroup_id'] = array();
 				}
+
+				//important for user registration mail, by Yagendoo
+				if(empty($data['language'])) $data['language'] = VmConfig::$vmlangTag;
 
 				$ret = $userModel->store($data);
 

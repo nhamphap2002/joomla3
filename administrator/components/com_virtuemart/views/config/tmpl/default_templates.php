@@ -40,7 +40,7 @@ $params = VmConfig::loadConfig();
 			echo VmHTML::row('genericlist','COM_VIRTUEMART_ADMIN_CFG_CATEGORY_LAYOUT', $this->categoryLayoutList, 'categorylayout', 'size=1', 'value', 'text', VmConfig::get('categorylayout', 0));
 			echo VmHTML::row('genericlist','COM_VIRTUEMART_CFG_PRODUCTS_SUBLAYOUT', $this->productsFieldList, 'productsublayout', 'size=1', 'value', 'text', VmConfig::get('productsublayout', 0));
 			echo VmHTML::row('genericlist','COM_VIRTUEMART_ADMIN_CFG_PRODUCT_LAYOUT', $this->productLayoutList, 'productlayout', 'size=1', 'value', 'text', VmConfig::get('productlayout', 0));
-
+			echo VmHTML::row('checkbox','COM_VM_PRODUCTDETAILS_DISPL_CATS','cat_productdetails', VmConfig::get('cat_productdetails',0));
 			?>
         </table>
     </fieldset>
@@ -54,7 +54,6 @@ $params = VmConfig::loadConfig();
 			echo VmHTML::row('checkbox','COM_VIRTUEMART_ADMIN_CFG_SHOW_CATEGORIES','show_categories', VmConfig::get('show_categories',1));
 			echo VmHTML::row('input','COM_VIRTUEMART_ADMIN_CFG_CATEGORIES_PER_ROW','homepage_categories_per_row', VmConfig::get('homepage_categories_per_row',3),'',4,4);
 			echo VmHTML::row('input','COM_VIRTUEMART_ADMIN_CFG_PRODUCTS_PER_ROW','homepage_products_per_row', VmConfig::get('homepage_products_per_row',3),'',4,4);
-
 			?>
 		</table>
 	</fieldset>

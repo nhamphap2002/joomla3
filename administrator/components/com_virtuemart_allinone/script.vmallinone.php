@@ -57,9 +57,10 @@ if (!defined ('_VM_AIO_SCRIPT_INCLUDED')) {
 
 		public function vmInstall ($dontMove=0) {
 
-
-			jimport ('joomla.filesystem.file');
 			jimport ('joomla.installer.installer');
+
+			if(!class_exists('JFile')) require(VMPATH_LIBS .'/joomla/filesystem/file.php');
+			if(!class_exists('JFolder')) require(VMPATH_LIBS .'/joomla/filesystem/folder.php');
 
 			vmLanguage::loadJLang('com_virtuemart');
 			$this->createIndexFolder (JPATH_ROOT . DS . 'plugins' . DS . 'vmcalculation');

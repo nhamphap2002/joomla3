@@ -14,7 +14,7 @@
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
-* @version $Id: config.php 9461 2017-02-28 15:37:01Z Milbo $
+* @version $Id: config.php 9538 2017-05-10 17:25:03Z Milbo $
 */
 
 // Check to ensure this file is included in Joomla!
@@ -69,7 +69,7 @@ class VirtuemartControllerConfig extends VmController {
 			$redir = $this->redirectPath;
 		}
 
-		$this->setRedirect($redir.'&vmms=1', $msg);
+		$this->setRedirect($redir.'&vmms=1&nosafepathcheck=1', $msg);
 
 
 	}

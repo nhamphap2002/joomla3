@@ -13,7 +13,7 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: medias.php 9424 2017-01-18 19:42:51Z Milbo $
+ * @version $Id: medias.php 9513 2017-04-29 10:40:51Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
@@ -168,6 +168,7 @@ class TableMedias extends VmTable {
 			}
 		}
 		else {
+			vmdebug('Media table check, media has no file_title',$this);
 			vmError (vmText::_ ('COM_VIRTUEMART_MEDIA_MUST_HAVE_TITLE'));
 			$ok = FALSE;
 		}

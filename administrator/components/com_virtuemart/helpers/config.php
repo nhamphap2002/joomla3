@@ -396,7 +396,7 @@ function vmdebug($debugdescr,$debugvalues=NULL){
 			}else {
 				VmConfig::$maxMessageCount++;
 				$app = JFactory::getApplication();
-				$app ->enqueueMessage('<span class="vmdebug" >vmdebug '.$debugdescr.'</span>');
+				$app ->enqueueMessage('<span class="vmdebug" >'.VmConfig::$maxMessageCount.' vmdebug '.$debugdescr.'</span>');
 			}
 
 		}
@@ -422,7 +422,7 @@ function vmTrace($notice,$force=FALSE, $args = 10){
 		echo '</pre>';
 		$body = ob_get_contents();
 		ob_end_clean();
-		
+
 		if(VmConfig::$logDebug){
 			logInfo($body,$notice);
 		}
@@ -546,7 +546,7 @@ function logInfo ($text, $type = 'message') {
 			}
 
 			fwrite ($fp, "\n" . JFactory::getDate()->format ('Y-m-d H:i:s'));
-			fwrite ($fp,  " ".strtoupper($type) . ' ' . $text);
+			fwrite ($fp,  " ".strtoupper($type) . ' ' . htmlspecialchars($text));
 			fclose ($fp);
 		} else {
 			if (VmConfig::$echoAdmin){
@@ -596,6 +596,7 @@ class VmConfig {
 	public static $vmlangSef = '';
 
 	public static $defaultLang = false;
+	public static $defaultLangTag = false;
 	public static $jDefLang = false;
 	public static $jDefLangTag = false;
 
@@ -978,12 +979,12 @@ class VmConfig {
 			self::$installed = VirtueMartModelConfig::checkVirtuemartInstalled();
 			if(!self::$installed){
 				if(!$redirected and !$install){
-					$link = 'index.php?option=com_virtuemart&view=updatesmigration&redirected=1';
+					$link = 'index.php?option=com_virtuemart&view=updatesmigration&redirected=1&nosafepathcheck=1';
 
 					if($app->isSite()){
 						$link = JUri::root(true).'/administrator/'.$link;
 					} else {
-						if(empty($msg)) $msg = 'Install Virtuemart first, click on the menu component and select VirtueMart';
+						if(empty($msg)) $msg = 'COM_VM_INSTALLATION_INFO';
 					}
 				}
 			}
@@ -1014,6 +1015,7 @@ class VmConfig {
 		if($lang)vmLanguage::initialise();
 		self::echoAdmin();
 		self::showDebug();
+		vmLanguage::debugLangVars();
 
 		self::$_secret = JFactory::getConfig()->get('secret');
 
@@ -1037,7 +1039,10 @@ class VmConfig {
 			if(vmAccess::manager('core.admin') and ($install or $redirected)){
 				VmConfig::$_jpConfig->set('dangeroustools',1);
 			}
-			if(!empty($msg)) $app->enqueueMessage($msg);
+			if(!empty($msg)){
+				vmLanguage::loadJLang('com_virtuemart_config');
+				$app->enqueueMessage(vmText::_($msg), self::$mType);
+			}
 			if(!empty($link)) $app->redirect($link);
 		}
 
@@ -1198,6 +1203,20 @@ class VmConfig {
 	static public function isSuperVendor($uid = 0){
 		return vmAccess::isSuperVendor($uid);
 	}
+
+	static private $isSite = null;
+	static public function isSite(){
+
+		if(self::$isSite===null){
+			$app = JFactory::getApplication ();
+			if($app->isAdmin() or (vRequest::get('manage',false) and vmAccess::manager('manage'))){
+				self::$isSite = false;
+			} else {
+				self::$isSite = true;
+			}
+		}
+		return self::$isSite;
+	}
 }
 
 
@@ -1280,7 +1299,7 @@ class vmAccess {
 
 				if ($virtuemart_vendor_id) {
 					self::$_virtuemart_vendor_id[$uid] = $virtuemart_vendor_id;
-					vmdebug('Active vendor '.$virtuemart_vendor_id );
+					vmdebug('Active vendor '.$uid.' '.$virtuemart_vendor_id );
 				} else {
 					if(self::manager('core') or self::manager('managevendors')){
 						vmdebug('Active Mainvendor');
@@ -1290,7 +1309,11 @@ class vmAccess {
 					}
 				}
 			}
-			if(self::$_virtuemart_vendor_id[$uid] <= 0) vmdebug('isSuperVendor Not a vendor');
+			if($uid==0){
+				self::$_virtuemart_vendor_id[$user->id] = self::$_virtuemart_vendor_id[$uid];
+				vmdebug('Set '.$user->id.' to '.self::$_virtuemart_vendor_id[$uid]);
+			}
+			if(self::$_virtuemart_vendor_id[$uid] <= 0) vmdebug('isSuperVendor Not a vendor '.$uid,self::$_virtuemart_vendor_id[$uid]);
 		}
 		return self::$_virtuemart_vendor_id[$uid];
 	}
@@ -1396,7 +1419,7 @@ class vmURI{
 
 	static function getCurrentUrlBy ($source = 'request',$route = false, $white = true, $ignore = false){
 
-		$vars = array('option', 'view', 'controller', 'task', 'virtuemart_category_id', 'virtuemart_manufacturer_id', 'virtuemart_product_id', 'virtuemart_user_id', 'addrtype', 'virtuemart_user_info', 'virtuemart_currency_id', 'layout', 'format', 'limitstart', 'limit', 'lang', 'language', 'keyword', 'virtuemart_order_id', 'order_number', 'order_pass', 'tmpl', 'usersearch', 'manage', 'orderby', 'dir', 'Itemid');
+		$vars = array('option', 'view', 'controller', 'task', 'virtuemart_category_id', 'virtuemart_manufacturer_id', 'virtuemart_product_id', 'virtuemart_user_id', 'addrtype', 'virtuemart_user_info', 'virtuemart_currency_id', 'layout', 'format', 'limitstart', 'limit', 'language', 'keyword', 'virtuemart_order_id', 'order_number', 'order_pass', 'tmpl', 'usersearch', 'manage', 'orderby', 'dir', 'Itemid', 'lang');	//TODO Maybe better to remove the 'lang', which keeps the SEF suffix
 
 		$url = 'index.php?';
 		if($white){
@@ -1441,11 +1464,11 @@ class vmURI{
 			}
 		}
 
-		$url = rtrim($url,'&');
+		$url = $urlold = rtrim($url,'&');
 		if ($route){
 			$url = JRoute::_($url);
 		}
-		vmdebug('getCurrentUrlBy '.$url);
+		vmdebug('getCurrentUrlBy ',$urlold,$url);
 		return $url;
 	}
 
@@ -1470,7 +1493,12 @@ class vmURI{
 		if(isset($useSSL)) return $useSSL;
 
 		$jconf = JFactory::getConfig();
-		$useSSL = VmConfig::get('useSSL', 0) or $jconf->get('force_ssl')=='2';
+		if(VmConfig::get('useSSL', 0)!=0 or $jconf->get('force_ssl')=='2'){
+			$useSSL = 1;
+			vmdebug('SSL enabled');
+		} else {
+			$useSSL = 0;
+		}
 		return $useSSL;
 	}
 }

@@ -123,7 +123,7 @@ function virtuemartBuildRoute(&$query) {
 				unset($query['limitstart']);
 			}
 			if ( isset($query['start'] ) ) {
-				$start = (int)$query['start'] ;
+				$limit = $start = (int)$query['start'] ;
 				unset($query['start']);
 			}
 			if ( isset($query['limit'] ) ) {
@@ -813,7 +813,7 @@ class vmrouterHelper {
 			// if language switcher we must know the $query
 			$this->query = $query;
 
-			$this->langFback = ( !VmConfig::get('prodOnlyWLang',false) and VmConfig::$defaultLang!=VmConfig::$vmlang and VmConfig::$langCount>1 );
+			$this->langFback = vmLanguage::getUseLangFallback();// !VmConfig::get('prodOnlyWLang',false) and VmConfig::$defaultLang!=VmConfig::$vmlang and VmConfig::$langCount>1 );
 		}
 
 	}
@@ -833,7 +833,7 @@ class vmrouterHelper {
 				$mainframe = JFactory::getApplication(); ;
 				$view = 'virtuemart';
 				if(isset($query['view'])) $view = $query['view'];
-				self::$limit= $mainframe->getUserStateFromRequest('com_virtuemart.'.$view.'.limit', VmConfig::get('list_limit', 20), 'int');
+				self::$limit= $mainframe->getUserStateFromRequest('com_virtuemart.'.$view.'.limit', VmConfig::get('list_limit', 20), 20, 'int');
 			}
 		}
 		self::$_instance->query = $query;

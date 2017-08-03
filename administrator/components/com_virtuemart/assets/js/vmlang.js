@@ -15,11 +15,12 @@ function updateLanguageValues(data, langCode, flagClass) {
 	if (data.fields !== "error" ) {
 		var cible = null; 
 		var tmce_ver = 0;
-			if(typeof window.tinyMCE!=="undefined"){
-				var tmce_ver=window.tinyMCE.majorVersion;
-			}
+		if(typeof window.tinyMCE!=="undefined"){
+			var tmce_ver=window.tinyMCE.majorVersion;
+		}
 		
 		if (data.structure == "empty") alert(data.msg);
+
 		jQuery.each(data.fields , function(key, val) {
 			cible = jQuery("#"+key);
 			if (window.oldflag !== "") jQuery('.allflags').removeClass(window.oldflag)
@@ -47,8 +48,12 @@ function updateLanguageValues(data, langCode, flagClass) {
 				jQuery("#child"+data.requested_id+"slug").val(data.fields["slug"]);
 			}
 		});
-		
-		
+
+		var fbflag = '';
+		if (data.byfallback != "0"){
+			fbflag = '(<span class="allflags flag-'+data.byfallback+'"></span>)';
+		}
+		jQuery(".langfallback").html(fbflag);
 
 	} else {
 		alert(data.msg);

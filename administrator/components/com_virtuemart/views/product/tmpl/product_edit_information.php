@@ -14,11 +14,13 @@
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
- * @version $Id: product_edit_information.php 9440 2017-02-01 12:49:35Z Milbo $
+ * @version $Id: product_edit_information.php 9499 2017-04-11 13:42:24Z Milbo $
  */
 
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
+
+
 
 // set row counter
 $i=0;
@@ -42,6 +44,7 @@ $i=0;
 			</td>
 			<td>
 				<input class="required inputbox" type="text" name="product_name" id="product_name" value="<?php echo $this->product->product_name; ?>" size="32" maxlength="255" />
+				<?php echo $this->origLang ?>
 			</td>
 			<td colspan="2">
 				<label><?php echo VmHTML::checkbox('published', $this->product->published); ?><?php echo vmText::_('COM_VIRTUEMART_PUBLISHED') ?></label>
@@ -51,8 +54,9 @@ $i=0;
 			<td>
 				<span class="hastip" title="<?php echo vmText::_('COM_VIRTUEMART_PRODUCT_FORM_ALIAS_TIP');?>"><?php echo vmText::_('COM_VIRTUEMART_PRODUCT_FORM_ALIAS') ?></span>
 			</td>
-			<td height="18">
+			<td height="18" >
 				<input type="text" class="inputbox"  name="slug" id="slug" value="<?php echo $this->product->slug; ?>" size="32" maxlength="255" />
+				<?php echo $this->origLang ?>
 			</td>
 		</tr>
 
